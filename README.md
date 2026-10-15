@@ -39,7 +39,7 @@ claude mcp add --transport http brightdata "https://mcp.brightdata.com/mcp?token
 ```
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r python\requirements.txt
-.venv\Scripts\python.exe python\intern_intel.py --offline
+.venv\Scripts\python.exe python\intern_intel.py --offline --location "Remote"
 copy .env.example .env
 ```
 
@@ -54,7 +54,7 @@ Open `.env`, put your key after `BRIGHTDATA_API_TOKEN=`, save, then:
 ```
 python3 -m venv .venv
 .venv/bin/python -m pip install -r python/requirements.txt
-.venv/bin/python python/intern_intel.py --offline
+.venv/bin/python python/intern_intel.py --offline --location "Remote"
 cp .env.example .env
 .venv/bin/python python/intern_intel.py --role "software engineer intern" --location "Remote"
 ```
@@ -63,7 +63,7 @@ cp .env.example .env
 The offline run needs no install; the live run reads the same `.env`:
 
 ```
-node js/intern_intel.mjs --offline
+node js/intern_intel.mjs --offline --location "Remote"
 node js/intern_intel.mjs --role "software engineer intern" --location "Remote"
 ```
 

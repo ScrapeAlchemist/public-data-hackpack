@@ -122,7 +122,7 @@ Windows (PowerShell):
 ```
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -r python\requirements.txt
-.venv\Scripts\python.exe python\intern_intel.py --offline
+.venv\Scripts\python.exe python\intern_intel.py --offline --location "Remote"
 ```
 
 macOS / Linux:
@@ -130,13 +130,13 @@ macOS / Linux:
 ```
 python3 -m venv .venv
 .venv/bin/python -m pip install -r python/requirements.txt
-.venv/bin/python python/intern_intel.py --offline
+.venv/bin/python python/intern_intel.py --offline --location "Remote"
 ```
 
 The offline run should end with a line like:
 
 ```
-45 listings -> 45 unique jobs (0 on both sites) -> 45 after filters. Wrote out/intern_intel.csv and out/intern_intel.json in 0.0 s.
+45 listings -> 38 unique jobs (7 on both sites) -> 38 after filters. Wrote out/intern_intel.csv and out/intern_intel.json in 0.0 s.
 ```
 
 Then drop `--offline` to fetch live pages through Bright Data. Options are listed in the
@@ -147,7 +147,7 @@ Then drop `--offline` to fetch live pages through Bright Data. Options are liste
 Node 20 or newer. Same flags as the Python version:
 
 ```
-node js/intern_intel.mjs --offline
+node js/intern_intel.mjs --offline --location "Remote"
 ```
 
 `js/intern_intel.mjs` needs no npm packages, so the line above works right after cloning. In
