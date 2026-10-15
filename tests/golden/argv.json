@@ -1,0 +1,809 @@
+{
+ "cases": [
+  {
+   "argv": [],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--help"
+   ],
+   "exit": 0,
+   "help": "usage: intern_intel.py [-h] [--role ROLE] [--location LOCATION]\n                       [--pages {1,2}] [--title-includes TITLE_INCLUDES]\n                       [--location-includes LOCATION_INCLUDES]\n                       [--min-hourly MIN_HOURLY] [--limit LIMIT] [--refresh]\n                       [--offline] [--save-fixtures [PREFIX]] [--print-urls]\n                       [--from-dir DIR]\n\nInternship listings from Indeed and Glassdoor in one table.\n\noptions:\n  -h, --help            show this help message and exit\n  --role ROLE           search keywords\n  --location LOCATION   e.g. \"New York, NY\" or \"Remote\"; empty = whole US\n  --pages {1,2}         1 = top results per site, 2 = also the newest listings\n                        per site\n  --title-includes TITLE_INCLUDES\n                        keep rows whose title contains this text\n  --location-includes LOCATION_INCLUDES\n                        keep rows whose location contains this text\n  --min-hourly MIN_HOURLY\n                        keep rows paying at least this many USD per hour\n  --limit LIMIT         print only the first N rows (files get all rows)\n  --refresh             ignore the 6-hour cache and fetch again\n  --offline             read pages from fixtures/ only (no network, no API\n                        key)\n  --save-fixtures [PREFIX]\n                        copy the fetched pages into fixtures/ as\n                        <PREFIX><source>_p<page>.md\n  --print-urls          print the search URLs (source, page, url; tab\n                        separated) and exit\n  --from-dir DIR        parse markdown files already in DIR (indeed_p1.md,\n                        glassdoor_p1.md, ...) instead of fetching; --role,\n                        --location and --pages are then not used\n"
+  },
+  {
+   "argv": [
+    "-h"
+   ],
+   "exit": 0,
+   "help": "usage: intern_intel.py [-h] [--role ROLE] [--location LOCATION]\n                       [--pages {1,2}] [--title-includes TITLE_INCLUDES]\n                       [--location-includes LOCATION_INCLUDES]\n                       [--min-hourly MIN_HOURLY] [--limit LIMIT] [--refresh]\n                       [--offline] [--save-fixtures [PREFIX]] [--print-urls]\n                       [--from-dir DIR]\n\nInternship listings from Indeed and Glassdoor in one table.\n\noptions:\n  -h, --help            show this help message and exit\n  --role ROLE           search keywords\n  --location LOCATION   e.g. \"New York, NY\" or \"Remote\"; empty = whole US\n  --pages {1,2}         1 = top results per site, 2 = also the newest listings\n                        per site\n  --title-includes TITLE_INCLUDES\n                        keep rows whose title contains this text\n  --location-includes LOCATION_INCLUDES\n                        keep rows whose location contains this text\n  --min-hourly MIN_HOURLY\n                        keep rows paying at least this many USD per hour\n  --limit LIMIT         print only the first N rows (files get all rows)\n  --refresh             ignore the 6-hour cache and fetch again\n  --offline             read pages from fixtures/ only (no network, no API\n                        key)\n  --save-fixtures [PREFIX]\n                        copy the fetched pages into fixtures/ as\n                        <PREFIX><source>_p<page>.md\n  --print-urls          print the search URLs (source, page, url; tab\n                        separated) and exit\n  --from-dir DIR        parse markdown files already in DIR (indeed_p1.md,\n                        glassdoor_p1.md, ...) instead of fetching; --role,\n                        --location and --pages are then not used\n"
+  },
+  {
+   "argv": [
+    "--he"
+   ],
+   "exit": 0,
+   "help": "usage: intern_intel.py [-h] [--role ROLE] [--location LOCATION]\n                       [--pages {1,2}] [--title-includes TITLE_INCLUDES]\n                       [--location-includes LOCATION_INCLUDES]\n                       [--min-hourly MIN_HOURLY] [--limit LIMIT] [--refresh]\n                       [--offline] [--save-fixtures [PREFIX]] [--print-urls]\n                       [--from-dir DIR]\n\nInternship listings from Indeed and Glassdoor in one table.\n\noptions:\n  -h, --help            show this help message and exit\n  --role ROLE           search keywords\n  --location LOCATION   e.g. \"New York, NY\" or \"Remote\"; empty = whole US\n  --pages {1,2}         1 = top results per site, 2 = also the newest listings\n                        per site\n  --title-includes TITLE_INCLUDES\n                        keep rows whose title contains this text\n  --location-includes LOCATION_INCLUDES\n                        keep rows whose location contains this text\n  --min-hourly MIN_HOURLY\n                        keep rows paying at least this many USD per hour\n  --limit LIMIT         print only the first N rows (files get all rows)\n  --refresh             ignore the 6-hour cache and fetch again\n  --offline             read pages from fixtures/ only (no network, no API\n                        key)\n  --save-fixtures [PREFIX]\n                        copy the fetched pages into fixtures/ as\n                        <PREFIX><source>_p<page>.md\n  --print-urls          print the search URLs (source, page, url; tab\n                        separated) and exit\n  --from-dir DIR        parse markdown files already in DIR (indeed_p1.md,\n                        glassdoor_p1.md, ...) instead of fetching; --role,\n                        --location and --pages are then not used\n"
+  },
+  {
+   "argv": [
+    "-hx"
+   ],
+   "exit": 0,
+   "help": "usage: intern_intel.py [-h] [--role ROLE] [--location LOCATION]\n                       [--pages {1,2}] [--title-includes TITLE_INCLUDES]\n                       [--location-includes LOCATION_INCLUDES]\n                       [--min-hourly MIN_HOURLY] [--limit LIMIT] [--refresh]\n                       [--offline] [--save-fixtures [PREFIX]] [--print-urls]\n                       [--from-dir DIR]\n\nInternship listings from Indeed and Glassdoor in one table.\n\noptions:\n  -h, --help            show this help message and exit\n  --role ROLE           search keywords\n  --location LOCATION   e.g. \"New York, NY\" or \"Remote\"; empty = whole US\n  --pages {1,2}         1 = top results per site, 2 = also the newest listings\n                        per site\n  --title-includes TITLE_INCLUDES\n                        keep rows whose title contains this text\n  --location-includes LOCATION_INCLUDES\n                        keep rows whose location contains this text\n  --min-hourly MIN_HOURLY\n                        keep rows paying at least this many USD per hour\n  --limit LIMIT         print only the first N rows (files get all rows)\n  --refresh             ignore the 6-hour cache and fetch again\n  --offline             read pages from fixtures/ only (no network, no API\n                        key)\n  --save-fixtures [PREFIX]\n                        copy the fetched pages into fixtures/ as\n                        <PREFIX><source>_p<page>.md\n  --print-urls          print the search URLs (source, page, url; tab\n                        separated) and exit\n  --from-dir DIR        parse markdown files already in DIR (indeed_p1.md,\n                        glassdoor_p1.md, ...) instead of fetching; --role,\n                        --location and --pages are then not used\n"
+  },
+  {
+   "argv": [
+    "-h=x"
+   ],
+   "exit": 2,
+   "error": "argument -h/--help: ignored explicit argument 'x'"
+  },
+  {
+   "argv": [
+    "-h-x"
+   ],
+   "exit": 2,
+   "error": "argument -h/--help: ignored explicit argument '-x'"
+  },
+  {
+   "argv": [
+    "--role=",
+    "--pages=2"
+   ],
+   "args": {
+    "role": "",
+    "location": "San Francisco, CA",
+    "pages": 2,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--save-fixtures",
+    "abc"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": "abc",
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--save-fixtures",
+    "-x"
+   ],
+   "exit": 2,
+   "error": "unrecognized arguments: -x"
+  },
+  {
+   "argv": [
+    "--save-fixtures"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": "",
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--save-fixtures=",
+    "--offline"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": true,
+    "save_fixtures": "",
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    "-5"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": {
+     "float": "-5.0"
+    },
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    "-1e5"
+   ],
+   "exit": 2,
+   "error": "argument --min-hourly: expected one argument"
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    "-.5"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": {
+     "float": "-0.5"
+    },
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    " 1_0.5 "
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": {
+     "float": "10.5"
+    },
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    "1e"
+   ],
+   "exit": 2,
+   "error": "argument --min-hourly: invalid float value: '1e'"
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    "1.e2"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": {
+     "float": "100.0"
+    },
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    "+.5"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": {
+     "float": "0.5"
+    },
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    "1__0"
+   ],
+   "exit": 2,
+   "error": "argument --min-hourly: invalid float value: '1__0'"
+  },
+  {
+   "argv": [
+    "--min-hourly",
+    "\u0663.\u0664"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": {
+     "float": "3.4"
+    },
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--min-hourly"
+   ],
+   "exit": 2,
+   "error": "argument --min-hourly: expected one argument"
+  },
+  {
+   "argv": [
+    "--limit",
+    "-1"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": -1,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--limit",
+    "1_0"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": 10,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--limit",
+    "abc"
+   ],
+   "exit": 2,
+   "error": "argument --limit: invalid int value: 'abc'"
+  },
+  {
+   "argv": [
+    "--limit",
+    "007"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": 7,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--limit",
+    "2.0"
+   ],
+   "exit": 2,
+   "error": "argument --limit: invalid int value: '2.0'"
+  },
+  {
+   "argv": [
+    "--role",
+    "-x y"
+   ],
+   "args": {
+    "role": "-x y",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--role",
+    "-5"
+   ],
+   "args": {
+    "role": "-5",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--role",
+    "-x"
+   ],
+   "exit": 2,
+   "error": "argument --role: expected one argument"
+  },
+  {
+   "argv": [
+    "--role",
+    "--"
+   ],
+   "exit": 2,
+   "error": "argument --role: expected one argument"
+  },
+  {
+   "argv": [
+    "--role",
+    "a",
+    "b",
+    "--zz=1",
+    "-q"
+   ],
+   "exit": 2,
+   "error": "unrecognized arguments: b --zz=1 -q"
+  },
+  {
+   "argv": [
+    "--offline=1"
+   ],
+   "exit": 2,
+   "error": "argument --offline: ignored explicit argument '1'"
+  },
+  {
+   "argv": [
+    "--offline="
+   ],
+   "exit": 2,
+   "error": "argument --offline: ignored explicit argument ''"
+  },
+  {
+   "argv": [
+    "--refresh",
+    "--refresh"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": true,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--pages",
+    " 2 "
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 2,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--pages",
+    "3"
+   ],
+   "exit": 2,
+   "error": "argument --pages: invalid choice: '3' (choose from 1, 2)"
+  },
+  {
+   "argv": [
+    "--pages",
+    "0"
+   ],
+   "exit": 2,
+   "error": "argument --pages: invalid choice: '0' (choose from 1, 2)"
+  },
+  {
+   "argv": [
+    "--pages",
+    "-1"
+   ],
+   "exit": 2,
+   "error": "argument --pages: invalid choice: '-1' (choose from 1, 2)"
+  },
+  {
+   "argv": [
+    "--pages",
+    "\u0662"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 2,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--pages=",
+    "--loc",
+    "x"
+   ],
+   "exit": 2,
+   "error": "argument --pages: invalid int value: ''"
+  },
+  {
+   "argv": [
+    "--pages",
+    "3",
+    "--loc",
+    "x"
+   ],
+   "exit": 2,
+   "error": "argument --pages: invalid choice: '3' (choose from 1, 2)"
+  },
+  {
+   "argv": [
+    "x",
+    "--pages",
+    "3"
+   ],
+   "exit": 2,
+   "error": "argument --pages: invalid choice: '3' (choose from 1, 2)"
+  },
+  {
+   "argv": [
+    "-"
+   ],
+   "exit": 2,
+   "error": "unrecognized arguments: -"
+  },
+  {
+   "argv": [
+    "--",
+    "x"
+   ],
+   "exit": 2,
+   "error": "unrecognized arguments: -- x"
+  },
+  {
+   "argv": [
+    "--=x"
+   ],
+   "exit": 2,
+   "error": "ambiguous option: --=x could match --help, --role, --location, --pages, --title-includes, --location-includes, --min-hourly, --limit, --refresh, --offline, --save-fixtures, --print-urls, --from-dir"
+  },
+  {
+   "argv": [
+    "--loc",
+    "x"
+   ],
+   "exit": 2,
+   "error": "ambiguous option: --loc could match --location, --location-includes"
+  },
+  {
+   "argv": [
+    "--loc=x"
+   ],
+   "exit": 2,
+   "error": "ambiguous option: --loc=x could match --location, --location-includes"
+  },
+  {
+   "argv": [
+    "--location-i",
+    "x"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": "x",
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--from",
+    "d"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": "d"
+   }
+  },
+  {
+   "argv": [
+    "--print-urls",
+    "--from-dir",
+    ""
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": true,
+    "from_dir": ""
+   }
+  },
+  {
+   "argv": [
+    "--from-dir",
+    "x",
+    "--offline"
+   ],
+   "exit": 2,
+   "error": "--from-dir reads files you already have, so it does not combine with --offline, --refresh, --print-urls or --save-fixtures"
+  },
+  {
+   "argv": [
+    "--from-dir",
+    "x",
+    "--refresh"
+   ],
+   "exit": 2,
+   "error": "--from-dir reads files you already have, so it does not combine with --offline, --refresh, --print-urls or --save-fixtures"
+  },
+  {
+   "argv": [
+    "--from-dir",
+    "x",
+    "--print-urls"
+   ],
+   "exit": 2,
+   "error": "--from-dir reads files you already have, so it does not combine with --offline, --refresh, --print-urls or --save-fixtures"
+  },
+  {
+   "argv": [
+    "--from-dir",
+    "x",
+    "--save-fixtures"
+   ],
+   "exit": 2,
+   "error": "--from-dir reads files you already have, so it does not combine with --offline, --refresh, --print-urls or --save-fixtures"
+  },
+  {
+   "argv": [
+    "--from-dir",
+    "x",
+    "--save-fixtures",
+    "p"
+   ],
+   "exit": 2,
+   "error": "--from-dir reads files you already have, so it does not combine with --offline, --refresh, --print-urls or --save-fixtures"
+  },
+  {
+   "argv": [
+    "--from-dir",
+    "x",
+    "--title-includes",
+    "a",
+    "--location-includes",
+    "b",
+    "--min-hourly",
+    "1",
+    "--limit",
+    "2"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": "a",
+    "location_includes": "b",
+    "min_hourly": {
+     "float": "1.0"
+    },
+    "limit": 2,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": "x"
+   }
+  },
+  {
+   "argv": [
+    "--title",
+    "t",
+    "--min",
+    "3",
+    "--lim",
+    "4",
+    "--of",
+    "--ref",
+    "--pr",
+    "--sav",
+    "pre_"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "San Francisco, CA",
+    "pages": 1,
+    "title_includes": "t",
+    "location_includes": null,
+    "min_hourly": {
+     "float": "3.0"
+    },
+    "limit": 4,
+    "refresh": true,
+    "offline": true,
+    "save_fixtures": "pre_",
+    "print_urls": true,
+    "from_dir": null
+   }
+  },
+  {
+   "argv": [
+    "--location",
+    "New York, NY",
+    "--location",
+    "Remote"
+   ],
+   "args": {
+    "role": "software engineer intern",
+    "location": "Remote",
+    "pages": 1,
+    "title_includes": null,
+    "location_includes": null,
+    "min_hourly": null,
+    "limit": null,
+    "refresh": false,
+    "offline": false,
+    "save_fixtures": null,
+    "print_urls": false,
+    "from_dir": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "intern-intel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Indeed and Glassdoor internship listings, merged and deduplicated. JavaScript port of python/intern_intel.py.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node intern_intel.mjs",
+    "offline": "node intern_intel.mjs --offline",
+    "test": "node --test test.mjs",
+    "sdk-example": "node sdk_example.mjs"
+  },
+  "dependencies": {
+    "@brightdata/sdk": "1.2.0"
+  }
+}

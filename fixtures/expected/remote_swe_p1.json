@@ -1,0 +1,586 @@
+[
+  {
+    "title": "Web Development Software Engineer (Intern)",
+    "company": "Lief",
+    "location": "Remote",
+    "pay": "$25,000 a month",
+    "pay_hourly_min": 144.23,
+    "rating": 4.7,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=f981809cf9c67dfb",
+      "glassdoor": "https://www.glassdoor.com/job-listing/web-development-software-engineer-intern-lief-JV_KO0,40_KE41,45.htm?jl=1009756599579"
+    },
+    "key": "lief|web development software engineer intern"
+  },
+  {
+    "title": "bnsf tech Trainee 2027 (Remote - US)",
+    "company": "BNSF Railway",
+    "location": "Remote",
+    "pay": "From $105,000 a year",
+    "pay_hourly_min": 50.48,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=81b3ec9c3bd83ca1"
+    },
+    "key": "bnsf railway|bnsf tech trainee remote"
+  },
+  {
+    "title": "Software Engineer Intern, 2027 Summer U.S.",
+    "company": "Atlassian",
+    "location": "San Francisco, CA",
+    "pay": "$49.00 - $67.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 49,
+    "rating": 3.2,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-2027-summer-us-atlassian-JV_IC1147401_KO0,39_KE40,49.htm?jl=1010249890043"
+    },
+    "key": "atlassian|software engineer intern u s"
+  },
+  {
+    "title": "Software Engineering Intern, Full Stack",
+    "company": "Tessera Labs",
+    "location": "Remote in San Jose, CA",
+    "pay": "$40 - $45 an hour",
+    "pay_hourly_min": 40,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=a7b1192f935edbb4"
+    },
+    "key": "tessera labs|software engineer intern full stack"
+  },
+  {
+    "title": "Grad Intern – Software Engineer – Technology, AI & Data (Summer 2027)",
+    "company": "Amgen",
+    "location": "Remote",
+    "pay": "$35.34 - $41.20 Per Hour (Employer provided)",
+    "pay_hourly_min": 35.34,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/grad-intern-software-engineer-technology-ai-data-summer-2027-amgen-JV_KO0,60_KE61,66.htm?jl=1010261038192"
+    },
+    "key": "amgen|grad intern software engineer technology ai data"
+  },
+  {
+    "title": "Undergrad Intern – Software Engineer – Technology, AI & Data (Summer 2027)",
+    "company": "Amgen",
+    "location": "Remote",
+    "pay": "$28.87 an hour",
+    "pay_hourly_min": 28.87,
+    "rating": 3.8,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=f289fcef80da0065",
+      "glassdoor": "https://www.glassdoor.com/job-listing/undergrad-intern-software-engineer-technology-ai-data-summer-2027-amgen-JV_KO0,65_KE66,71.htm?jl=1010260893917"
+    },
+    "key": "amgen|undergrad intern software engineer technology ai data"
+  },
+  {
+    "title": "Undergrad Intern – Machine Learning Engineer – Technology, AI & Data (Summer 2027)",
+    "company": "Amgen",
+    "location": "Remote",
+    "pay": "$28.87 Per Hour (Employer provided)",
+    "pay_hourly_min": 28.87,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/undergrad-intern-machine-learning-engineer-technology-ai-data-summer-2027-amgen-JV_KO0,73_KE74,79.htm?jl=1010260893903"
+    },
+    "key": "amgen|undergrad intern machine learning engineer technology ai data"
+  },
+  {
+    "title": "DevOps Intern",
+    "company": "Pexaworks",
+    "location": "Remote",
+    "pay": "$5,000 (Employer provided)",
+    "pay_hourly_min": 28.85,
+    "rating": null,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/devops-intern-pexaworks-JV_KO0,13_KE14,23.htm?jl=1010293769743"
+    },
+    "key": "pexaworks|devops intern"
+  },
+  {
+    "title": "Summer Intern - Enovia PLM",
+    "company": "Westinghouse",
+    "location": "Cranberry Twp, PA",
+    "pay": "$25.40 - $29.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 25.4,
+    "rating": 3.7,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/summer-intern-enovia-plm-westinghouse-JV_IC1152819_KO0,24_KE25,37.htm?jl=1010253552765"
+    },
+    "key": "westinghouse|intern enovia plm"
+  },
+  {
+    "title": "Full-Stack Engineer Intern",
+    "company": "Thrive Therapies Group",
+    "location": "Remote",
+    "pay": "$25 - $35 an hour",
+    "pay_hourly_min": 25,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=d26281ad73128436"
+    },
+    "key": "thrive therapies group|full stack engineer intern"
+  },
+  {
+    "title": "AI Engineer Intern",
+    "company": "Alchimetis",
+    "location": "Remote",
+    "pay": "$4,000 - $5,000 a month",
+    "pay_hourly_min": 23.08,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=a521ac61e0bb8634"
+    },
+    "key": "alchimetis|ai engineer intern"
+  },
+  {
+    "title": "Software Development/Engineer Intern - Summer 2027",
+    "company": "CACI International",
+    "location": "Remote",
+    "pay": "$40K - $80K (Employer provided)",
+    "pay_hourly_min": 19.23,
+    "rating": 3.7,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-development-engineer-intern-summer-2027-caci-international-JV_KO0,48_KE49,67.htm?jl=1010282090206"
+    },
+    "key": "caci international|software engineer intern"
+  },
+  {
+    "title": "Front-End Developer Intern - Marketing Sites (Remote)",
+    "company": "WebstaurantStore",
+    "location": "Lititz, PA",
+    "pay": "$18.75 - $22.25 Per Hour (Employer provided)",
+    "pay_hourly_min": 18.75,
+    "rating": 3.2,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/front-end-developer-intern-marketing-sites-remote-webstaurantstore-JV_IC1152363_KO0,49_KE50,66.htm?jl=1010289596106"
+    },
+    "key": "webstaurantstore|front end developer intern marketing sites remote"
+  },
+  {
+    "title": "Accessibility Engineering Intern (Remote)",
+    "company": "WebstaurantStore",
+    "location": "Lititz, PA",
+    "pay": "$18.75 - $22.25 Per Hour (Employer provided)",
+    "pay_hourly_min": 18.75,
+    "rating": 3.2,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/accessibility-engineering-intern-remote-webstaurantstore-JV_IC1152363_KO0,39_KE40,56.htm?jl=1010288660362"
+    },
+    "key": "webstaurantstore|accessibility engineer intern remote"
+  },
+  {
+    "title": "Front-End Developer Intern (Remote)",
+    "company": "WebstaurantStore",
+    "location": "Lititz, PA",
+    "pay": "$18.75 - $22.25 Per Hour (Employer provided)",
+    "pay_hourly_min": 18.75,
+    "rating": 3.2,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/front-end-developer-intern-remote-webstaurantstore-JV_IC1152363_KO0,33_KE34,50.htm?jl=1010287387102"
+    },
+    "key": "webstaurantstore|front end developer intern remote"
+  },
+  {
+    "title": "Systems Engineer (Cyber) - Intern",
+    "company": "Lockheed Martin",
+    "location": "Remote",
+    "pay": "$18.31 - $35.19 an hour",
+    "pay_hourly_min": 18.31,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=11c74ffc3a1b81ce"
+    },
+    "key": "lockheed martin|systems engineer cyber intern"
+  },
+  {
+    "title": "QA Software Intern (Part-Time, Remote)",
+    "company": "LeadrPro",
+    "location": "Remote",
+    "pay": "$18 - $22 an hour",
+    "pay_hourly_min": 18,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=aa7a0c0b005ab273"
+    },
+    "key": "leadrpro|qa software intern part time remote"
+  },
+  {
+    "title": "Student Opportunities - IT / Computer Science Internship - Summer 2027 (Remote or Hybrid Eligible)",
+    "company": "The Cincinnati Insurance Companies",
+    "location": "Remote in Fairfield, OH",
+    "pay": "$18 an hour",
+    "pay_hourly_min": 18,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=22e542906a97a023"
+    },
+    "key": "the cincinnati insurance companies|student opportunities it computer science internship remote or hybrid eligible"
+  },
+  {
+    "title": "Strategic Student Program: Mendix Development Intern (CMMK, Spring 2027)",
+    "company": "Siemens",
+    "location": "Saint Louis, MO",
+    "pay": "$18.00 - $50.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 18,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/strategic-student-program-mendix-development-intern-cmmk-spring-2027-siemens-JV_IC1131270_KO0,68_KE69,76.htm?jl=1010253888680"
+    },
+    "key": "siemens|strategic student program mendix development intern cmmk"
+  },
+  {
+    "title": "Full-Stack Product Development Intern, BTGH OS",
+    "company": "Beyond the Game Health",
+    "location": "Remote",
+    "pay": "$1 - $2 (Employer provided)",
+    "pay_hourly_min": 1,
+    "rating": null,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/full-stack-product-development-intern-btgh-os-beyond-the-game-health-JV_KO0,45_KE46,68.htm?jl=1010291642274"
+    },
+    "key": "beyond the game health|full stack product development intern btgh os"
+  },
+  {
+    "title": "Backend Developer Internship (Remote)",
+    "company": "Springer Capital",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 3.8,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=a486faa5190a556f",
+      "glassdoor": "https://www.glassdoor.com/job-listing/backend-developer-internship-remote-springer-capital-JV_KO0,35_KE36,52.htm?jl=1010039919161"
+    },
+    "key": "springer capital|backend developer internship remote"
+  },
+  {
+    "title": "Cloud Engineer Intern",
+    "company": "Stellar Software Solutions",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=2d7a313fa41ec41f",
+      "glassdoor": "https://www.glassdoor.com/job-listing/cloud-engineer-intern-stellar-software-solutions-JV_KO0,21_KE22,48.htm?jl=1010290921377"
+    },
+    "key": "stellar software solutions|cloud engineer intern"
+  },
+  {
+    "title": "Software Engineering Intern - Remote Job",
+    "company": "EnthuZiastic",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 3.2,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=38d7e8508c765694",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-intern-remote-job-enthuziastic-JV_KO0,38_KE39,51.htm?jl=1009741158103"
+    },
+    "key": "enthuziastic|software engineer intern remote job"
+  },
+  {
+    "title": "Backend Developer Intern",
+    "company": "Stellar Software Solutions",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=602c193587692611",
+      "glassdoor": "https://www.glassdoor.com/job-listing/backend-developer-intern-stellar-software-solutions-JV_KO0,24_KE25,51.htm?jl=1010290921369"
+    },
+    "key": "stellar software solutions|backend developer intern"
+  },
+  {
+    "title": "Frontend Developer Intern",
+    "company": "Stellar Software Solutions",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=1d814e4b15119f0c",
+      "glassdoor": "https://www.glassdoor.com/job-listing/frontend-developer-intern-stellar-software-solutions-JV_KO0,25_KE26,52.htm?jl=1010290921383"
+    },
+    "key": "stellar software solutions|frontend developer intern"
+  },
+  {
+    "title": "Cloud Architect and DevOps Intern Apprentice",
+    "company": "Adela Technologies",
+    "location": "Remote in Washington, VA",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=0693f05e0dbde19f"
+    },
+    "key": "adela technologies|cloud architect and devops intern apprentice"
+  },
+  {
+    "title": "Engineering Software Developer, Intern",
+    "company": "Keysight Technologies",
+    "location": "Austin, TX",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 3.9,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/engineering-software-developer-intern-keysight-technologies-JV_IC1139761_KO0,37_KE38,59.htm?jl=1010275491078"
+    },
+    "key": "keysight technologies|engineering software developer intern"
+  },
+  {
+    "title": "Intern, Technical Graduate Year Round - Intl Safeguards & Engagements, Remote",
+    "company": "Sandia National Laboratories",
+    "location": "Albuquerque, NM",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4.2,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/intern-technical-graduate-year-round-intl-safeguards-engagements-remote-sandia-national-laboratories-JV_IC1137959_KO0,71_KE72,100.htm?jl=1010294733563"
+    },
+    "key": "sandia national laboratories|intern technical graduate year round intl safeguards engagements remote"
+  },
+  {
+    "title": "Developer Intern",
+    "company": "Crest Operations",
+    "location": "Pineville, LA",
+    "pay": "$46K - $82K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.7,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/developer-intern-crest-operations-JV_IC1149772_KO0,16_KE17,33.htm?jl=1010258190363"
+    },
+    "key": "crest operations|developer intern"
+  },
+  {
+    "title": "Computer Science Internship Summer 2027",
+    "company": "AnaVation",
+    "location": "San Antonio, TX",
+    "pay": "$50K - $89K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 4.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/computer-science-internship-summer-2027-anavation-JV_IC1140494_KO0,39_KE40,49.htm?jl=1010256938633"
+    },
+    "key": "anavation|computer science internship"
+  },
+  {
+    "title": "Skillbridge Internship",
+    "company": "ARSIEM Corporation",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/skillbridge-internship-arsiem-corporation-JV_KO0,22_KE23,41.htm?jl=1009284405096"
+    },
+    "key": "arsiem|skillbridge internship"
+  },
+  {
+    "title": "Software Engineer Intern",
+    "company": "ShopBack",
+    "location": "San Francisco, CA",
+    "pay": "$123K - $191K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-shopback-JV_IC1147401_KO0,24_KE25,33.htm?jl=1010283388075"
+    },
+    "key": "shopback|software engineer intern"
+  },
+  {
+    "title": "Internship - Technology, Marketing & Client Success",
+    "company": "AMW Group",
+    "location": "Miami, FL",
+    "pay": "$72K - $134K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.5,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/internship-technology-marketing-client-success-amw-group-JV_IC1154170_KO0,46_KE47,56.htm?jl=1010156896748"
+    },
+    "key": "amw group|internship technology marketing client success"
+  },
+  {
+    "title": "Software Engineering Intern",
+    "company": "Collaborative Drug Discovery",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4.3,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-intern-collaborative-drug-discovery-JV_KO0,27_KE28,56.htm?jl=1009624152398"
+    },
+    "key": "collaborative drug discovery|software engineer intern"
+  },
+  {
+    "title": "Java / Spring Boot Developer Intern",
+    "company": "Stellar Software Solutions",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/java-spring-boot-developer-intern-stellar-software-solutions-JV_KO0,33_KE34,60.htm?jl=1010290921368"
+    },
+    "key": "stellar software solutions|java boot developer intern"
+  },
+  {
+    "title": "Internship - Machine Learning Engineer",
+    "company": "Smule",
+    "location": "Salt Lake City, UT",
+    "pay": "$72K - $135K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/internship-machine-learning-engineer-smule-JV_IC1128289_KO0,36_KE37,42.htm?jl=1010183098310"
+    },
+    "key": "smule|internship machine learning engineer"
+  },
+  {
+    "title": "FRONT-END DESIGN INTERN",
+    "company": "Inbox America",
+    "location": "Alexandria, VA",
+    "pay": "$82K - $153K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 5,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/front-end-design-intern-inbox-america-JV_IC1130334_KO0,23_KE24,37.htm?jl=1006751001581"
+    },
+    "key": "inbox america|front end design intern"
+  },
+  {
+    "title": "Vibe Coding Internship",
+    "company": "Cliquelog IT Solutions Pvt. Ltd",
+    "location": "Remote",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/vibe-coding-internship-cliquelog-it-solutions-pvt-ltd-JV_KO0,22_KE23,53.htm?jl=1010275440149"
+    },
+    "key": "cliquelog it solutions pvt|vibe coding internship"
+  }
+]

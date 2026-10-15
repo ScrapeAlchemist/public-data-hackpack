@@ -1,0 +1,52 @@
+{
+  "pages": {
+    "https://www.indeed.com/jobs?q=software+engineer+intern&l=San+Francisco%2C+CA": {
+      "file": "indeed_p1.md",
+      "source": "indeed",
+      "page": 1,
+      "fetched": "2026-10-15"
+    },
+    "https://www.indeed.com/jobs?q=software+engineer+intern&l=San+Francisco%2C+CA&sort=date": {
+      "file": "indeed_p2.md",
+      "source": "indeed",
+      "page": 2,
+      "fetched": "2026-10-15"
+    },
+    "https://www.glassdoor.com/Job/san-francisco-ca-software-engineer-intern-jobs-SRCH_IL.0,16_IC1147401_KO17,41.htm": {
+      "file": "glassdoor_p1.md",
+      "source": "glassdoor",
+      "page": 1,
+      "fetched": "2026-10-15"
+    },
+    "https://www.glassdoor.com/Job/san-francisco-ca-software-engineer-intern-jobs-SRCH_IL.0,16_IC1147401_KO17,41.htm?fromAge=30": {
+      "file": "glassdoor_p2.md",
+      "source": "glassdoor",
+      "page": 2,
+      "fetched": "2026-10-15"
+    },
+    "https://www.indeed.com/jobs?q=data+science+intern&l=New+York%2C+NY": {
+      "file": "ny_ds_indeed_p1.md",
+      "source": "indeed",
+      "page": 1,
+      "fetched": "2026-10-15"
+    },
+    "https://www.glassdoor.com/Job/new-york-ny-data-science-intern-jobs-SRCH_IL.0,11_IC1132348_KO12,31.htm": {
+      "file": "ny_ds_glassdoor_p1.md",
+      "source": "glassdoor",
+      "page": 1,
+      "fetched": "2026-10-15"
+    },
+    "https://www.indeed.com/jobs?q=software+engineer+intern&l=Remote": {
+      "file": "remote_swe_indeed_p1.md",
+      "source": "indeed",
+      "page": 1,
+      "fetched": "2026-10-15"
+    },
+    "https://www.glassdoor.com/Job/remote-software-engineer-intern-jobs-SRCH_IL.0,6_IS11047_KO7,31.htm": {
+      "file": "remote_swe_glassdoor_p1.md",
+      "source": "glassdoor",
+      "page": 1,
+      "fetched": "2026-10-15"
+    }
+  }
+}

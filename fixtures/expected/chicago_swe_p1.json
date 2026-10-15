@@ -1,0 +1,586 @@
+[
+  {
+    "title": "Software Engineer Intern - Summer 2027",
+    "company": "IMC Financial Markets",
+    "location": "Chicago, IL",
+    "pay": "$200,000 a year",
+    "pay_hourly_min": 96.15,
+    "rating": 4.2,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=a0b31818c43b35a9",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-summer-2027-imc-trading-JV_IC1128808_KO0,36_KE37,48.htm?jl=1010187255062"
+    },
+    "key": "imc financial markets|software engineer intern"
+  },
+  {
+    "title": "Software Engineer Intern - Summer 2027",
+    "company": "Belvedere Trading",
+    "location": "Chicago, IL",
+    "pay": "$130K (Employer provided)",
+    "pay_hourly_min": 62.5,
+    "rating": 4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-summer-2027-belvedere-trading-JV_IC1128808_KO0,36_KE37,54.htm?jl=1010225197328"
+    },
+    "key": "belvedere trading|software engineer intern"
+  },
+  {
+    "title": "Software Engineering Intern, PhD, Summer 2027",
+    "company": "Google",
+    "location": "Chicago, IL",
+    "pay": "$118,000 - $157,000 a year",
+    "pay_hourly_min": 56.73,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=383c84f55f6a2f39"
+    },
+    "key": "google|software engineer intern phd"
+  },
+  {
+    "title": "Software Developer Intern",
+    "company": "Group One Trading",
+    "location": "Chicago, IL",
+    "pay": "$45.00 - $50.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 4.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-developer-intern-group-one-trading-JV_IC1128808_KO0,25_KE26,43.htm?jl=1010257222785"
+    },
+    "key": "group one trading|software developer intern"
+  },
+  {
+    "title": "C++ Developer Intern",
+    "company": "ScalpTrade",
+    "location": "Chicago, IL",
+    "pay": "$84K (Employer provided)",
+    "pay_hourly_min": 40.38,
+    "rating": 4.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/c-developer-intern-scalptrade-JV_IC1128808_KO0,18_KE19,29.htm?jl=1010232661224"
+    },
+    "key": "scalptrade|cpp developer intern"
+  },
+  {
+    "title": "C# Developer Intern",
+    "company": "ScalpTrade",
+    "location": "Chicago, IL",
+    "pay": "$84K (Employer provided)",
+    "pay_hourly_min": 40.38,
+    "rating": 4.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/c-developer-intern-scalptrade-JV_IC1128808_KO0,18_KE19,29.htm?jl=1010232661222"
+    },
+    "key": "scalptrade|csharp developer intern"
+  },
+  {
+    "title": "DevOps Engineer Intern - Summer 2027",
+    "company": "DV Trading",
+    "location": "Chicago, IL",
+    "pay": "$40.00 - $50.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 40,
+    "rating": 3.3,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/devops-engineer-intern-summer-2027-dv-trading-JV_IC1128808_KO0,34_KE35,45.htm?jl=1010258013544"
+    },
+    "key": "dv trading|devops engineer intern"
+  },
+  {
+    "title": "C++ Developer (Intern)",
+    "company": "Geneva Trading",
+    "location": "Chicago, IL",
+    "pay": "$40.00 - $45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 40,
+    "rating": 4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/c-developer-intern-geneva-trading-JV_IC1128808_KO0,18_KE19,33.htm?jl=1010270500581"
+    },
+    "key": "geneva trading|cpp developer intern"
+  },
+  {
+    "title": "Software Engineer Intern",
+    "company": "DocuSign",
+    "location": "Hybrid work in Chicago, IL",
+    "pay": "$38 - $42 an hour",
+    "pay_hourly_min": 38,
+    "rating": 3.6,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=dc772675171376e7",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-docusign-JV_IC1128808_KO0,24_KE25,33.htm?jl=1010291376099"
+    },
+    "key": "docusign|software engineer intern"
+  },
+  {
+    "title": "R&D Intern - Summer 2027",
+    "company": "Linde",
+    "location": "Burr Ridge, IL",
+    "pay": "$37.00 - $39.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 37,
+    "rating": 3.5,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/rd-intern-summer-2027-linde-JV_IC1157981_KO0,21_KE22,27.htm?jl=1010214790854"
+    },
+    "key": "linde|r d intern"
+  },
+  {
+    "title": "2027 Summer Intern - Software Engineering",
+    "company": "CIBC",
+    "location": "Chicago, IL",
+    "pay": "$36 - $40 an hour",
+    "pay_hourly_min": 36,
+    "rating": 4,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=9706aa616f5a6327",
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-summer-intern-software-engineering-cibc-JV_IC1128808_KO0,39_KE40,44.htm?jl=1010253644747"
+    },
+    "key": "cibc|intern software engineering"
+  },
+  {
+    "title": "Software Engineer Internship Summer 2027 (Hybrid)",
+    "company": "Enova International",
+    "location": "Hybrid work in Chicago, IL",
+    "pay": "$35 - $38 an hour",
+    "pay_hourly_min": 35,
+    "rating": 3.8,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=f574bc68a174d30b",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-internship-summer-2027-hybrid-enova-JV_IC1128808_KO0,47_KE48,53.htm?jl=1010278171418"
+    },
+    "key": "enova international|software engineer internship hybrid"
+  },
+  {
+    "title": "Python Developer Intern",
+    "company": "Geneva Trading",
+    "location": "Chicago, IL",
+    "pay": "$35.00 - $40.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 35,
+    "rating": 4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/python-developer-intern-geneva-trading-JV_IC1128808_KO0,23_KE24,38.htm?jl=1010271133677"
+    },
+    "key": "geneva trading|python developer intern"
+  },
+  {
+    "title": "Year at Palantir - Forward Deployed Software Engineer, Internship - Commercial",
+    "company": "Palantir Technologies",
+    "location": "Chicago, IL",
+    "pay": "$5,900 - $10,500 (Employer provided)",
+    "pay_hourly_min": 34.04,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/year-at-palantir-forward-deployed-software-engineer-internship-commercial-palantir-technologies-JV_IC1128808_KO0,73_KE74,95.htm?jl=1010178719732"
+    },
+    "key": "palantir technologies|year at palantir forward deployed software engineer internship commercial"
+  },
+  {
+    "title": "Entry Level Technology Summer Analyst - Various Locations - NAELFY27",
+    "company": "Logic",
+    "location": "Chicago, IL",
+    "pay": "$27.00 - $35.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 27,
+    "rating": 3.9,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/entry-level-technology-summer-analyst-various-locations-naelfy27-logic-JV_IC1128808_KO0,64_KE65,70.htm?jl=1010259404639"
+    },
+    "key": "logic|entry level technology analyst various locations naelfy27"
+  },
+  {
+    "title": "2027 Summer Intern Program- IT Intern, Chicago",
+    "company": "Westfield Insurance",
+    "location": "Hybrid work in Chicago, IL",
+    "pay": "$25 an hour",
+    "pay_hourly_min": 25,
+    "rating": 3.1,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=fded5c7164dcc8ed",
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-summer-intern-program-it-intern-chicago-westfield-insurance-JV_IC1128808_KO0,44_KE45,64.htm?jl=1010270754753"
+    },
+    "key": "westfield insurance|intern program it intern chicago"
+  },
+  {
+    "title": "Summer 2027 Applications Developer Intern",
+    "company": "National Futures Association",
+    "location": "Chicago, IL",
+    "pay": "$25.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 25,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/summer-2027-applications-developer-intern-national-futures-association-JV_IC1128808_KO0,41_KE42,70.htm?jl=1010250818984"
+    },
+    "key": "national futures association|applications developer intern"
+  },
+  {
+    "title": "Software Development Intern (.NET)",
+    "company": "Opto International",
+    "location": "Wood Dale, IL",
+    "pay": "$24.00 - $27.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 24,
+    "rating": 2.9,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-development-intern-net-opto-international-JV_IC1129013_KO0,31_KE32,50.htm?jl=1010264116149"
+    },
+    "key": "opto international|software development intern dotnet"
+  },
+  {
+    "title": "Software Engineering Intern",
+    "company": "Shure",
+    "location": "Hybrid work in Niles, IL",
+    "pay": "$23 - $43 an hour",
+    "pay_hourly_min": 23,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=43e971a9c3846536"
+    },
+    "key": "shure|software engineer intern"
+  },
+  {
+    "title": "Cloud Software Engineering Intern",
+    "company": "Shure",
+    "location": "Hybrid work in Niles, IL",
+    "pay": "$23 - $43 an hour",
+    "pay_hourly_min": 23,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=b05b60478ec7e544"
+    },
+    "key": "shure|cloud software engineer intern"
+  },
+  {
+    "title": "Embedded Software Intern",
+    "company": "Shure",
+    "location": "Hybrid work in Niles, IL",
+    "pay": "$23 - $43 an hour",
+    "pay_hourly_min": 23,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=e8ca810d973a0d72"
+    },
+    "key": "shure|embedded software intern"
+  },
+  {
+    "title": "Software Engineer Intern",
+    "company": "CBOE",
+    "location": "Chicago, IL",
+    "pay": "$22 - $42 an hour",
+    "pay_hourly_min": 22,
+    "rating": 2.9,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=172d0c794e8d0393",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-cboe-global-markets-JV_IC1128808_KO0,24_KE25,44.htm?jl=1010257020860"
+    },
+    "key": "cboe|software engineer intern"
+  },
+  {
+    "title": "Software Engineering Internship - Summer 2027",
+    "company": "CME Group",
+    "location": "Chicago, IL",
+    "pay": "$21.68 - $36.10 Per Hour (Employer provided)",
+    "pay_hourly_min": 21.68,
+    "rating": 3.9,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-internship-summer-2027-cme-group-JV_IC1128808_KO0,43_KE44,53.htm?jl=1010268481638"
+    },
+    "key": "cme group|software engineering internship"
+  },
+  {
+    "title": "Software Engineering Fellowship - Summer 2027",
+    "company": "CME Group",
+    "location": "Chicago, IL",
+    "pay": "$21.68 - $36.10 Per Hour (Employer provided)",
+    "pay_hourly_min": 21.68,
+    "rating": 3.9,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-fellowship-summer-2027-cme-group-JV_IC1128808_KO0,43_KE44,53.htm?jl=1010268481596"
+    },
+    "key": "cme group|software engineering fellowship"
+  },
+  {
+    "title": "IT Product/Project Management Intern- Chicago",
+    "company": "Randa Accessories",
+    "location": "Rosemont, IL",
+    "pay": "$20.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 20,
+    "rating": 3.3,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/it-product-project-management-intern-chicago-randa-corp-JV_IC1158097_KO0,44_KE45,55.htm?jl=1010267361085"
+    },
+    "key": "randa accessories|it product project management intern chicago"
+  },
+  {
+    "title": "Summer 2027 Intern - IT, Software Developer",
+    "company": "Mesirow",
+    "location": "Chicago, IL",
+    "pay": "$20.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 20,
+    "rating": 4.2,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/summer-2027-intern-it-software-developer-mesirow-financial-JV_IC1128808_KO0,40_KE41,58.htm?jl=1010280088076"
+    },
+    "key": "mesirow|intern it software developer"
+  },
+  {
+    "title": "Software Engineer Intern",
+    "company": "CNH Industrial",
+    "location": "Oak Brook, IL",
+    "pay": "$19.57 - $35.02 an hour",
+    "pay_hourly_min": 19.57,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=e6fe1cffa92e749b"
+    },
+    "key": "cnh industrial|software engineer intern"
+  },
+  {
+    "title": "Embedded Software Engineer Intern",
+    "company": "CNH Industrial",
+    "location": "Oak Brook, IL",
+    "pay": "$19.57 - $35.02 an hour",
+    "pay_hourly_min": 19.57,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=68acffec6f227fd1"
+    },
+    "key": "cnh industrial|embedded software engineer intern"
+  },
+  {
+    "title": "Wintrust 2027 Summer Internship: Information Technology",
+    "company": "Wintrust Financial",
+    "location": "Rosemont, IL",
+    "pay": "$19.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 19,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/wintrust-2027-summer-internship-information-technology-wintrust-financial-JV_IC1158097_KO0,54_KE55,73.htm?jl=1010289960179"
+    },
+    "key": "wintrust financial|wintrust internship information technology"
+  },
+  {
+    "title": "Summer Internship - Application Development",
+    "company": "FHLBank Chicago",
+    "location": "Chicago, IL",
+    "pay": "$39K - $58K (Employer provided)",
+    "pay_hourly_min": 18.75,
+    "rating": 3.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/summer-internship-application-development-fhlbank-chicago-JV_IC1128808_KO0,41_KE42,57.htm?jl=1010264178380"
+    },
+    "key": "fhlbank chicago|internship application development"
+  },
+  {
+    "title": "Software Engineer Intern - Summer 2027",
+    "company": "Motorola Solutions",
+    "location": "Chicago, IL",
+    "pay": "$79K - $133K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 4.2,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=d40876649d33cd47",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-summer-2027-motorola-solutions-JV_IC1128808_KO0,36_KE37,55.htm?jl=1010274829064"
+    },
+    "key": "motorola solutions|software engineer intern"
+  },
+  {
+    "title": "Software Test Engineer Intern",
+    "company": "CNH Industrial",
+    "location": "Oak Brook, IL",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=d926c4ea811d307b"
+    },
+    "key": "cnh industrial|software test engineer intern"
+  },
+  {
+    "title": "Intern – Software Engineer, Legacy Systems (Hybrid: Onsite & Remote)",
+    "company": "US Foods, Inc.",
+    "location": "Hybrid work in Rosemont, IL",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=35756223b3077851"
+    },
+    "key": "us foods|intern software engineer legacy systems hybrid onsite remote"
+  },
+  {
+    "title": "Software Engineering Intern - Summer 2027",
+    "company": "Motorola Solutions",
+    "location": "Chicago, IL",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4.2,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-intern-summer-2027-motorola-solutions-JV_IC1128808_KO0,39_KE40,58.htm?jl=1010256822253"
+    },
+    "key": "motorola solutions|software engineer intern"
+  },
+  {
+    "title": "Android Applications Developer Intern - Summer 2027",
+    "company": "Motorola Solutions",
+    "location": "Chicago, IL",
+    "pay": "$60K - $91K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 4.2,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/android-applications-developer-intern-summer-2027-motorola-solutions-JV_IC1128808_KO0,49_KE50,68.htm?jl=1010239386202"
+    },
+    "key": "motorola solutions|android applications developer intern"
+  },
+  {
+    "title": "Forward Deployed Software Engineer, Internship - Commercial",
+    "company": "Palantir Technologies",
+    "location": "Chicago, IL",
+    "pay": "$103K - $182K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/forward-deployed-software-engineer-internship-commercial-palantir-technologies-JV_IC1128808_KO0,56_KE57,78.htm?jl=1010184770230"
+    },
+    "key": "palantir technologies|forward deployed software engineer internship commercial"
+  },
+  {
+    "title": "Quantitative Technologist (C++ Intern)",
+    "company": "Radix Trading University Job Board",
+    "location": "Chicago, IL",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/quantitative-technologist-c-intern-radix-trading-university-job-board-JV_IC1128808_KO0,34_KE35,69.htm?jl=1010123914185"
+    },
+    "key": "radix trading university job board|quantitative technologist cpp intern"
+  },
+  {
+    "title": "Software Engineer Intern (Summer 2027)",
+    "company": "ENFOS",
+    "location": "Chicago, IL",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 4.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-summer-2027-enfos-JV_IC1128808_KO0,36_KE37,42.htm?jl=1010253534885"
+    },
+    "key": "enfos|software engineer intern"
+  }
+]

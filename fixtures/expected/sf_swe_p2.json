@@ -1,0 +1,1169 @@
+[
+  {
+    "title": "Software Engineer Intern",
+    "company": "Mercor",
+    "location": "San Francisco, CA",
+    "pay": "$70 an hour",
+    "pay_hourly_min": 70,
+    "rating": null,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=b43fe49a01c521b4",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-mercor-JV_IC1147401_KO0,24_KE25,31.htm?jl=1009948640868"
+    },
+    "key": "mercor|software engineer intern"
+  },
+  {
+    "title": "PhD Machine Learning Software Engineer Intern (Summer 2027)",
+    "company": "Lyft",
+    "location": "San Francisco, CA",
+    "pay": "$65.00 - $68.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 65,
+    "rating": 3.9,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/phd-machine-learning-software-engineer-intern-summer-2027-lyft-JV_IC1147401_KO0,57_KE58,62.htm?jl=1010287387169"
+    },
+    "key": "lyft|phd machine learning software engineer intern"
+  },
+  {
+    "title": "Software Engineer Intern",
+    "company": "Serval",
+    "location": "San Francisco, CA",
+    "pay": "$11,000 a month",
+    "pay_hourly_min": 63.46,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=39aeaf0694b1092e"
+    },
+    "key": "serval|software engineer intern"
+  },
+  {
+    "title": "[Summer 2027] Software Engineer Intern",
+    "company": "roblox",
+    "location": "San Mateo, CA",
+    "pay": "$62 an hour",
+    "pay_hourly_min": 62,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=963b19f39abdf4d7"
+    },
+    "key": "roblox|software engineer intern"
+  },
+  {
+    "title": "Software Engineering Intern (Summer 2027)",
+    "company": "Harvey",
+    "location": "Hybrid work in San Francisco, CA",
+    "pay": "$62 - $72 an hour",
+    "pay_hourly_min": 62,
+    "rating": 4.2,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=b2566edecc4b4d76",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-intern-summer-2027-harvey-JV_IC1147401_KO0,39_KE40,46.htm?jl=1010283849802"
+    },
+    "key": "harvey|software engineer intern"
+  },
+  {
+    "title": "Machine Learning Engineering Intern, Summer 2027",
+    "company": "Wing",
+    "location": "Palo Alto, CA",
+    "pay": "$128,000 - $135,000 a year",
+    "pay_hourly_min": 61.54,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=857129fb36ff71c8"
+    },
+    "key": "wing|machine learning engineer intern"
+  },
+  {
+    "title": "Software Engineer Intern (Summer 2027)",
+    "company": "Affirm",
+    "location": "San Francisco, CA",
+    "pay": "$60.58 an hour",
+    "pay_hourly_min": 60.58,
+    "rating": 3.8,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=93ae6c64d63ad7d1",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-summer-2027-affirm-JV_IC1147401_KO0,36_KE37,43.htm?jl=1010283939429"
+    },
+    "key": "affirm|software engineer intern"
+  },
+  {
+    "title": "Software Engineer Intern - Backend Focused - Summer 2027",
+    "company": "Rippling",
+    "location": "Hybrid work in San Francisco, CA",
+    "pay": "$10,500 a month",
+    "pay_hourly_min": 60.58,
+    "rating": 3.6,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=ff40704488f49e10",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-backend-focused-summer-2027-rippling-JV_IC1147401_KO0,52_KE53,61.htm?jl=1010271160283"
+    },
+    "key": "rippling|software engineer intern backend focused"
+  },
+  {
+    "title": "Full Stack Software Engineer Intern - Summer 2027",
+    "company": "Rippling",
+    "location": "San Francisco, CA",
+    "pay": "$10,500 (Employer provided)",
+    "pay_hourly_min": 60.58,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/full-stack-software-engineer-intern-summer-2027-rippling-JV_IC1147401_KO0,47_KE48,56.htm?jl=1010271158344"
+    },
+    "key": "rippling|full stack software engineer intern"
+  },
+  {
+    "title": "Software Engineer (Machine Learning) Intern (Summer 2027)",
+    "company": "Affirm",
+    "location": "San Francisco, CA",
+    "pay": "$60.58 Per Hour (Employer provided)",
+    "pay_hourly_min": 60.58,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-machine-learning-intern-summer-2027-affirm-JV_IC1147401_KO0,53_KE54,60.htm?jl=1010283939435"
+    },
+    "key": "affirm|software engineer machine learning intern"
+  },
+  {
+    "title": "Machine Learning Engineer Intern (E-Commerce Risk Control)- 2027 Start (PhD)",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 60,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/machine-learning-engineer-intern-e-commerce-risk-control-2027-start-phd-bytedance-JV_IC1147436_KO0,71_KE72,81.htm?jl=1010234773593"
+    },
+    "key": "bytedance|machine learning engineer intern e commerce risk control phd"
+  },
+  {
+    "title": "Software Engineer Intern (Applied Machine Learning-Enterprise) - 2026 Start (PhD)",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 60,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-applied-machine-learning-enterprise-2026-start-phd-bytedance-JV_IC1147436_KO0,75_KE76,85.htm?jl=1009842363396"
+    },
+    "key": "bytedance|software engineer intern applied machine learning enterprise phd"
+  },
+  {
+    "title": "Software Engineer Project Intern (AI Infrastructure) - 2026 Start (PhD)",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 60,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-project-intern-ai-infrastructure-2026-start-phd-bytedance-JV_IC1147436_KO0,65_KE66,75.htm?jl=1010032908972"
+    },
+    "key": "bytedance|software engineer project intern ai infrastructure phd"
+  },
+  {
+    "title": "AI Engineering - Software Engineer Internships - Summer 2027 (Masters)",
+    "company": "ServiceNow",
+    "location": "Hybrid work in Santa Clara, CA",
+    "pay": "$58.96 an hour",
+    "pay_hourly_min": 58.96,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=c79e424ffebc84b8"
+    },
+    "key": "servicenow|ai engineering software engineer internships masters"
+  },
+  {
+    "title": "AI Engineering - Assoc Software Engineer Internships - Summer 2027 (Bachelors)",
+    "company": "ServiceNow",
+    "location": "Hybrid work in Santa Clara, CA",
+    "pay": "$55.56 an hour",
+    "pay_hourly_min": 55.56,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=f966708e471ea2a9"
+    },
+    "key": "servicenow|ai engineering assoc software engineer internships bachelors"
+  },
+  {
+    "title": "2027 Intern - AI/ML Engineer - Capacity & Performance Engineering, Autonomous Vehicles",
+    "company": "General Motors",
+    "location": "Sunnyvale, CA",
+    "pay": "$9,600 - $11,800 a month",
+    "pay_hourly_min": 55.39,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=4d89a08c11e9f269"
+    },
+    "key": "general motors|intern ai ml engineer capacity performance engineering autonomous vehicles"
+  },
+  {
+    "title": "2027 Intern - AI/ML Engineer, Autonomous Vehicle ML Infrastructure",
+    "company": "General Motors",
+    "location": "Sunnyvale, CA",
+    "pay": "$9,600 - $11,800 a month",
+    "pay_hourly_min": 55.39,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=b8d6ca2f58ccb34e"
+    },
+    "key": "general motors|intern ai ml engineer autonomous vehicle ml infrastructure"
+  },
+  {
+    "title": "Software Development Engineer Intern, AWS Database - 2027 (US)",
+    "company": "Amazon",
+    "location": "East Palo Alto, CA",
+    "pay": "$109K - $126K (Employer provided)",
+    "pay_hourly_min": 52.4,
+    "rating": 3.5,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-development-engineer-intern-aws-database-2027-us-amazon-JV_IC1164026_KO0,57_KE58,64.htm?jl=1010280397198"
+    },
+    "key": "amazon|software engineer intern aws database"
+  },
+  {
+    "title": "Software Engineer, Intern (Summer 2027) - US",
+    "company": "DoorDash USA",
+    "location": "San Francisco, CA",
+    "pay": "$107,400 - $158,000 a year",
+    "pay_hourly_min": 51.63,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=bca7afa58e1841a6"
+    },
+    "key": "doordash|software engineer intern"
+  },
+  {
+    "title": "Software Engineer, Intern - Labs (Summer 2027)",
+    "company": "DoorDash",
+    "location": "San Francisco, CA",
+    "pay": "$107K - $158K (Employer provided)",
+    "pay_hourly_min": 51.44,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-labs-summer-2027-doordash-JV_IC1147401_KO0,41_KE42,50.htm?jl=1010289224544"
+    },
+    "key": "doordash|software engineer intern labs"
+  },
+  {
+    "title": "IT Engineer Intern (Early Careers Summer 2027)",
+    "company": "Affirm",
+    "location": "San Francisco, CA",
+    "pay": "$50 an hour",
+    "pay_hourly_min": 50,
+    "rating": 3.8,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=7ca62b83ad4ae512",
+      "glassdoor": "https://www.glassdoor.com/job-listing/it-engineer-intern-early-careers-summer-2027-affirm-JV_IC1147401_KO0,44_KE45,51.htm?jl=1010291244808"
+    },
+    "key": "affirm|it engineer intern early careers"
+  },
+  {
+    "title": "AI Kernel Engineer Intern",
+    "company": "Quadric IT",
+    "location": "Burlingame, CA",
+    "pay": "$50.00 - $57.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 50,
+    "rating": 4.5,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/ai-kernel-engineer-intern-quadric-it-JV_IC1147335_KO0,25_KE26,36.htm?jl=1010271747645"
+    },
+    "key": "quadric it|ai kernel engineer intern"
+  },
+  {
+    "title": "Software Engineering Intern (Summer 2027)",
+    "company": "Niantic Spatial",
+    "location": "San Francisco, CA",
+    "pay": "$48.00 - $70.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 48,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-intern-summer-2027-niantic-spatial-JV_IC1147401_KO0,39_KE40,55.htm?jl=1010287386804"
+    },
+    "key": "niantic spatial|software engineer intern"
+  },
+  {
+    "title": "Software Engineer - Intern (Summer 2027)",
+    "company": "C3 AI Ascend Internship Program: Summer 2027",
+    "location": "Redwood City, CA",
+    "pay": "$8,000 - $10,000 a month",
+    "pay_hourly_min": 46.15,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=4f34233b268a44d3"
+    },
+    "key": "c3 ai ascend internship program summer 2027|software engineer intern"
+  },
+  {
+    "title": "Software Engineer - Intern (Summer 2027)",
+    "company": "C3 AI",
+    "location": "Redwood City, CA",
+    "pay": "$8,000 - $10,000 a month",
+    "pay_hourly_min": 46.15,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=ed68d86ae115e152"
+    },
+    "key": "c3 ai|software engineer intern"
+  },
+  {
+    "title": "Research Intern, Knowledge Engineering & Generative AI",
+    "company": "Hitachi",
+    "location": "Santa Clara, CA",
+    "pay": "$45 - $50 an hour",
+    "pay_hourly_min": 45,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=08d634f9bce1f43f"
+    },
+    "key": "hitachi|research intern knowledge engineering generative ai"
+  },
+  {
+    "title": "Software Engineer Intern (Global Payment Infra and SRE) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-global-payment-infra-and-sre-2027-summer-bytedance-JV_IC1147436_KO0,65_KE66,75.htm?jl=1010231029134"
+    },
+    "key": "bytedance|software engineer intern global payment infra and sre"
+  },
+  {
+    "title": "GPU/AI Application System Software Engineer Intern (System Technologies and Engineering) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/gpu-ai-application-system-software-engineer-intern-system-technologies-and-engineering-2027-summer-bytedance-JV_IC1147436_KO0,98_KE99,108.htm?jl=1010222872474"
+    },
+    "key": "bytedance|gpu ai application system software engineer intern system technologies and engineering"
+  },
+  {
+    "title": "Security Software Engineer Project Intern (Network Security) - 2026 Start (BS/MS)",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 - $60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/security-software-engineer-project-intern-network-security-2026-start-bs-ms-bytedance-JV_IC1147436_KO0,75_KE76,85.htm?jl=1010014151708"
+    },
+    "key": "bytedance|security software engineer project intern network security bs ms"
+  },
+  {
+    "title": "Software Engineer Intern (AI Platform) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-ai-platform-2027-summer-bytedance-JV_IC1147436_KO0,48_KE49,58.htm?jl=1010220824292"
+    },
+    "key": "bytedance|software engineer intern ai platform"
+  },
+  {
+    "title": "Software Engineer Intern (Relational Database) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-relational-database-2027-summer-bytedance-JV_IC1147436_KO0,56_KE57,66.htm?jl=1010248992846"
+    },
+    "key": "bytedance|software engineer intern relational database"
+  },
+  {
+    "title": "Software Engineer intern (Global Traffic Architecture) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-global-traffic-architecture-2027-summer-bytedance-JV_IC1147436_KO0,64_KE65,74.htm?jl=1010231029018"
+    },
+    "key": "bytedance|software engineer intern global traffic architecture"
+  },
+  {
+    "title": "Software Engineer Intern (AML-Engine-Orchestration) - 2027 Start",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-aml-engine-orchestration-2027-start-bytedance-JV_IC1147436_KO0,60_KE61,70.htm?jl=1010226909930"
+    },
+    "key": "bytedance|software engineer intern aml engine orchestration"
+  },
+  {
+    "title": "Software Engineer Project Intern (Security-Data) - 2026 Start (BS/MS)",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 - $60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-project-intern-security-data-2026-start-bs-ms-bytedance-JV_IC1147436_KO0,63_KE64,73.htm?jl=1010013028895"
+    },
+    "key": "bytedance|software engineer project intern security data bs ms"
+  },
+  {
+    "title": "Software Engineer Intern (AI Infra Compute) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-ai-infra-compute-2027-summer-bytedance-JV_IC1147436_KO0,53_KE54,63.htm?jl=1010218772821"
+    },
+    "key": "bytedance|software engineer intern ai infra compute"
+  },
+  {
+    "title": "Machine Learning Engineer Intern (AML-Engine-Orchestration) - 2027 Start",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/machine-learning-engineer-intern-aml-engine-orchestration-2027-start-bytedance-JV_IC1147436_KO0,68_KE69,78.htm?jl=1010226649154"
+    },
+    "key": "bytedance|machine learning engineer intern aml engine orchestration"
+  },
+  {
+    "title": "Software Engineer Intern (Global Payment - Risk & Compliance) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-global-payment-risk-compliance-2027-summer-bytedance-JV_IC1147436_KO0,67_KE68,77.htm?jl=1010222874735"
+    },
+    "key": "bytedance|software engineer intern global payment risk compliance"
+  },
+  {
+    "title": "Software Engineer Intern (Traffic Infrastructure) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-traffic-infrastructure-2027-summer-bytedance-JV_IC1147436_KO0,59_KE60,69.htm?jl=1010231029039"
+    },
+    "key": "bytedance|software engineer intern traffic infrastructure"
+  },
+  {
+    "title": "Software Engineer Intern (Global Payment) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-global-payment-2027-summer-bytedance-JV_IC1147436_KO0,51_KE52,61.htm?jl=1010232190800"
+    },
+    "key": "bytedance|software engineer intern global payment"
+  },
+  {
+    "title": "Network Security Software Engineer Intern (Security Engineering) - 2027 Fall",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 - $60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/network-security-software-engineer-intern-security-engineering-2027-fall-bytedance-JV_IC1147436_KO0,72_KE73,82.htm?jl=1010218770648"
+    },
+    "key": "bytedance|network security software engineer intern security engineering"
+  },
+  {
+    "title": "Software Engineer Intern (CIS Knowledge Bank) - 2027 Fall",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 - $60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-cis-knowledge-bank-2027-fall-bytedance-JV_IC1147436_KO0,53_KE54,63.htm?jl=1010236977931"
+    },
+    "key": "bytedance|software engineer intern cis knowledge bank"
+  },
+  {
+    "title": "Software Development Engineer Intern (Network Automation) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-development-engineer-intern-network-automation-2027-summer-bytedance-JV_IC1147436_KO0,67_KE68,77.htm?jl=1010225347440"
+    },
+    "key": "bytedance|software engineer intern network automation"
+  },
+  {
+    "title": "Agent Evaluation & Evolution Machine Learning Engineer Intern (AML-Ark-US) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/agent-evaluation-evolution-machine-learning-engineer-intern-aml-ark-us-2027-summer-bytedance-JV_IC1147436_KO0,82_KE83,92.htm?jl=1010226649206"
+    },
+    "key": "bytedance|agent evaluation evolution machine learning engineer intern aml ark us"
+  },
+  {
+    "title": "Visual Generation & Multimodal Evaluation Machine Learning Engineer Intern (AML-Ark-US) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/visual-generation-multimodal-evaluation-machine-learning-engineer-intern-aml-ark-us-2027-summer-bytedance-JV_IC1147436_KO0,95_KE96,105.htm?jl=1010226649199"
+    },
+    "key": "bytedance|visual generation multimodal evaluation machine learning engineer intern aml ark us"
+  },
+  {
+    "title": "Software Engineer Intern (Distributed NoSQL Database Systems) - 2027 Summer",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-distributed-nosql-database-systems-2027-summer-bytedance-JV_IC1147436_KO0,71_KE72,81.htm?jl=1010218770650"
+    },
+    "key": "bytedance|software engineer intern distributed nosql database systems"
+  },
+  {
+    "title": "Machine Learning Engineer Project Intern (Security-Data) - 2026 Start (BS/MS)",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/machine-learning-engineer-project-intern-security-data-2026-start-bs-ms-bytedance-JV_IC1147436_KO0,71_KE72,81.htm?jl=1010140525503"
+    },
+    "key": "bytedance|machine learning engineer project intern security data bs ms"
+  },
+  {
+    "title": "Software Engineer Project Intern (Developer Infrastructure) - 2027 Start",
+    "company": "ByteDance",
+    "location": "San Jose, CA",
+    "pay": "$45.00 - $60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 45,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-project-intern-developer-infrastructure-2027-start-bytedance-JV_IC1147436_KO0,68_KE69,78.htm?jl=1010290986499"
+    },
+    "key": "bytedance|software engineer project intern developer infrastructure"
+  },
+  {
+    "title": "Machine Learning Engineer-Internship",
+    "company": "Unity Technologies SF",
+    "location": "Mountain View, CA",
+    "pay": "$92,000 - $152,000 a year",
+    "pay_hourly_min": 44.23,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=3e3979032298a987"
+    },
+    "key": "unity technologies sf|machine learning engineer internship"
+  },
+  {
+    "title": "Research Scientist Intern, Robotics Foundation Models Mid-Training (PhD)",
+    "company": "Meta",
+    "location": "Menlo Park, CA",
+    "pay": "$7,650 - $12,667 a month",
+    "pay_hourly_min": 44.14,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=fec43d0d6d67ac1a"
+    },
+    "key": "meta|research scientist intern robotics foundation models mid training phd"
+  },
+  {
+    "title": "Research Scientist Intern, Language and Agents (PhD)",
+    "company": "Meta",
+    "location": "Menlo Park, CA",
+    "pay": "$7,650 - $12,667 a month",
+    "pay_hourly_min": 44.14,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=e1943b7e7bb955ca"
+    },
+    "key": "meta|research scientist intern language and agents phd"
+  },
+  {
+    "title": "Software Engineer Intern, Machine Learning (PhD)",
+    "company": "Meta",
+    "location": "Menlo Park, CA",
+    "pay": "$7,313 - $12,667 (Employer provided)",
+    "pay_hourly_min": 42.19,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-machine-learning-phd-meta-JV_IC1147371_KO0,45_KE46,50.htm?jl=1010287785491"
+    },
+    "key": "meta|software engineer intern machine learning phd"
+  },
+  {
+    "title": "Software Engineer Intern, Systems and Infrastructure (PhD)",
+    "company": "Meta",
+    "location": "Menlo Park, CA",
+    "pay": "$7,313 - $12,667 (Employer provided)",
+    "pay_hourly_min": 42.19,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-systems-and-infrastructure-phd-meta-JV_IC1147371_KO0,55_KE56,60.htm?jl=1010287785483"
+    },
+    "key": "meta|software engineer intern systems and infrastructure phd"
+  },
+  {
+    "title": "Software Engineering Intern",
+    "company": "Meta",
+    "location": "Menlo Park, CA",
+    "pay": "$7,313 - $12,667 (Employer provided)",
+    "pay_hourly_min": 42.19,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-intern-meta-JV_IC1147371_KO0,27_KE28,32.htm?jl=1010287785496"
+    },
+    "key": "meta|software engineer intern"
+  },
+  {
+    "title": "Robotics Intern - Winter 2026",
+    "company": "Mytra",
+    "location": "Brisbane, CA",
+    "pay": "$40.00 - $60.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 40,
+    "rating": 4.3,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/robotics-intern-winter-2026-mytra-JV_IC1147334_KO0,27_KE28,33.htm?jl=1010271263964"
+    },
+    "key": "mytra|robotics intern"
+  },
+  {
+    "title": "Software Engineer Intern",
+    "company": "DocuSign",
+    "location": "Hybrid work in San Francisco, CA",
+    "pay": "$39 - $51 an hour",
+    "pay_hourly_min": 39,
+    "rating": 3.6,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=95bf481700782e65",
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-docusign-JV_IC1147401_KO0,24_KE25,33.htm?jl=1010287403912"
+    },
+    "key": "docusign|software engineer intern"
+  },
+  {
+    "title": "Computer Vision Engineer Intern, Advanced Manufacturing (Reality Labs)",
+    "company": "Meta",
+    "location": "Sunnyvale, CA",
+    "pay": "$6,688 - $11,880 a month",
+    "pay_hourly_min": 38.59,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=630698b3e134fe20"
+    },
+    "key": "meta|computer vision engineer intern advanced manufacturing reality labs"
+  },
+  {
+    "title": "Data Engineering Intern, Summer 2027 – San Franscisco, CA, US",
+    "company": "Mastercard",
+    "location": "San Francisco, CA",
+    "pay": "$35 - $46 an hour",
+    "pay_hourly_min": 35,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=91bd3fffa8583694"
+    },
+    "key": "mastercard|data engineer intern san franscisco ca"
+  },
+  {
+    "title": "Software Engineer Intern, Internal Apps",
+    "company": "Neuralink",
+    "location": "South San Francisco, CA",
+    "pay": "$35 an hour",
+    "pay_hourly_min": 35,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=a6990edab3780aba"
+    },
+    "key": "neuralink|software engineer intern internal apps"
+  },
+  {
+    "title": "Contract Student Worker - Fleet Maps Validation (FT 40 hrs/week)",
+    "company": "Zoox",
+    "location": "Foster City, CA",
+    "pay": "$30.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 30,
+    "rating": 3.5,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/contract-student-worker-fleet-maps-validation-ft-40-hrs-week-zoox-JV_IC1163997_KO0,60_KE61,65.htm?jl=1010286248749"
+    },
+    "key": "zoox|contract student worker fleet maps validation ft 40 hrs week"
+  },
+  {
+    "title": "Intern, Technology, DevOps & Site Reliability Engineering (SRE)",
+    "company": "Sephora",
+    "location": "San Francisco, CA",
+    "pay": "$30.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 30,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/intern-technology-devops-site-reliability-engineering-sre-sephora-JV_IC1147401_KO0,57_KE58,65.htm?jl=1010291146760"
+    },
+    "key": "sephora|intern technology devops site reliability engineering sre"
+  },
+  {
+    "title": "CST Application Engineer Intern - Systems ATX",
+    "company": "Cadence Design Systems",
+    "location": "San Jose, CA",
+    "pay": "$28.60 - $53.12 an hour",
+    "pay_hourly_min": 28.6,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=5c74acc3bcdab103"
+    },
+    "key": "cadence design systems|cst application engineer intern systems atx"
+  },
+  {
+    "title": "Software Engineer Intern",
+    "company": "Lockheed Martin",
+    "location": "Sunnyvale, CA",
+    "pay": "$25.18 - $35.19 an hour",
+    "pay_hourly_min": 25.18,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=d94f00e43c2d1149"
+    },
+    "key": "lockheed martin|software engineer intern"
+  },
+  {
+    "title": "College Student -Software Engineer",
+    "company": "Lockheed Martin",
+    "location": "Sunnyvale, CA",
+    "pay": "$25.18 - $35.19 Per Hour (Employer provided)",
+    "pay_hourly_min": 25.18,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/college-student-software-engineer-lockheed-martin-JV_IC1147442_KO0,33_KE34,49.htm?jl=1010290936896"
+    },
+    "key": "lockheed martin|college student software engineer"
+  },
+  {
+    "title": "Analog and RF circuit design Summer/Fall Co-Op (June-Dec '27)",
+    "company": "Skyworks Solutions",
+    "location": "San Jose, CA",
+    "pay": "$23 - $49 an hour",
+    "pay_hourly_min": 23,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=0f0edb395bc2a261"
+    },
+    "key": "skyworks solutions|analog and rf circuit design co op june dec 27"
+  },
+  {
+    "title": "Software Engineering Intern",
+    "company": "JLG",
+    "location": "San Francisco, CA",
+    "pay": "$18.00 - $37.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 18,
+    "rating": 3.7,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-intern-jlg-JV_IC1147401_KO0,27_KE28,31.htm?jl=1010263951351"
+    },
+    "key": "jlg|software engineer intern"
+  },
+  {
+    "title": "Software Engineer - Intern",
+    "company": "Kastle",
+    "location": "San Francisco, CA",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=7dfa0bca34910fe7"
+    },
+    "key": "kastle|software engineer intern"
+  },
+  {
+    "title": "Computer Vision/Machine Learning Intern",
+    "company": "KLA",
+    "location": "Milpitas, CA",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=0d6d6481da01b1e5"
+    },
+    "key": "kla|computer vision machine learning intern"
+  },
+  {
+    "title": "Software Engineer (High Performance/Distributed Computing)",
+    "company": "KLA",
+    "location": "Milpitas, CA",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=3d69ed4d416e638c"
+    },
+    "key": "kla|software engineer high performance distributed computing"
+  },
+  {
+    "title": "Software Development Engineer Intern (Embedded Systems) - Summer 2027 (USA)",
+    "company": "Amazon",
+    "location": null,
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": 3.5,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-development-engineer-intern-embedded-systems-summer-2027-usa-amazon-com-services-llc-JV_KO0,69_KE70,93.htm?jl=1010283614913"
+    },
+    "key": "amazon|software engineer intern embedded systems"
+  },
+  {
+    "title": "Machine Learning Software Engineer Intern - Summer 2027",
+    "company": "Rippling",
+    "location": "San Francisco, CA",
+    "pay": "$162K - $207K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/machine-learning-software-engineer-intern-summer-2027-rippling-JV_IC1147401_KO0,53_KE54,62.htm?jl=1010271156592"
+    },
+    "key": "rippling|machine learning software engineer intern"
+  },
+  {
+    "title": "Engineering Intern",
+    "company": "Aptiv",
+    "location": "Walnut Creek, CA",
+    "pay": "$67K - $104K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/engineering-intern-aptiv-JV_IC1147417_KO0,18_KE19,24.htm?jl=1010290588544"
+    },
+    "key": "aptiv|engineer intern"
+  },
+  {
+    "title": "Intern - Compiler Team",
+    "company": "Aptiv",
+    "location": "Walnut Creek, CA",
+    "pay": "$74K - $134K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/intern-compiler-team-aptiv-JV_IC1147417_KO0,20_KE21,26.htm?jl=1010290588574"
+    },
+    "key": "aptiv|intern compiler team"
+  },
+  {
+    "title": "Embedded Software - Engineering Intern",
+    "company": "Aptiv",
+    "location": "Walnut Creek, CA",
+    "pay": "$121K - $171K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 3.6,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/embedded-software-engineering-intern-aptiv-JV_IC1147417_KO0,36_KE37,42.htm?jl=1010290588575"
+    },
+    "key": "aptiv|embedded software engineer intern"
+  },
+  {
+    "title": "Intern, Software Engineering, 2027",
+    "company": "Cowboy Space",
+    "location": "San Carlos, CA",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/intern-software-engineering-2027-cowboy-space-corp-JV_IC1147400_KO0,32_KE33,50.htm?jl=1010270645758"
+    },
+    "key": "cowboy space|intern software engineering"
+  },
+  {
+    "title": "Software Engineering Intern – Winter 2027",
+    "company": "Replit",
+    "location": "Foster City, CA",
+    "pay": "$108K - $194K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineering-intern-winter-2027-repl-it-JV_IC1163997_KO0,39_KE40,47.htm?jl=1010289942814"
+    },
+    "key": "replit|software engineer intern"
+  },
+  {
+    "title": "Machine Learning Engineer, Applied AI Co-Op Intern, Winter 2027",
+    "company": "BRAIN",
+    "location": "San Francisco, CA",
+    "pay": "$132K - $186K (Glassdoor est.)",
+    "pay_hourly_min": null,
+    "rating": 4.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/machine-learning-engineer-applied-ai-co-op-intern-winter-2027-brain-JV_IC1147401_KO0,61_KE62,67.htm?jl=1010294874837"
+    },
+    "key": "brain|machine learning engineer applied ai co op intern"
+  },
+  {
+    "title": "Robotics Software Engineering Intern",
+    "company": "Relling",
+    "location": "San Francisco, CA",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/robotics-software-engineering-intern-relling-JV_IC1147401_KO0,36_KE37,44.htm?jl=1010284005295"
+    },
+    "key": "relling|robotics software engineer intern"
+  }
+]

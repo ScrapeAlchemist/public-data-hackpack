@@ -1,0 +1,18 @@
+# Intern Intel, Python version.
+#
+# Why plain requests instead of the Bright Data Python SDK (brightdata-sdk):
+# this project needs each search page as markdown. The REST endpoint
+# POST https://api.brightdata.com/request returns markdown when the body has
+# "data_format": "markdown". brightdata-sdk 2.5.2 returns raw HTML or JSON only,
+# so the code calls the REST endpoint directly. It is one POST to /request with a small JSON body.
+#
+# Only the live fetch needs these two packages: --offline and --from-dir run on the standard
+# library alone. Install into a virtual environment:
+#   python -m venv .venv
+#   .venv\Scripts\activate        (Windows)   or   source .venv/bin/activate   (macOS, Linux)
+#   pip install -r python/requirements.txt
+requests==2.34.2
+python-dotenv==1.2.4
+
+# Only for running the tests (python -m pytest).
+pytest==9.1.1

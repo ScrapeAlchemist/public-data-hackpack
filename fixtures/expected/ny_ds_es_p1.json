@@ -1,0 +1,625 @@
+[
+  {
+    "title": "Applied Scientist Intern",
+    "company": "Ramp Network",
+    "location": "New York, NY",
+    "pay": "$12,500 (Employer provided)",
+    "pay_hourly_min": 72.12,
+    "rating": 3.3,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/applied-scientist-intern-ramp-network-JV_IC1132348_KO0,24_KE25,37.htm?jl=1010280256227"
+    },
+    "key": "ramp network|applied scientist intern"
+  },
+  {
+    "title": "Applied Scientist Intern",
+    "company": "Ramp",
+    "location": "New York, NY",
+    "pay": "$12,500 (Employer provided)",
+    "pay_hourly_min": 72.12,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/applied-scientist-intern-ramp-JV_IC1132348_KO0,24_KE25,29.htm?jl=1010280535460"
+    },
+    "key": "ramp|applied scientist intern"
+  },
+  {
+    "title": "Data Science Intern",
+    "company": "Coinbase",
+    "location": "New York, NY",
+    "pay": "$50 por hora",
+    "pay_hourly_min": 50,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=a24248d52f40c254"
+    },
+    "key": "coinbase|data science intern"
+  },
+  {
+    "title": "Product Management, NA Integrated Analytics (2027 Summer - New York)",
+    "company": "Munich Re",
+    "location": "New York, NY",
+    "pay": "$44.00 - $54.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 44,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/product-management-na-integrated-analytics-2027-summer-new-york-munich-re-JV_IC1132348_KO0,63_KE64,73.htm?jl=1010266709137"
+    },
+    "key": "munich re|product management na integrated analytics new york"
+  },
+  {
+    "title": "Business Analyst Intern, NA Integrated Analytics (2027 Summer - New York)",
+    "company": "Munich Re",
+    "location": "New York, NY",
+    "pay": "$44.00 - $54.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 44,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/business-analyst-intern-na-integrated-analytics-2027-summer-new-york-munich-re-JV_IC1132348_KO0,68_KE69,78.htm?jl=1010263679563"
+    },
+    "key": "munich re|business analyst intern na integrated analytics new york"
+  },
+  {
+    "title": "Data Engineer Intern, Product Analytics (Summer 2027)",
+    "company": "Meta",
+    "location": "New York, NY",
+    "pay": "$7,469 - $9,138 por mes",
+    "pay_hourly_min": 43.09,
+    "rating": 3.4,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=119dcc9c543a1b82",
+      "glassdoor": "https://www.glassdoor.com/job-listing/data-engineer-intern-product-analytics-summer-2027-meta-JV_IC1132348_KO0,50_KE51,55.htm?jl=1010277697061"
+    },
+    "key": "meta|data engineer intern product analytics"
+  },
+  {
+    "title": "Summer 2027: AI Science Intern",
+    "company": "Intuit",
+    "location": "New York, NY",
+    "pay": "$42.69 - $86.50 por hora",
+    "pay_hourly_min": 42.69,
+    "rating": 3.9,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=93426aeab34514a1",
+      "glassdoor": "https://www.glassdoor.com/job-listing/summer-2027-ai-science-intern-intuit-JV_IC1132348_KO0,29_KE30,36.htm?jl=1010263527553"
+    },
+    "key": "intuit|ai science intern"
+  },
+  {
+    "title": "Software Engineer Intern, Machine Learning (PhD)",
+    "company": "Meta",
+    "location": "New York, NY",
+    "pay": "$7,313 - $12,667 (Employer provided)",
+    "pay_hourly_min": 42.19,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/software-engineer-intern-machine-learning-phd-meta-JV_IC1132348_KO0,45_KE46,50.htm?jl=1010287785497"
+    },
+    "key": "meta|software engineer intern machine learning phd"
+  },
+  {
+    "title": "Data Scientist Intern, Product Analytics (Summer 2027)",
+    "company": "Meta",
+    "location": "New York, NY",
+    "pay": "$7,188 - $12,100 por mes",
+    "pay_hourly_min": 41.47,
+    "rating": 3.4,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=c967a478fdf0ad36",
+      "glassdoor": "https://www.glassdoor.com/job-listing/data-scientist-intern-product-analytics-summer-2027-meta-JV_IC1132348_KO0,51_KE52,56.htm?jl=1010287785515"
+    },
+    "key": "meta|data scientist intern product analytics"
+  },
+  {
+    "title": "Intern - Private Infrastructure (Summer 2027)",
+    "company": "Principal Financial Group",
+    "location": "New York, NY",
+    "pay": "$40 por hora",
+    "pay_hourly_min": 40,
+    "rating": 3.7,
+    "sources": [
+      "indeed",
+      "glassdoor"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=45a7dd41f1a2bbd5",
+      "glassdoor": "https://www.glassdoor.com/job-listing/intern-private-infrastructure-summer-2027-principal-financial-group-JV_IC1132348_KO0,41_KE42,67.htm?jl=1010272898361"
+    },
+    "key": "principal financial group|intern private infrastructure"
+  },
+  {
+    "title": "Early Career Intern - Digital Asset Product",
+    "company": "Invesco",
+    "location": "New York, NY",
+    "pay": "$40.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 40,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/early-career-intern-digital-asset-product-invesco-JV_IC1132348_KO0,41_KE42,49.htm?jl=1010263278278"
+    },
+    "key": "invesco|early career intern digital asset product"
+  },
+  {
+    "title": "CAMPUS: Capital Group Rotational Program Data & Technology Track Summer Associate (New York, 2027)",
+    "company": "Capital Group",
+    "location": "New York, NY",
+    "pay": "$39.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 39,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/campus-capital-group-rotational-program-data-technology-track-summer-associate-new-york-2027-capital-group-JV_IC1132348_KO0,92_KE93,106.htm?jl=1010271975722"
+    },
+    "key": "capital group|campus capital group rotational program data technology track associate new york"
+  },
+  {
+    "title": "Campus Graduate II Summer Internship Program - 2027 Data Science, Finance - New York, NY",
+    "company": "American Express",
+    "location": "New York, NY",
+    "pay": "$38.45 - $87.00 por hora",
+    "pay_hourly_min": 38.45,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=da639f60b250cb2b"
+    },
+    "key": "american express|campus graduate ii internship program data science finance new york ny"
+  },
+  {
+    "title": "Data Strategy Summer Intern",
+    "company": "Moody's",
+    "location": "New York, NY",
+    "pay": "$35 por hora",
+    "pay_hourly_min": 35,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=1aa6847374b85248"
+    },
+    "key": "moodys|data strategy intern"
+  },
+  {
+    "title": "2027 Investment Associate Intern",
+    "company": "Bridgewater Associates",
+    "location": "New York, NY",
+    "pay": "$71,000 por año",
+    "pay_hourly_min": 34.13,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=9341315df7603236"
+    },
+    "key": "bridgewater associates|investment associate intern"
+  },
+  {
+    "title": "Year at Palantir - Forward Deployed Software Engineer, Internship - USG",
+    "company": "Palantir Technologies",
+    "location": "New York, NY",
+    "pay": "$5,900 - $10,500 (Employer provided)",
+    "pay_hourly_min": 34.04,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/year-at-palantir-forward-deployed-software-engineer-internship-usg-palantir-technologies-JV_IC1132348_KO0,66_KE67,88.htm?jl=1010135040866"
+    },
+    "key": "palantir technologies|year at palantir forward deployed software engineer internship usg"
+  },
+  {
+    "title": "Year at Palantir - Software Engineer, Internship",
+    "company": "Palantir Technologies",
+    "location": "New York, NY",
+    "pay": "$5,900 - $10,500 (Employer provided)",
+    "pay_hourly_min": 34.04,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/year-at-palantir-software-engineer-internship-palantir-technologies-JV_IC1132348_KO0,45_KE46,67.htm?jl=1010135040951"
+    },
+    "key": "palantir technologies|year at palantir software engineer internship"
+  },
+  {
+    "title": "Year at Palantir - Forward Deployed Software Engineer, Internship - Commercial",
+    "company": "Palantir Technologies",
+    "location": "New York, NY",
+    "pay": "$5,900 - $10,500 (Employer provided)",
+    "pay_hourly_min": 34.04,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/year-at-palantir-forward-deployed-software-engineer-internship-commercial-palantir-technologies-JV_IC1132348_KO0,73_KE74,95.htm?jl=1010135040972"
+    },
+    "key": "palantir technologies|year at palantir forward deployed software engineer internship commercial"
+  },
+  {
+    "title": "2027 Technology, Data, AI & Ventures Summer Internship Program - Data Scientist Intern",
+    "company": "New York Life",
+    "location": "New York, NY",
+    "pay": "$30 - $35 por hora",
+    "pay_hourly_min": 30,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=7b946c5e60d8f835"
+    },
+    "key": "new york life|technology data ai ventures internship program data scientist intern"
+  },
+  {
+    "title": "BA & Governance Project Intern (Scaled Growth Agency) - 2026 Start (BS/MS)",
+    "company": "TikTok",
+    "location": "New York, NY",
+    "pay": "$30.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 30,
+    "rating": 3.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/ba-governance-project-intern-scaled-growth-agency-2026-start-bs-ms-tiktok-JV_IC1132348_KO0,66_KE67,73.htm?jl=1010203653333"
+    },
+    "key": "tiktok|ba governance project intern scaled growth agency bs ms"
+  },
+  {
+    "title": "AT&T Technology Development Program Internship",
+    "company": "AT&T",
+    "location": "Middletown, NJ",
+    "pay": "$58K - $98K (Employer provided)",
+    "pay_hourly_min": 27.88,
+    "rating": 3.3,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/att-technology-development-program-internship-att-JV_IC1126872_KO0,45_KE46,49.htm?jl=1010270775033"
+    },
+    "key": "at t|at t technology development program internship"
+  },
+  {
+    "title": "2027 BNY Summer Internship Program - Engineering (Data Science) - New York, NY",
+    "company": "BNY",
+    "location": "New York, NY",
+    "pay": "$52K - $110K (Employer provided)",
+    "pay_hourly_min": 25,
+    "rating": 3.4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-bny-summer-internship-program-engineering-data-science-new-york-ny-bny-mellon-JV_IC1132348_KO0,71_KE72,82.htm?jl=1010239398780"
+    },
+    "key": "bny|bny internship program engineering data science new york ny"
+  },
+  {
+    "title": "2027 Intern - Solutions Consulting Analyst",
+    "company": "Adobe",
+    "location": "New York, NY",
+    "pay": "$25.00 - $30.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 25,
+    "rating": 4,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-intern-solutions-consulting-analyst-adobe-JV_IC1132348_KO0,40_KE41,46.htm?jl=1010256613261"
+    },
+    "key": "adobe|intern solutions consulting analyst"
+  },
+  {
+    "title": "Campus Graduate I Summer Internship Program - 2027 Data Science, Finance - New York, NY",
+    "company": "American Express",
+    "location": "New York, NY",
+    "pay": "$24.05 - $63.00 por hora",
+    "pay_hourly_min": 24.05,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=61e57e2dfad59924"
+    },
+    "key": "american express|campus graduate i internship program data science finance new york ny"
+  },
+  {
+    "title": "Strategy Internship- Mobility (Summer 2027)",
+    "company": "Siemens",
+    "location": "New York, NY",
+    "pay": "$23.00 - $28.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 23,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/strategy-internship-mobility-summer-2027-siemens-JV_IC1132348_KO0,40_KE41,48.htm?jl=1010255945478"
+    },
+    "key": "siemens|strategy internship mobility"
+  },
+  {
+    "title": "Data Journalism Summer Intern",
+    "company": "Financial Times",
+    "location": "New York, NY",
+    "pay": "$22 por hora",
+    "pay_hourly_min": 22,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=bc389c011ac587db"
+    },
+    "key": "financial times|data journalism intern"
+  },
+  {
+    "title": "Advanced Analytics Summer Internship, Actuarial – Short Hills, NJ (Hybrid)",
+    "company": "Selective Insurance",
+    "location": "Short Hills, NJ",
+    "pay": "$22.00 - $25.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 22,
+    "rating": 2.7,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/advanced-analytics-summer-internship-actuarial-short-hills-nj-hybrid-selective-insurance-JV_IC1126986_KO0,68_KE69,88.htm?jl=1010256567341"
+    },
+    "key": "selective insurance|advanced analytics internship actuarial short hills nj hybrid"
+  },
+  {
+    "title": "Campus Intern DTAI Track – Data, Tech & AI",
+    "company": "Genpact",
+    "location": "New York, NY",
+    "pay": "$45K - $57K (Employer provided)",
+    "pay_hourly_min": 21.63,
+    "rating": 3.7,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/campus-intern-dtai-track-data-tech-ai-genpact-JV_IC1132348_KO0,37_KE38,45.htm?jl=1010193598460"
+    },
+    "key": "genpact|campus intern dtai track data tech ai"
+  },
+  {
+    "title": "Corporate Reserving Actuarial Intern",
+    "company": "Munich Re",
+    "location": "New York, NY",
+    "pay": "$20.00 - $33.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 20,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/corporate-reserving-actuarial-intern-munich-re-JV_IC1132348_KO0,36_KE37,46.htm?jl=1010288765507"
+    },
+    "key": "munich re|corporate reserving actuarial intern"
+  },
+  {
+    "title": "2027 Future Talent Program – Manufacturing Science and Technology Intern",
+    "company": "Merck",
+    "location": "Rahway, NJ",
+    "pay": "$40K - $111K (Employer provided)",
+    "pay_hourly_min": 19.23,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-future-talent-program-manufacturing-science-and-technology-intern-merck-JV_IC1126952_KO0,70_KE71,76.htm?jl=1010260772284"
+    },
+    "key": "merck|future talent program manufacturing science and technology intern"
+  },
+  {
+    "title": "2027 Future Talent Program - Biostatistics and Research and Decision Sciences - Health Economics & Data Science Intern",
+    "company": "Merck",
+    "location": "Rahway, NJ",
+    "pay": "$40K - $111K (Employer provided)",
+    "pay_hourly_min": 19.23,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-future-talent-program-biostatistics-and-research-and-decision-sciences-health-economics-data-science-intern-merck-JV_IC1126952_KO0,112_KE113,118.htm?jl=1010256036298"
+    },
+    "key": "merck|future talent program biostatistics and research and decision sciences health economics data science intern"
+  },
+  {
+    "title": "2027 Future Talent Program - Supply Chain Management Summer Intern - US Based",
+    "company": "Merck",
+    "location": "Rahway, NJ",
+    "pay": "$40K - $111K (Employer provided)",
+    "pay_hourly_min": 19.23,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-future-talent-program-supply-chain-management-summer-intern-us-based-merck-JV_IC1126952_KO0,73_KE74,79.htm?jl=1010259426221"
+    },
+    "key": "merck|future talent program supply chain management intern us based"
+  },
+  {
+    "title": "2027 Future Talent Program - Statistical Programmer - Intern",
+    "company": "Merck",
+    "location": "Rahway, NJ",
+    "pay": "$40K - $111K (Employer provided)",
+    "pay_hourly_min": 19.23,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-future-talent-program-statistical-programmer-intern-merck-JV_IC1126952_KO0,56_KE57,62.htm?jl=1010256894899"
+    },
+    "key": "merck|future talent program statistical programmer intern"
+  },
+  {
+    "title": "2027 Future Talent Program - International Pricing Analytics - Intern",
+    "company": "Merck",
+    "location": "Rahway, NJ",
+    "pay": "$40K - $111K (Employer provided)",
+    "pay_hourly_min": 19.23,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-future-talent-program-international-pricing-analytics-intern-merck-JV_IC1126952_KO0,65_KE66,71.htm?jl=1010290079746"
+    },
+    "key": "merck|future talent program international pricing analytics intern"
+  },
+  {
+    "title": "2027 Future Talent Program - Information Science - Intern",
+    "company": "Merck",
+    "location": "Rahway, NJ",
+    "pay": "$40K - $111K (Employer provided)",
+    "pay_hourly_min": 19.23,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-future-talent-program-information-science-intern-merck-JV_IC1126952_KO0,53_KE54,59.htm?jl=1010256036206"
+    },
+    "key": "merck|future talent program information science intern"
+  },
+  {
+    "title": "2027 Future Talent Program - Global Strategic Sourcing - Intern",
+    "company": "Merck",
+    "location": "Rahway, NJ",
+    "pay": "$39K (Employer provided)",
+    "pay_hourly_min": 18.75,
+    "rating": 4.1,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/2027-future-talent-program-global-strategic-sourcing-intern-merck-JV_IC1126952_KO0,59_KE60,65.htm?jl=1010256035687"
+    },
+    "key": "merck|future talent program global strategic sourcing intern"
+  },
+  {
+    "title": "Student Intern",
+    "company": "NYU Langone Health",
+    "location": "New York, NY",
+    "pay": "$17 - $20 por hora",
+    "pay_hourly_min": 17,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=67355fd54fefed74"
+    },
+    "key": "nyu langone health|student intern"
+  },
+  {
+    "title": "Machine Learning & Artificial Intelligence Engineering Internship – Summer 2027",
+    "company": "Qualcomm",
+    "location": "New York, NY",
+    "pay": "$17.00 - $98.00 Per Hour (Employer provided)",
+    "pay_hourly_min": 17,
+    "rating": 3.8,
+    "sources": [
+      "glassdoor"
+    ],
+    "urls": {
+      "glassdoor": "https://www.glassdoor.com/job-listing/machine-learning-artificial-intelligence-engineering-internship-summer-2027-qualcomm-JV_IC1132348_KO0,75_KE76,84.htm?jl=1010268395513"
+    },
+    "key": "qualcomm|machine learning artificial intelligence engineering internship"
+  },
+  {
+    "title": "6 months Internship in Strategy & Data Science | New York",
+    "company": "Ekimetrics",
+    "location": "New York, NY",
+    "pay": "$2,800 por mes",
+    "pay_hourly_min": 16.15,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=1d39b9d1dea89df8"
+    },
+    "key": "ekimetrics|6 months internship in strategy data science new york"
+  },
+  {
+    "title": "Data Science Intern - Summer 2027",
+    "company": "GREATER NEW YORK MUTUAL INSURANCE COMPANY",
+    "location": "Manhattan, NY",
+    "pay": "$16 - $30 por hora",
+    "pay_hourly_min": 16,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=95e283e476a91be2"
+    },
+    "key": "greater new york mutual insurance company|data science intern"
+  },
+  {
+    "title": "Data Science Intern",
+    "company": "SageSure",
+    "location": "Jersey City, NJ",
+    "pay": null,
+    "pay_hourly_min": null,
+    "rating": null,
+    "sources": [
+      "indeed"
+    ],
+    "urls": {
+      "indeed": "https://www.indeed.com/viewjob?jk=26fea5bcfab482c6"
+    },
+    "key": "sagesure|data science intern"
+  }
+]

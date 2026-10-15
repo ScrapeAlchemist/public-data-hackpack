@@ -1,0 +1,18 @@
+# secrets
+.env
+.env.*
+!.env.example
+.mcp.json
+.cursor/
+
+# generated
+cache/
+out/
+
+# environments and tooling
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/

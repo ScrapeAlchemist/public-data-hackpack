@@ -1,0 +1,6 @@
+# Fixtures are raw Bright Data output. Store the bytes exactly as fetched so the
+# Python and JavaScript parsers see identical input on every machine.
+fixtures/** -text
+
+# Shell scripts must keep LF line endings, or bash fails on Windows checkouts.
+*.sh text eol=lf
