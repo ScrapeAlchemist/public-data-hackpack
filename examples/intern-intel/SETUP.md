@@ -97,8 +97,8 @@ Node 20 or newer (tested with Node 22) for the JavaScript version and the CLI.
 Get the repo:
 
 ```
-git clone <repo URL from the workshop page>
-cd <repo folder>/examples/intern-intel
+git clone https://github.com/ScrapeAlchemist/public-data-hackpack.git
+cd public-data-hackpack/examples/intern-intel
 ```
 
 ### Your .env file

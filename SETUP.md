@@ -28,8 +28,8 @@ Treat the key like a password. Do not paste it into a chat, a screenshot, a comm
 ## 2. Get the repo and add your key
 
 ```
-git clone <repo URL from the workshop page>
-cd <repo folder>
+git clone https://github.com/ScrapeAlchemist/public-data-hackpack.git
+cd public-data-hackpack
 ```
 
 Copy `.env.example` to `.env` in the repo root and fill it in:
