@@ -1,0 +1,159 @@
+{
+  "_about": "Trimmed real records from Bright Data, 2026-10-19. Public figures only: same-name people in the search results were removed before saving. Field names are exactly as the API returns them; long lists are cut to 1-3 items.",
+  "find_url_google": {
+    "note": "Google through Web Unlocker with brd_json=1, query: site:linkedin.com/in \"<name>\" <company>. Each query returned 10 organic results, all linkedin.com/in links; only the target is kept. Benioff's title and description do not mention Salesforce.",
+    "records": [
+      {
+        "link": "https://www.linkedin.com/in/arvindkrishna",
+        "title": "Arvind Krishna - Chairman and Chief Executive Officer, IBM",
+        "description": "Arvind Krishna is an influencer. Chairman and Chief Executive Officer, IBM. IBM University of Illinois at Urbana-Champaign. New ...Read more",
+        "display_link": "334.9K+ followers",
+        "rank": 1
+      },
+      {
+        "link": "https://www.linkedin.com/in/marcbenioff",
+        "title": "Marc Benioff - San Francisco, California, United States",
+        "description": "Marc Benioff is an influencer. San Francisco, California, United States. 298K followers 500+ connections.Read more",
+        "display_link": "297.9K+ followers",
+        "rank": 1
+      }
+    ]
+  },
+  "find_url_people_search": {
+    "dataset_id": "gd_m8d03he47z8nwb5xc",
+    "note": "Input {\"url\": \"https://www.linkedin.com\", \"first_name\": ..., \"last_name\": ...}. 3 names returned 60 records (11, 3 and 46 people with the same name); targets were rank 1. Full record fields: avatar, education, experience, input, location, name, subtitle, timestamp, url. Only these 4 fields of the targets were saved. Benioff's subtitle is null.",
+    "records": [
+      {
+        "name": "Mary Barra",
+        "url": "https://www.linkedin.com/in/mary-barra",
+        "location": "Detroit Metropolitan Area",
+        "subtitle": "Chair and Chief Executive Officer at General Motors"
+      },
+      {
+        "name": "Marc Benioff",
+        "url": "https://www.linkedin.com/in/marcbenioff",
+        "location": "San Francisco, CA",
+        "subtitle": null
+      }
+    ]
+  },
+  "profile_records": {
+    "dataset_id": "gd_l1viktl72bvl7bjuj0",
+    "note": "Nadella: flat experience, one school with years and one without. Krishna: several roles at one company, so experience[0].title is the company and the dated roles are in positions[] (two of them end in Present). Benioff: sparse public profile, no current_company key at all; nothing to verify against.",
+    "records": [
+      {
+        "url": "https://de.linkedin.com/in/satyanadella",
+        "name": "Satya Nadella",
+        "position": "Chairman and CEO at Microsoft",
+        "current_company": {
+          "name": "Microsoft",
+          "company_id": "microsoft",
+          "title": "Chairman and CEO"
+        },
+        "city": "Redmond, Washington, United States",
+        "experience": [
+          {
+            "title": "Chairman and CEO",
+            "company": "Microsoft",
+            "company_id": "microsoft",
+            "start_date": "Feb 2014",
+            "end_date": "Present"
+          },
+          {
+            "title": "Member Board Of Trustees",
+            "company": "University of Chicago",
+            "start_date": "2018",
+            "end_date": "Present"
+          }
+        ],
+        "education": [
+          {
+            "title": "The University of Chicago Booth School of Business",
+            "start_year": "1994",
+            "end_year": "1996"
+          },
+          {
+            "title": "Manipal Institute of Technology, Manipal",
+            "degree": "Bachelor\u2019s Degree",
+            "field": "Electrical Engineering"
+          }
+        ],
+        "timestamp": "2026-10-19T19:07:19.529Z"
+      },
+      {
+        "url": "https://ar.linkedin.com/in/Arvindkrishna",
+        "name": "Arvind Krishna",
+        "position": "Chairman and Chief Executive Officer, IBM",
+        "current_company": {
+          "name": "IBM",
+          "company_id": "ibm",
+          "title": "Chairman"
+        },
+        "city": "New York City Metropolitan Area",
+        "experience": [
+          {
+            "title": "IBM",
+            "company": "IBM",
+            "company_id": "ibm",
+            "duration": "35 years 11 months",
+            "positions": [
+              {
+                "title": "Chairman",
+                "start_date": "Jan 2021",
+                "end_date": "Present",
+                "meta": "Jan 2021 - Present 5 years 10 months"
+              },
+              {
+                "title": "Chief Executive Officer",
+                "start_date": "Apr 2020",
+                "end_date": "Present",
+                "meta": "Apr 2020 - Present 6 years 7 months"
+              },
+              {
+                "title": "Senior Vice President, Cloud and Cognitive Software",
+                "start_date": "Jan 2019",
+                "end_date": "Apr 2020",
+                "meta": "Jan 2019 - Apr 2020 1 year 4 months"
+              }
+            ]
+          }
+        ],
+        "education": [
+          {
+            "title": "University of Illinois at Urbana-Champaign",
+            "degree": "Doctor of Philosophy - PhD",
+            "start_year": "1985",
+            "end_year": "1991"
+          },
+          {
+            "title": "Indian Institute of Technology Kanpur",
+            "degree": "B.Tech.",
+            "start_year": "1980",
+            "end_year": "1985"
+          }
+        ],
+        "timestamp": "2026-10-19T19:07:32.346Z"
+      },
+      {
+        "url": "https://at.linkedin.com/in/marcbenioff",
+        "name": "Marc Benioff",
+        "position": null,
+        "city": "San Francisco, California, United States",
+        "experience": null,
+        "education": null,
+        "timestamp": "2026-10-19T19:07:45.495Z"
+      }
+    ]
+  },
+  "error_record": {
+    "note": "Arrives inside a 200 response. Treat as no public profile, not as a red flag.",
+    "record": {
+      "timestamp": "2026-10-19T19:07:30.472Z",
+      "input": {
+        "url": "https://www.linkedin.com/in/williamrmcdermott"
+      },
+      "error": "The profile is hidden or private.",
+      "error_code": "dead_page"
+    }
+  }
+}

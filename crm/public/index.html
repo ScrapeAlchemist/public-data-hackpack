@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiny CRM</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #1b2430; --muted: #687385; --line: #e3e7ed;
+    --accent: #3d7ffc; --accent-ink: #ffffff; --danger: #c43d3d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }
+  header { padding: 20px 24px 8px; display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 20px; }
+  .muted { color: var(--muted); }
+  main { padding: 8px 24px 40px; max-width: 1200px; }
+  .pipeline { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 16px; }
+  .pill { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+  .pill.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  form.add { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin-bottom: 16px; }
+  input, select, textarea { font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); width: 100%; }
+  textarea { resize: vertical; min-height: 34px; }
+  button { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+  button.ghost { background: transparent; color: var(--danger); border-color: transparent; }
+  .table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; min-width: 860px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  td.name strong { display: block; }
+  td.name a { font-size: 12px; color: var(--accent); }
+  .search { max-width: 280px; }
+  .empty { padding: 24px; text-align: center; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Tiny CRM</h1>
+  <span class="muted" id="summary"></span>
+  <input class="search" id="search" placeholder="Search name, company, notes">
+</header>
+<main>
+  <div class="pipeline" id="pipeline"></div>
+
+  <form class="add" id="add">
+    <input name="name" placeholder="Name (required)" required>
+    <input name="company" placeholder="Company">
+    <input name="linkedin_url" placeholder="LinkedIn URL (optional)">
+    <select name="stage" id="new-stage"></select>
+    <input name="next_step" placeholder="Next step">
+    <button type="submit">Add contact</button>
+  </form>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Company</th><th>Stage</th><th>Next step</th><th>Notes</th><th>Last contacted</th><th></th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</main>
+
+<script>
+let STAGES = [];
+let contacts = [];
+let stageFilter = '';
+
+const $ = (sel) => document.querySelector(sel);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+async function api(method, url, body) {
+  const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: body ? JSON.stringify(body) : undefined });
+  if (!res.ok) throw new Error((await res.json()).error || res.statusText);
+  return res.json();
+}
+
+async function load() {
+  const data = await api('GET', '/api/contacts');
+  STAGES = data.stages;
+  contacts = data.contacts;
+  $('#new-stage').innerHTML = STAGES.map((s) => `<option>${s}</option>`).join('');
+  render();
+}
+
+function render() {
+  const q = $('#search').value.trim().toLowerCase();
+  const shown = contacts.filter((c) =>
+    (!stageFilter || c.stage === stageFilter) &&
+    (!q || [c.name, c.company, c.notes, c.next_step].join(' ').toLowerCase().includes(q)));
+
+  $('#summary').textContent = `${contacts.length} contacts`;
+  $('#pipeline').innerHTML = ['', ...STAGES].map((s) => {
+    const n = s ? contacts.filter((c) => c.stage === s).length : contacts.length;
+    return `<span class="pill ${s === stageFilter ? 'active' : ''}" data-stage="${s}">${s || 'all'} (${n})</span>`;
+  }).join('');
+
+  $('#rows').innerHTML = shown.length ? shown.map((c) => `
+    <tr data-id="${c.id}">
+      <td class="name"><strong>${esc(c.name)}</strong>${c.linkedin_url ? `<a href="${esc(c.linkedin_url)}" target="_blank" rel="noopener">LinkedIn</a>` : ''}</td>
+      <td>${esc(c.company)}</td>
+      <td><select data-field="stage">${STAGES.map((s) => `<option ${s === c.stage ? 'selected' : ''}>${s}</option>`).join('')}</select></td>
+      <td><input data-field="next_step" value="${esc(c.next_step)}"></td>
+      <td><textarea data-field="notes" rows="1">${esc(c.notes)}</textarea></td>
+      <td><input type="date" data-field="last_contacted" value="${esc(c.last_contacted)}"></td>
+      <td><button class="ghost" data-action="delete" title="Delete">Delete</button></td>
+    </tr>`).join('') : `<tr><td colspan="7" class="empty">No contacts here yet.</td></tr>`;
+}
+
+$('#pipeline').addEventListener('click', (e) => {
+  const pill = e.target.closest('.pill');
+  if (!pill) return;
+  stageFilter = pill.dataset.stage;
+  render();
+});
+
+$('#search').addEventListener('input', render);
+
+$('#add').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const body = Object.fromEntries(new FormData(e.target));
+  contacts.push(await api('POST', '/api/contacts', body));
+  e.target.reset();
+  render();
+});
+
+$('#rows').addEventListener('change', async (e) => {
+  const field = e.target.dataset.field;
+  if (!field) return;
+  const id = e.target.closest('tr').dataset.id;
+  const updated = await api('PATCH', `/api/contacts/${id}`, { [field]: e.target.value });
+  contacts = contacts.map((c) => (c.id === id ? updated : c));
+  if (field === 'stage') render();
+});
+
+$('#rows').addEventListener('click', async (e) => {
+  if (e.target.dataset.action !== 'delete') return;
+  const id = e.target.closest('tr').dataset.id;
+  await api('DELETE', `/api/contacts/${id}`);
+  contacts = contacts.filter((c) => c.id !== id);
+  render();
+});
+
+load().catch((err) => { $('#rows').innerHTML = `<tr><td colspan="7" class="empty">${esc(err.message)}</td></tr>`; });
+</script>
+</body>
+</html>

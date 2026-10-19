@@ -1,0 +1,229 @@
+{
+  "_about": "Trimmed real records from the Bright Data Instagram, YouTube and X scrapers and the plain YouTube RSS feed, 2026-10-19. Famous creators, brands and NASA only. Field names are exactly as the source returns them; long lists are cut to 1-2 items, image URLs and long text are dropped.",
+  "instagram_profiles": {
+    "dataset_id": "gd_l1vikfch901nx3by4",
+    "note": "Exact followers. posts[] is the 12-post grid (cut to 1 here): dates only, no likes or comments.",
+    "records": [
+      {
+        "url": "https://www.instagram.com/mkbhd/",
+        "account": "mkbhd",
+        "full_name": "Marques Brownlee",
+        "followers": 5287693,
+        "following": 582,
+        "posts_count": 2118,
+        "is_verified": true,
+        "biography": "I promise I won't overdo the filters.",
+        "timestamp": "2026-10-19T19:10:45.370Z",
+        "input": {
+          "url": "https://www.instagram.com/mkbhd/"
+        },
+        "posts": [
+          {
+            "id": "3999303357150966366",
+            "caption": "This is not an iPhone Duo (new video up on YouTube, check it...",
+            "datetime": "2026-10-02T00:00:00.000Z",
+            "content_type": "Video",
+            "url": "https://www.instagram.com/p/DeAYTbQArJe"
+          }
+        ]
+      }
+    ]
+  },
+  "instagram_posts": {
+    "dataset_id": "gd_lk5ns7kz21pck8jpis",
+    "note": "discover_by=url, num_of_posts 30 (the second record comes from an earlier 12-post pull). Records arrive unsorted: sort by date_posted. The followers field on a post is rounded, and on a collab post (second record, from mkbhd's grid) it belongs to user_posted. Take followers from the profiles scraper.",
+    "records": [
+      {
+        "url": "https://www.instagram.com/reel/Dero7QJsruR/",
+        "shortcode": "Dero7QJsruR",
+        "user_posted": "mrbeast",
+        "description": "Guess who...",
+        "date_posted": "2026-10-19T16:03:20.000Z",
+        "content_type": "Reel",
+        "likes": 133957,
+        "num_comments": 7474,
+        "followers": 91000000,
+        "posts_count": 523,
+        "discovery_input": {
+          "url": "https://www.instagram.com/mrbeast/",
+          "num_of_posts": 30
+        },
+        "timestamp": "2026-10-19T19:15:32.321Z"
+      },
+      {
+        "url": "https://www.instagram.com/p/DcMnToCkbT5/",
+        "shortcode": "DcMnToCkbT5",
+        "user_posted": "ufaleague",
+        "description": "Fun fact: Marques Brownlee is the only player in league history to thr...",
+        "date_posted": "2026-08-18T21:48:05.000Z",
+        "content_type": "Carousel",
+        "likes": 30845,
+        "num_comments": 173,
+        "followers": 325000,
+        "posts_count": 9724,
+        "discovery_input": {
+          "url": "https://www.instagram.com/mkbhd/",
+          "num_of_posts": 12
+        },
+        "timestamp": "2026-10-19T19:10:22.566Z"
+      }
+    ]
+  },
+  "engagement_last_12": {
+    "note": "Computed by us, not a source field. n = the number of newest posts kept by date_posted (at most 12). engagement_rate_pct_last_12 = 100 * (sum of likes + sum of num_comments over the n posts) / n / followers from the profiles scraper. Collab posts were kept. posts_per_week_over_12 = 7 * (n - 1) / days, where days = whole calendar days between the UTC dates (date part of date_posted) of the oldest and newest of the n kept posts, minimum 1; empty when n < 2. posts_last_30_days is a floor when the 30-post pull does not reach back 30 days: NASA 30 (oldest pulled post 2026-09-30) and NatGeo 29 (the pull reached back only to 2026-10-11, plus one older post from 2026-09-10) are floors.",
+    "rows": [
+      {
+        "handle": "mkbhd",
+        "followers": 5287693,
+        "avg_likes_last_12": 207512.5,
+        "avg_comments_last_12": 1916.4,
+        "engagement_rate_pct_last_12": 3.961,
+        "posts_per_week_over_12": 0.66,
+        "posts_last_30_days": 1,
+        "latest_post_date": "2026-10-02"
+      },
+      {
+        "handle": "mrbeast",
+        "followers": 91087802,
+        "avg_likes_last_12": 1621531.6,
+        "avg_comments_last_12": 31487.2,
+        "engagement_rate_pct_last_12": 1.815,
+        "posts_per_week_over_12": 2.66,
+        "posts_last_30_days": 14,
+        "latest_post_date": "2026-10-19"
+      },
+      {
+        "handle": "natgeo",
+        "followers": 268337664,
+        "avg_likes_last_12": 68588.9,
+        "avg_comments_last_12": 491.8,
+        "engagement_rate_pct_last_12": 0.026,
+        "posts_per_week_over_12": 25.67,
+        "posts_last_30_days": 29,
+        "latest_post_date": "2026-10-19"
+      },
+      {
+        "handle": "nasa",
+        "followers": 104380976,
+        "avg_likes_last_12": 448425.0,
+        "avg_comments_last_12": 2153.4,
+        "engagement_rate_pct_last_12": 0.432,
+        "posts_per_week_over_12": 9.62,
+        "posts_last_30_days": 30,
+        "latest_post_date": "2026-10-16"
+      },
+      {
+        "handle": "veritasium",
+        "followers": 362481,
+        "avg_likes_last_12": 20488.1,
+        "avg_comments_last_12": 220.9,
+        "engagement_rate_pct_last_12": 5.713,
+        "posts_per_week_over_12": 0.04,
+        "posts_last_30_days": 0,
+        "latest_post_date": "2025-12-02"
+      }
+    ]
+  },
+  "youtube_channels": {
+    "dataset_id": "gd_lk538t2k2p1k3oos71",
+    "note": "subscribers is rounded at the source. id is the channel_id for the RSS feed. views is the channel total.",
+    "records": [
+      {
+        "url": "https://www.youtube.com/@mkbhd",
+        "handle": "@mkbhd",
+        "name": "Marques Brownlee",
+        "id": "UCBJycsmduvYEL83R_U4JriQ",
+        "subscribers": 21400000,
+        "videos_count": 1859,
+        "views": 5796591204,
+        "created_date": "2008-03-21T00:00:00.000Z",
+        "timestamp": "2026-10-19T19:09:06.261Z",
+        "input": {
+          "url": "https://www.youtube.com/@mkbhd/about"
+        }
+      }
+    ]
+  },
+  "youtube_rss_plain": {
+    "request": "GET https://www.youtube.com/feeds/videos.xml?channel_id=UCBJycsmduvYEL83R_U4JriQ",
+    "note": "No Bright Data. XML, shown here as element and @attribute. 15 newest entries, Shorts and lives included.",
+    "entries": [
+      {
+        "yt:videoId": "scwlR0QHGOk",
+        "title": "The NEW Tesla Roadster: My Honest Reaction",
+        "published": "2026-10-17T02:09:23+00:00",
+        "media:starRating@count": "172084",
+        "media:statistics@views": "10442634"
+      }
+    ]
+  },
+  "youtube_videos": {
+    "dataset_id": "gd_lk56epmy2i5g7lzu0k",
+    "note": "Optional. discover_by=url on the /videos tab: long-form only, deeper than 15. video_length is seconds.",
+    "records": [
+      {
+        "url": "https://www.youtube.com/watch?v=scwlR0QHGOk",
+        "video_id": "scwlR0QHGOk",
+        "title": "The NEW Tesla Roadster: My Honest Reaction",
+        "youtuber": "@mkbhd",
+        "date_posted": "2026-10-17T02:09:23.000Z",
+        "views": 10447481,
+        "likes": 172149,
+        "video_length": 1365
+      }
+    ]
+  },
+  "x_profiles": {
+    "dataset_id": "gd_lwxmeb2u1cniijd7t4",
+    "note": "Exact followers. posts[] cut from 10 to 2; the second is a repost, so likes is 0.",
+    "records": [
+      {
+        "url": "https://x.com/NASA",
+        "id": "NASA",
+        "profile_name": "NASA",
+        "is_verified": true,
+        "followers": 92321193,
+        "following": 115,
+        "posts_count": 74438,
+        "date_joined": "2007-12-19T20:20:32.000Z",
+        "timestamp": "2026-10-19T19:05:12.965Z",
+        "input": {
+          "url": "https://x.com/NASA",
+          "max_number_of_posts": 10
+        },
+        "posts": [
+          {
+            "post_id": "2111180963661435219",
+            "date_posted": "2026-10-16T19:42:20.000Z",
+            "post_url": "https://twitter.com/11348282/status/2111180963661435219",
+            "likes": 1593,
+            "replies": 176,
+            "reposts": 229,
+            "views": 383686
+          },
+          {
+            "post_id": "2111148671219753420",
+            "date_posted": "2026-10-16T17:34:01.000Z",
+            "post_url": "https://twitter.com/11348282/status/2111148671219753420",
+            "likes": 0,
+            "replies": 0,
+            "reposts": 66,
+            "views": 58049,
+            "description": "RT @NASASpox: There was plenty to see across @NASA this week..."
+          }
+        ]
+      }
+    ]
+  },
+  "error_record": {
+    "note": "From YouTube discovery, inside a 200 response. Filter on error_code.",
+    "record": {
+      "timestamp": "2026-10-19T19:14:50.702Z",
+      "error": "Video unavailable",
+      "error_code": "dead_page",
+      "input": {
+        "url": "https://www.youtube.com/watch?v=O-WDn8qtfKQ"
+      }
+    }
+  }
+}

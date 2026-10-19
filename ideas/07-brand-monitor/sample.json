@@ -1,0 +1,161 @@
+{
+  "_about": "Trimmed real records for the brand phrase \"Notion AI\", measured 2026-10-19 (19:04 to 19:20 UTC). Businesses and organizations only: no Reddit usernames, no reviewer names or review text, posts in user-profile subreddits (u_*) left out. API records keep the field names exactly as the API returns them; HTML sources show the parsed shape and name the source attribute. Long lists are cut to 1-2 items.",
+  "reddit_posts": {
+    "route": "Web Unlocker raw HTML of https://www.reddit.com/search/?q=%22notion+ai%22&type=posts&sort=new&t=week, then the /svc/shreddit/search/ cursor partials",
+    "note": "Output of reddit_mentions.mjs. Parsed from each data-testid=\"search-sdui-post\" block: id from data-thingid, title from the post-title aria-label, votes and comments from the two faceplate-number tags, created from faceplate-timeago ts (on the page: 2026-10-18T11:13:15.355000+0000). Prepend https://www.reddit.com to permalink. The first record is a listicle that matched on the post body.",
+    "records": [
+      {
+        "id": "t3_1x98ime",
+        "title": "50 things you can sell online using AI (no experience needed)",
+        "subreddit": "laptopmillionaire",
+        "votes": 1,
+        "comments": 0,
+        "created": "2026-10-18T17:10:34.020Z",
+        "permalink": "/r/laptopmillionaire/comments/1x98ime/50_things_you_can_sell_online_using_ai_no/"
+      },
+      {
+        "id": "t3_1x90njf",
+        "title": "Notion AI Voice mode",
+        "subreddit": "Notion",
+        "votes": 0,
+        "comments": 14,
+        "created": "2026-10-18T11:13:15.355Z",
+        "permalink": "/r/Notion/comments/1x90njf/notion_ai_voice_mode/"
+      },
+      {
+        "id": "t3_1x89v9k",
+        "title": "Notion AI stopped responding after giving a strange reply. Has anyone else encountered this?",
+        "subreddit": "Notion",
+        "votes": 3,
+        "comments": 3,
+        "created": "2026-10-17T13:09:16.443Z",
+        "permalink": "/r/Notion/comments/1x89v9k/notion_ai_stopped_responding_after_giving_a/"
+      }
+    ]
+  },
+  "reddit_thread": {
+    "route": "Web Unlocker raw HTML of the post permalink (5.64 s)",
+    "note": "From <shreddit-post score= comment-count=> and each <shreddit-comment score= created= depth=>. Authors and comment bodies not saved.",
+    "record": {
+      "post_score": 4,
+      "post_comment_count": 3,
+      "comments": [
+        { "score": 2, "created": "2026-10-19T16:16:12.507000+0000", "depth": 0 },
+        { "score": 1, "created": "2026-10-19T17:16:16.189000+0000", "depth": 1 }
+      ]
+    }
+  },
+  "youtube_search": {
+    "route": "Plain GET https://www.youtube.com/results?search_query=notion+ai&sp=EgIIAw%253D%253D (This week), no Bright Data",
+    "note": "Parsed from ytInitialData videoRenderer: videoId, title.runs, ownerText, viewCountText, publishedTimeText, lengthText. Dates are relative only.",
+    "records": [
+      {
+        "video_id": "8odhmX32w2M",
+        "title": "How Notion's Design Team Makes Great Products Quickly",
+        "channel": "Hatch Conference",
+        "views_text": "3,878 views",
+        "published_text": "13h ago",
+        "length": "31:00"
+      }
+    ]
+  },
+  "youtube_videos": {
+    "dataset_id": "gd_lk56epmy2i5g7lzu0k",
+    "note": "YouTube videos scraper, input {\"url\": \"https://www.youtube.com/watch?v=<id>\"}. 20 of 20 came back in 200.6 s. likes was null on 9 of 20 and num_comments on 2 of 20. Also returned: description, transcript, formatted_transcript, comments, recommended_videos (cut here).",
+    "records": [
+      {
+        "url": "https://www.youtube.com/watch?v=8odhmX32w2M",
+        "video_id": "8odhmX32w2M",
+        "title": "How Notion's Design Team Makes Great Products Quickly",
+        "youtuber": "@hatchconference",
+        "handle_name": "Hatch Conference",
+        "subscribers": 10700,
+        "date_posted": "2026-10-19T06:00:08.000Z",
+        "views": 3913,
+        "likes": 49,
+        "num_comments": 2,
+        "video_length": 1860,
+        "category": "Science & Technology",
+        "live_status": "was_live",
+        "timestamp": "2026-10-19T19:16:25.802Z"
+      }
+    ]
+  },
+  "trustpilot_page": {
+    "route": "Web Unlocker raw HTML of https://www.trustpilot.com/review/notion.so, read <script id=\"__NEXT_DATA__\">",
+    "note": "Paths: props.pageProps.businessUnit and props.pageProps.reviews[] (20 per page, English only). Reviewer and text fields left out.",
+    "businessUnit": {
+      "displayName": "Notion",
+      "identifyingName": "notion.so",
+      "trustScore": 2.2,
+      "stars": 2,
+      "numberOfReviews": 439,
+      "numberOfReviewsLast12Months": 113,
+      "websiteUrl": "https://notion.so"
+    },
+    "reviews": [
+      {
+        "id": "6ac753e65543c6bb1a25b60f",
+        "rating": 1,
+        "language": "en",
+        "dates": {
+          "experiencedDate": "2026-10-08T00:00:00.000Z",
+          "publishedDate": "2026-10-08T10:27:18.000Z",
+          "updatedDate": null,
+          "submittedDate": null
+        }
+      }
+    ]
+  },
+  "trustpilot_reviews": {
+    "dataset_id": "gd_lm5zmhwd2sni130p",
+    "note": "Trustpilot reviews scraper, input {\"url\": \"https://www.trustpilot.com/review/notion.so\"}. 186 records in 262.66 s. Company fields repeat on every record. Found a 2026-10-14 review the public page did not show. reviewer_name, reviewer_location, review_title, review_content and the company contact fields left out.",
+    "records": [
+      {
+        "company_name": "Notion",
+        "company_overall_rating": 2.2,
+        "company_rating_name": "Poor",
+        "company_total_reviews": 439,
+        "5_star": { "percentage": "32%", "number": 142, "percentage_num": 32 },
+        "1_star": { "percentage": "44%", "number": 193, "percentage_num": 44 },
+        "review_id": "6acf73d734d457bdc5e413c9",
+        "review_date": "2026-10-14T14:21:43.000Z",
+        "review_rating": 1,
+        "review_date_of_experience": "2026-10-14T00:00:00.000Z",
+        "is_verified_review": false,
+        "url": "https://www.trustpilot.com/review/notion.so",
+        "timestamp": "2026-10-19T19:08:51.868Z"
+      }
+    ]
+  },
+  "g2_page": {
+    "route": "Web Unlocker raw HTML of https://www.g2.com/products/notion/reviews (39.41 s): JSON-LD aggregateRating and review[].datePublished",
+    "note": "aggregateRating and review[] sit in the SoftwareApplication JSON-LD. The page has two such blocks: one holds a single summary Review with no datePublished, the other the 10 dated reviews. datePublished carries G2's -05:00 offset; the items are not in date order, so parse each, take the max and store it as UTC. Author, name and reviewBody left out; 2 of the 10 kept (the newest and the first in page order).",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.6,
+      "reviewCount": 13878,
+      "ratingCount": 13878,
+      "bestRating": 5,
+      "worstRating": 0
+    },
+    "jsonld_reviews": [
+      { "@type": "Review", "datePublished": "2026-10-15T23:22:07-05:00", "reviewRating": { "ratingValue": 5 } },
+      { "@type": "Review", "datePublished": "2026-10-05T18:25:18-05:00", "reviewRating": { "ratingValue": 4.5 } }
+    ],
+    "optional_markdown_second_call": {
+      "route": "Same URL with data_format markdown (43.03 s), a second call. Not needed for the newest review date.",
+      "note": "Card dates are M/D/YYYY strings, in page order (not date order).",
+      "review_card_dates": ["10/5/2026", "10/5/2026", "10/1/2026", "9/30/2026", "9/17/2026", "9/30/2026", "9/28/2026", "9/24/2026", "9/30/2026", "10/15/2026", "9/15/2026"]
+    }
+  },
+  "per_day_counts": {
+    "note": "UTC days. 2026-10-19 is partial. Reddit = quoted phrase, including 3 user-profile posts (u_*) that the script now drops. YouTube = exact date_posted from the scraper, a floor (the This-week filter caps at about 21).",
+    "reddit": { "2026-10-12": 1, "2026-10-13": 2, "2026-10-14": 3, "2026-10-15": 3, "2026-10-16": 3, "2026-10-17": 2, "2026-10-18": 2, "2026-10-19": 1 },
+    "youtube_at_least": { "2026-10-12": 4, "2026-10-13": 3, "2026-10-14": 1, "2026-10-15": 2, "2026-10-16": 1, "2026-10-17": 1, "2026-10-18": 3, "2026-10-19": 5 }
+  },
+  "errors": {
+    "g2_scraper": { "dataset_id": "gd_l88xp4k01qnhvyqlvw", "status": 400, "body": "This dataset does not support collection" },
+    "reddit_challenge": { "note": "Unquoted crawl, page 8: HTTP 200, 0 post blocks, page text contains 'prove your humanity'. Retry the same URL." }
+  }
+}

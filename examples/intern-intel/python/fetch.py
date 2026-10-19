@@ -9,7 +9,8 @@ read. The REST call below is one POST with data_format="markdown".
   {"zone": <Web Unlocker zone>, "url": <page>, "format": "raw", "data_format": "markdown", "country": "us"}
 
 Behaviour:
-- Token from BRIGHTDATA_API_TOKEN (or BRIGHTDATA_API_KEY), from the environment or the repo-root .env.
+- Token from BRIGHTDATA_API_TOKEN (or BRIGHTDATA_API_KEY), from the environment, else this
+  folder's .env, else the hackpack root .env.
 - Zone from BRIGHTDATA_ZONE. If it is empty, we list the account's zones once and use a
   Web Unlocker ("unblocker") zone.
 - Cache: cache/<sha1(url)>.md, reused while younger than 6 hours. If the network fails and an
@@ -95,7 +96,7 @@ def _token():
     tok = (os.environ.get("BRIGHTDATA_API_TOKEN") or os.environ.get("BRIGHTDATA_API_KEY") or "").strip()
     if not tok:
         raise FetchError("No Bright Data API key. Put BRIGHTDATA_API_TOKEN=... in .env "
-                         "(see .env.example), or run with --offline.")
+                         "(see .env.example in the hackpack root), or run with --offline.")
     return tok
 
 
@@ -210,6 +211,7 @@ def write_text(path, text):
 
 
 _load_env_file(REPO_ROOT / ".env")
+_load_env_file(REPO_ROOT.parent.parent / ".env")  # the hackpack root .env (this app lives in examples/)
 
 
 def fixture_manifest():

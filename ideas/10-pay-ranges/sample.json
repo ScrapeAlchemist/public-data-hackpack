@@ -1,0 +1,176 @@
+{
+  "_about": "Trimmed real records, 2026-10-19. Company job postings only, no person fields. Field names exactly as each source returns them; long text cut to the pay part ('...' marks a cut). Source dashes kept as JSON \\u escapes: your parser must handle them.",
+  "linkedin_job_listings": {
+    "dataset_id": "gd_lpfll7v5hcqtkxl6l",
+    "note": "LinkedIn job listings scraper, discover_by=keyword. Kong: base_salary AND text. Discord: text only (same job is on Indeed below). Twitch: Seattle range comes first in an SF posting. Dropped: job_poster (a person), company_logo, company_url, job_description_formatted (HTML of job_summary), apply_link, input, title_id, is_easy_apply, application_availability.",
+    "records": [
+      {
+        "url": "https://www.linkedin.com/jobs/view/staff-software-engineer-konnect-core-platform-at-kong-4455560595?_l=en",
+        "job_posting_id": "4455560595",
+        "job_title": "Staff Software Engineer, Konnect Core Platform",
+        "company_name": "Kong",
+        "company_id": "278819",
+        "job_location": "San Francisco, CA",
+        "country_code": "US",
+        "job_posted_time": "2 weeks ago",
+        "job_posted_date": "2026-10-05T19:09:14.155Z",
+        "job_seniority_level": "Mid-Senior level",
+        "job_employment_type": "Full-time",
+        "job_industries": "Software Development",
+        "job_num_applicants": 79,
+        "base_salary": {
+          "min_amount": 150000,
+          "max_amount": 275000,
+          "currency": "$",
+          "payment_period": "yr"
+        },
+        "job_base_pay_range": "$150,000.00/yr - $275,000.00/yr",
+        "salary_standards": "This range is provided by Kong. ...",
+        "job_summary": "...Compensation Range: $150K - $275K Show more Show less",
+        "discovery_input": {
+          "keyword": "software engineer",
+          "location": "San Francisco, California",
+          "country": "US",
+          "time_range": "Past month"
+        },
+        "timestamp": "2026-10-19T19:09:14.177Z"
+      },
+      {
+        "url": "https://www.linkedin.com/jobs/view/software-engineer-notifications-at-discord-4475342155?_l=en",
+        "job_posting_id": "4475342155",
+        "job_title": "Software Engineer, Notifications",
+        "company_name": "Discord",
+        "company_id": "3765675",
+        "job_location": "San Francisco, CA",
+        "country_code": "US",
+        "job_posted_time": "2 weeks ago",
+        "job_posted_date": "2026-10-05T19:10:13.834Z",
+        "job_seniority_level": "Entry level",
+        "job_employment_type": "Full-time",
+        "job_industries": "Software Development",
+        "job_num_applicants": 0,
+        "base_salary": null,
+        "job_base_pay_range": null,
+        "salary_standards": null,
+        "job_summary": "...eam The US base salary range for this full-time position is $160,000 to $200,000 + equity + benefits. Our salary ranges are determined by ro...",
+        "discovery_input": {
+          "keyword": "software engineer",
+          "location": "San Francisco, California",
+          "country": "US",
+          "time_range": "Past month"
+        },
+        "timestamp": "2026-10-19T19:10:14.156Z"
+      },
+      {
+        "url": "https://www.linkedin.com/jobs/view/software-development-engineer-security-platform-at-twitch-4456606613?_l=en",
+        "job_posting_id": "4456606613",
+        "job_title": "Software Development Engineer, Security Platform",
+        "company_name": "Twitch",
+        "company_id": "2320329",
+        "job_location": "San Francisco, CA",
+        "country_code": "US",
+        "job_posted_time": "2 weeks ago",
+        "job_posted_date": "2026-10-05T19:09:14.126Z",
+        "job_seniority_level": "Not Applicable",
+        "job_employment_type": "Full-time",
+        "job_industries": "Technology, Information and Internet",
+        "job_num_applicants": 0,
+        "base_salary": null,
+        "job_base_pay_range": null,
+        "salary_standards": null,
+        "job_summary": "...US, WA, Seattle - Annually $143,700\u2014$194,400 USD US, CA, San Francisco - Annually $165,200\u2014$223,600 USD US, CA, Irvine - Annually $143,7...",
+        "discovery_input": {
+          "keyword": "software engineer",
+          "location": "San Francisco, California",
+          "country": "US",
+          "time_range": "Past month"
+        },
+        "timestamp": "2026-10-19T19:09:14.146Z"
+      }
+    ]
+  },
+  "indeed_page1": {
+    "source": "Web Unlocker, https://www.indeed.com/jobs?q=software+engineer&l=San+Francisco%2C+CA with data_format markdown, parsed by parseIndeed() in examples/intern-intel/js/parsers.mjs",
+    "note": "Field names are the repo parser's output. On the page the pay is one line: '*   $160,000 - $200,000 a year'. Row 2 is the one hourly card (SWE New York).",
+    "records": [
+      {
+        "source": "indeed",
+        "title": "Software Engineer, Notifications",
+        "company": "Discord",
+        "location": "San Francisco Bay Area, CA",
+        "pay": "$160,000 - $200,000 a year",
+        "pay_hourly_min": 76.92,
+        "rating": null,
+        "url": "https://www.indeed.com/viewjob?jk=266eef7602c1331f",
+        "job_id": "266eef7602c1331f"
+      },
+      {
+        "source": "indeed",
+        "title": "Software Engineer 1",
+        "company": "Intuit",
+        "location": "New York, NY",
+        "pay": "$55.50 - $78.00 an hour",
+        "pay_hourly_min": 55.5,
+        "rating": null,
+        "url": "https://www.indeed.com/viewjob?jk=cf146a5da3b4ea1f",
+        "job_id": "cf146a5da3b4ea1f"
+      }
+    ]
+  },
+  "indeed_page2": {
+    "note": "start=10, 4 of 4 queries: HTTP 200, empty body. Logged-out ceiling: stop at page 1.",
+    "record": {
+      "status": 200,
+      "body_bytes": 0,
+      "x-brd-error": "login page found",
+      "x-brd-error-code": "reject_authwall"
+    }
+  },
+  "ashby_board": {
+    "source": "plain GET https://api.ashbyhq.com/posting-api/job-board/snowflake?includeCompensation=true (no Bright Data needed)",
+    "note": "Read compensation.summaryComponents (structured). compensationTierSummary has an en-dash, scrapeableCompensationSalarySummary a hyphen.",
+    "records": [
+      {
+        "title": "Software Engineer - Database Engineering",
+        "department": "Engineering",
+        "team": "Engineering",
+        "location": "US-CA-Menlo Park",
+        "secondaryLocations": [
+          {
+            "location": "US-WA-Bellevue"
+          }
+        ],
+        "publishedAt": "2026-07-28T22:20:47.028+00:00",
+        "jobUrl": "https://jobs.ashbyhq.com/snowflake/db1375f0-ea5d-404a-b640-259f94dbc995",
+        "compensation": {
+          "compensationTierSummary": "$160K \u2013 $230K",
+          "scrapeableCompensationSalarySummary": "$160K - $230K",
+          "summaryComponents": [
+            {
+              "compensationType": "Salary",
+              "interval": "1 YEAR",
+              "currencyCode": "USD",
+              "minValue": 160000,
+              "maxValue": 230000
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "nvidia_workday_detail": {
+    "source": "plain GET https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/job/<externalPath>, field jobPostingInfo (HTML stripped from jobDescription)",
+    "note": "No '$' sign, and two ranges for two levels in one posting.",
+    "records": [
+      {
+        "title": "Senior Circuit Design Engineer",
+        "location": "US, CA, Santa Clara",
+        "postedOn": "Posted Today",
+        "startDate": "2026-10-19",
+        "jobReqId": "JR2028143",
+        "externalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/US-CA-Santa-Clara/Senior-Circuit-Design-Engineer_JR2028143",
+        "jobDescription": "...The base salary range is 136,000 USD - 218,500 USD for Level 3, and 168,000 USD - 264,500 USD for Level 4. You will als..."
+      }
+    ]
+  }
+}

@@ -9,6 +9,10 @@
 cache/
 out/
 
+# local app data (can hold people's details; crm/ re-seeds from crm/data/seed.json)
+crm/data/contacts.json
+apps/*/data/
+
 # environments and tooling
 .venv/
 venv/

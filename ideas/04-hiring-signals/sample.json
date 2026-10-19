@@ -1,0 +1,258 @@
+{
+  "_about": "Trimmed real responses from the 2026-10-19 run. Plain fetch unless the group says Web Unlocker or dataset_id. Field names are exactly as each source returns them; long lists are cut to 1-2 items. Companies and job postings only, no people (job_poster dropped).",
+  "nvidia_workday_list": {
+    "source": "POST https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite/jobs",
+    "note": "total is capped at 2000 (real: 2749). Read facets[] where facetParameter is jobFamilyGroup, then page each values[].id. postedOn is relative text and stops at 'Posted 30+ Days Ago'. total, facets and the first posting are from the first unfiltered call; the second posting is from a facet-paged call of the same endpoint (bulletFields not kept).",
+    "records": {
+      "total": 2000,
+      "jobPostings": [
+        {
+          "title": "Director, IT",
+          "externalPath": "/job/US-CA-Santa-Clara/Director--IT_JR2027359",
+          "locationsText": "US, CA, Santa Clara",
+          "postedOn": "Posted Today",
+          "bulletFields": [
+            "JR2027359"
+          ]
+        },
+        {
+          "title": "Senior Full Chip Layout Engineer",
+          "externalPath": "/job/Israel-Yokneam/Senior-Full-Chip-Layout-Engineer_JR2025790",
+          "locationsText": "2 Locations",
+          "postedOn": "Posted 30+ Days Ago"
+        }
+      ],
+      "facets": [
+        {
+          "facetParameter": "jobFamilyGroup",
+          "descriptor": "Job Category",
+          "values": [
+            {
+              "descriptor": "Engineering",
+              "id": "0c40f6bd1d8f10ae43ffaefd46dc7e78",
+              "count": 1756
+            },
+            {
+              "descriptor": "Sales",
+              "id": "0c40f6bd1d8f10ae43ffcac5bbec7e90",
+              "count": 334
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "nvidia_workday_detail": {
+    "source": "GET https://nvidia.wd5.myworkdayjobs.com/wday/cxs/nvidia/NVIDIAExternalCareerSite<externalPath>",
+    "note": "One call per job. The only NVIDIA source of an exact date (startDate).",
+    "records": {
+      "jobPostingInfo": {
+        "title": "Senior Circuit Design Engineer",
+        "postedOn": "Posted Today",
+        "startDate": "2026-10-19",
+        "jobReqId": "JR2028143"
+      }
+    }
+  },
+  "stripe_greenhouse_jobs": {
+    "source": "GET https://boards-api.greenhouse.io/v1/boards/stripe/jobs?content=true",
+    "note": "content cut. departments[0] is a numbered leaf department; walk parent_id in the departments feed.",
+    "records": {
+      "jobs": [
+        {
+          "id": 8172508,
+          "title": "Abuse Investigator",
+          "updated_at": "2026-10-07T19:02:27-04:00",
+          "first_published": "2026-09-03T13:32:53-04:00",
+          "location": {
+            "name": "Dublin"
+          },
+          "absolute_url": "https://stripe.com/jobs/search?gh_jid=8172508",
+          "departments": [
+            {
+              "id": 81946,
+              "name": "8611 Security Analytics",
+              "parent_id": 78876
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "total": 723
+      }
+    }
+  },
+  "stripe_greenhouse_departments": {
+    "source": "GET https://boards-api.greenhouse.io/v1/boards/stripe/departments",
+    "note": "The parent_id chain for the job above, leaf to root (child_ids and jobs cut). 1035 departments in the feed.",
+    "records": {
+      "departments": [
+        {
+          "id": 81946,
+          "name": "8611 Security Analytics",
+          "parent_id": 78876
+        },
+        {
+          "id": 78876,
+          "name": "Security Infrastructure (Planning Group)",
+          "parent_id": 78875
+        },
+        {
+          "id": 78875,
+          "name": "Security (Planning Org)",
+          "parent_id": 61579
+        },
+        {
+          "id": 61579,
+          "name": "Tech",
+          "parent_id": null
+        }
+      ]
+    }
+  },
+  "snowflake_ashby": {
+    "source": "GET https://api.ashbyhq.com/posting-api/job-board/snowflake?includeCompensation=true",
+    "note": "Team = department. descriptionHtml, descriptionPlain and compensation cut.",
+    "records": {
+      "jobs": [
+        {
+          "id": "db1375f0-ea5d-404a-b640-259f94dbc995",
+          "title": "Software Engineer - Database Engineering",
+          "department": "Engineering",
+          "team": "Engineering",
+          "employmentType": "FullTime",
+          "location": "US-CA-Menlo Park",
+          "publishedAt": "2026-07-28T22:20:47.028+00:00",
+          "isListed": true,
+          "jobUrl": "https://jobs.ashbyhq.com/snowflake/db1375f0-ea5d-404a-b640-259f94dbc995"
+        }
+      ]
+    }
+  },
+  "amd_jibe": {
+    "source": "GET https://careers.amd.com/api/jobs?page=1&limit=100&sortBy=posted_date&descending=true&internal=false",
+    "note": "category has a leading space. Trim it.",
+    "records": {
+      "totalCount": 1281,
+      "jobs": [
+        {
+          "data": {
+            "req_id": "93469",
+            "title": "Lead Systems Engineer, Enterprise AI Server Platform Validation ",
+            "category": [
+              " Engineering"
+            ],
+            "posted_date": "2026-10-19T18:43:00+0000",
+            "city": "Austin",
+            "country": "United States"
+          }
+        }
+      ]
+    }
+  },
+  "tesla_state_web_unlocker": {
+    "source": "Web Unlocker, url https://www.tesla.com/cua-api/apps/careers/state, format raw (plain fetch: 403)",
+    "note": "Team = lookup.departments[dp]. Title is t, location id is l. No posted date. 8370 listings, 18 departments; lookup cut to a few entries.",
+    "records": {
+      "lookup": {
+        "departments": {
+          "4": "Manufacturing",
+          "1": "Vehicle Service",
+          "3": "Tesla SI"
+        },
+        "locations": {
+          "401022": "Palo Alto, California"
+        }
+      },
+      "listings": [
+        {
+          "id": "224501",
+          "t": "SI Engineer, Manipulation, Optimus",
+          "dp": "3",
+          "f": "74",
+          "l": "401022",
+          "y": 1,
+          "sp": 1,
+          "pu": null
+        }
+      ]
+    }
+  },
+  "microsoft_pcsx": {
+    "source": "GET https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=&location=&start=0&sort_by=timestamp",
+    "note": "10 positions per page. postedTs is Unix seconds. 429 on about half of plain calls.",
+    "records": {
+      "data": {
+        "count": 2375,
+        "positions": [
+          {
+            "id": 1970393557041711,
+            "displayJobId": "200062271",
+            "name": "Technical Program Manager II- Readiness Assessment & OEM Quality",
+            "department": "Technical Program Management",
+            "postedTs": 1792435839,
+            "locations": [
+              "United States, Washington, Redmond"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "linkedin_job_listings": {
+    "dataset_id": "gd_lpfll7v5hcqtkxl6l",
+    "note": "Discover by company search URL (f_C = LinkedIn company id). No team field. job_posted_date = timestamp minus job_posted_time. job_summary, description and job_poster cut.",
+    "records": [
+      {
+        "url": "https://www.linkedin.com/jobs/view/principal-graphics-developer-tools-engineer-at-nvidia-4428421064?_l=en",
+        "job_posting_id": "4428421064",
+        "job_title": "Principal Graphics Developer Tools Engineer",
+        "company_name": "NVIDIA",
+        "company_id": "3608",
+        "job_location": "Durham, NC",
+        "job_seniority_level": "Director",
+        "job_posted_time": "2 weeks ago",
+        "job_posted_date": "2026-10-05T19:07:53.339Z",
+        "job_num_applicants": 0,
+        "base_salary": null,
+        "discovery_input": {
+          "url": "https://www.linkedin.com/jobs/search?keywords=&f_C=3608&geoId=92000000&f_TPR=r2592000"
+        },
+        "timestamp": "2026-10-19T19:07:53.411Z"
+      }
+    ]
+  },
+  "team_counts_2026_10_19": {
+    "note": "Our rollup of the same run (19:03 to 19:07 UTC), not a source response: total and the largest team for the three test companies. Use it to sanity-check your first snapshot; counts drift daily. Team buckets come from the paged postings, so they can differ by 1 from the facet counts (Engineering 1,757 paged vs 1,756 facet).",
+    "records": [
+      {
+        "company": "NVIDIA",
+        "total_open": 2749,
+        "top_team": {
+          "Engineering": {
+            "0-30d": 681,
+            "30+d": 1076
+          }
+        }
+      },
+      {
+        "company": "Stripe",
+        "total_open": 723,
+        "top_team": {
+          "GTM > Global Sales & Business Ops (Planning Org)": {
+            "0-30d": 59,
+            "61d+": 35,
+            "31-60d": 46
+          }
+        }
+      },
+      {
+        "company": "Tesla",
+        "total_open": 8370,
+        "top_team": {
+          "Manufacturing": 1654
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "_about": "Trimmed real records from the Bright Data Filter Dataset API and the LinkedIn company scraper, measured 2026-10-19. Companies only. The people step is kept as its request, counts, title hits and field names: no person records on purpose. Field names are exactly as the API returns them; company records keep 10 of their 36 fields and long text is cut.",
+  "company_filter": {
+    "dataset_id": "gd_l1vikfnt1wgvvqz95w",
+    "note": "LinkedIn company information. This request returned 987 records, ready in 292.6 s, downloaded at 301.1 s. No record has a timestamp. The third record is sparse: 2 employees on LinkedIn inside a 51-200 band.",
+    "request": {
+      "dataset_id": "gd_l1vikfnt1wgvvqz95w",
+      "records_limit": 1000,
+      "filter": {
+        "operator": "and",
+        "filters": [
+          {
+            "name": "industries",
+            "operator": "=",
+            "value": "Software Development"
+          },
+          {
+            "name": "company_size",
+            "operator": "=",
+            "value": "51-200 employees"
+          },
+          {
+            "name": "headquarters",
+            "operator": "includes",
+            "value": "New York"
+          }
+        ]
+      }
+    },
+    "field_names": ["about", "additional_information", "affiliated", "alumni", "alumni_information", "company_id", "company_size", "country_code", "country_codes_array", "crunchbase_url", "description", "employees", "employees_in_linkedin", "followers", "formatted_locations", "founded", "funding", "get_directions_url", "headquarters", "id", "image", "industries", "investors", "locations", "logo", "name", "organization_type", "similar", "slogan", "specialties", "stock_info", "unformatted_about", "updates", "url", "website", "website_simplified"],
+    "records": [
+      {
+        "name": "Vic.ai",
+        "url": "https://www.linkedin.com/company/vic.ai",
+        "website": "https://www.vic.ai/",
+        "industries": "Software Development",
+        "company_size": "51-200 employees",
+        "employees_in_linkedin": 93,
+        "headquarters": "New York, NY",
+        "followers": 14788,
+        "founded": 2017,
+        "specialties": "artificial intelligence, accounting automation, accounting firms, accounting software, accounting technology, accounts p..."
+      },
+      {
+        "name": "Pinecone",
+        "url": "https://www.linkedin.com/company/pinecone-io",
+        "website": "https://www.pinecone.io/",
+        "industries": "Software Development",
+        "company_size": "51-200 employees",
+        "employees_in_linkedin": 139,
+        "headquarters": "New York, NY",
+        "followers": 78397,
+        "founded": 2019,
+        "specialties": null
+      },
+      {
+        "name": "AI.io",
+        "url": "https://www.linkedin.com/company/aidotio",
+        "website": "https://ai-io.io/",
+        "industries": "Software Development",
+        "company_size": "51-200 employees",
+        "employees_in_linkedin": 2,
+        "headquarters": "New York, NY",
+        "followers": 956,
+        "founded": 2016,
+        "specialties": "Artificial Intelligence, Robotics, Animation, Marketing, Social Media, Technology, Digital Marketing, and Media Design"
+      }
+    ]
+  },
+  "showcase_record": {
+    "note": "30 of the 987 records are /showcase/ (28) or /school/ (2) pages, not /company/ pages. They have no company slug, so keep only /company/ urls in the people join.",
+    "record": {
+      "name": "SpendHound",
+      "url": "https://www.linkedin.com/showcase/spendhound/",
+      "website": "https://www.spendhound.com/",
+      "industries": "Software Development",
+      "company_size": "51-200 employees",
+      "employees_in_linkedin": 0,
+      "headquarters": "New York, NY",
+      "followers": 2547,
+      "founded": 2023,
+      "specialties": null
+    }
+  },
+  "people_filter": {
+    "dataset_id": "gd_l1viktl72bvl7bjuj0",
+    "note": "LinkedIn people profiles. The measured run sent 956 company slugs (taken from each company url) in the in-list; 3 are shown here. Ready in 1074.2 s, downloaded at 1079.2 s. title_hits counts each record once, under the first of VP, Head of, Director, Chief found in position (same-case check). No record has a timestamp.",
+    "request": {
+      "dataset_id": "gd_l1viktl72bvl7bjuj0",
+      "records_limit": 1000,
+      "filter": {
+        "operator": "and",
+        "filters": [
+          {
+            "name": "current_company_company_id",
+            "operator": "in",
+            "value": ["vic.ai", "pinecone-io", "aidotio"]
+          },
+          {
+            "operator": "or",
+            "filters": [
+              {
+                "name": "position",
+                "operator": "includes",
+                "value": "VP"
+              },
+              {
+                "name": "position",
+                "operator": "includes",
+                "value": "Head of"
+              },
+              {
+                "name": "position",
+                "operator": "includes",
+                "value": "Director"
+              },
+              {
+                "name": "position",
+                "operator": "includes",
+                "value": "Chief"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "result_counts": {
+      "records": 554,
+      "companies_in_filter": 956,
+      "companies_with_a_match": 319,
+      "people_per_company_median": 1,
+      "title_hits": {
+        "Director": 336,
+        "VP": 77,
+        "Head of": 75,
+        "Chief": 57,
+        "(none of the four, same case)": 9
+      },
+      "field_coverage": {
+        "name": 554,
+        "url": 554,
+        "position": 554,
+        "current_company": 554,
+        "city": 554,
+        "experience": 553,
+        "education": 407,
+        "about": 311,
+        "followers": 529,
+        "timestamp": 0
+      }
+    },
+    "field_names": ["about", "activity", "avatar", "banner_image", "bio_links", "certifications", "city", "connections", "country_code", "courses", "current_company", "current_company_company_id", "current_company_name", "default_avatar", "education", "educations_details", "experience", "first_name", "followers", "honors_and_awards", "id", "influencer", "input_url", "languages", "last_name", "linkedin_id", "linkedin_num_id", "location", "memorialized_account", "name", "organizations", "patents", "people_also_viewed", "position", "posts", "projects", "publications", "recommendations", "recommendations_count", "similar_profiles", "url", "volunteer_experience"]
+  },
+  "error_example": {
+    "note": "HTTP 400 when one OR group held 8 position rules. Keep each logical group to 4 rules or fewer.",
+    "body": {
+      "validation_errors": [
+        "Filter logical groups can have a maximum of 4 rules."
+      ]
+    }
+  },
+  "live_refresh": {
+    "dataset_id": "gd_l1vikfnt1wgvvqz95w",
+    "note": "Company scraper, trigger with 35 shortlisted company urls: ready and downloaded in 34.94 s. Live records carry a timestamp and the slug in id; company_id is a number. Same company in the filter result: followers 78397, employees_in_linkedin 139.",
+    "records": [
+      {
+        "url": "https://www.linkedin.com/company/pinecone-io",
+        "id": "pinecone-io",
+        "name": "Pinecone",
+        "company_id": "20299330",
+        "industries": "Software Development",
+        "company_size": "51-200 employees",
+        "employees_in_linkedin": 138,
+        "headquarters": "New York, NY",
+        "website": "https://www.pinecone.io/",
+        "followers": 79671,
+        "founded": 2019,
+        "organization_type": "Privately Held",
+        "timestamp": "2026-10-19T19:17:56.419Z",
+        "updates": [
+          {
+            "time": "4d",
+            "date": "2026-10-15T19:08:27.039Z",
+            "likes_count": 11,
+            "text": "It's 2026. Are LLM hallucinations solved? Not quite. Models only know what they were trained on, and..."
+          }
+        ]
+      }
+    ]
+  }
+}

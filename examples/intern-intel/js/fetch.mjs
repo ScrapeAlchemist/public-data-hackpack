@@ -11,7 +11,8 @@
 //   {"zone": <Web Unlocker zone>, "url": <page>, "format": "raw", "country": "us", "data_format": "markdown"}
 //
 // Behaviour (same as the Python version):
-// - Token from BRIGHTDATA_API_TOKEN (or BRIGHTDATA_API_KEY), from the environment or the repo-root .env.
+// - Token from BRIGHTDATA_API_TOKEN (or BRIGHTDATA_API_KEY), from the environment, else this
+//   folder's .env, else the hackpack root .env.
 // - Zone from BRIGHTDATA_ZONE. If it is empty, we list the account's zones once and use a
 //   Web Unlocker ("unblocker") zone.
 // - Cache: cache/<sha1(url)>.md, reused while younger than 6 hours. If the network fails and an
@@ -63,6 +64,7 @@ export function loadDotenv(file) {
 }
 
 loadDotenv(path.join(REPO_ROOT, '.env'));
+loadDotenv(path.join(REPO_ROOT, '..', '..', '.env')); // the hackpack root .env (this app lives in examples/)
 
 export class FetchError extends Error {
   constructor(message) {
@@ -91,7 +93,7 @@ function token() {
   const tok = strip(process.env.BRIGHTDATA_API_TOKEN || process.env.BRIGHTDATA_API_KEY || '');
   if (!tok) {
     throw new FetchError('No Bright Data API key. Put BRIGHTDATA_API_TOKEN=... in .env ' +
-      '(see .env.example), or run with --offline.');
+      '(see .env.example in the hackpack root), or run with --offline.');
   }
   return tok;
 }

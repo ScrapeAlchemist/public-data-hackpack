@@ -1,0 +1,222 @@
+{
+  "_about": "Trimmed real records from 2026-10-19: one Yelp business page (Web Unlocker raw HTML), the Yelp reviews scraper, two public job boards and one LinkedIn company record. Businesses only: owner names, reviewer names, photo authors and review text were removed. Field names are exactly as each source returns them; long lists are cut to 1-2 items.",
+  "yelp_biz_page": {
+    "source": "Web Unlocker, url https://www.yelp.com/biz/bansho-ramen-berkeley-3, format raw. Entries from the data-apollo-state script. 27.5 s, 2026-10-19T19:06:45Z.",
+    "note": "Read claimability({\"useConsumerClaimability\":true}).isClaimed, not claimability. The page HTML holds 0 reviews. lat/lng: map image src, center=37.864882%2C-122.258850.",
+    "records": [
+      {
+        "Business:EkfGAqi1XZdMe2gMlrD4Kw": {
+          "alias": "bansho-ramen-berkeley-3",
+          "encid": "EkfGAqi1XZdMe2gMlrD4Kw",
+          "name": "Bansho Ramen",
+          "rating": 4.1,
+          "reviewCount": 196,
+          "priceRange": {
+            "display": "$$"
+          },
+          "categories": [
+            {
+              "__ref": "BusinessCategory:MHwNep1585bGYGQGK8CudQ"
+            },
+            {
+              "__ref": "BusinessCategory:ubV2EZduvkbqaUjHqTK0Hg"
+            }
+          ],
+          "isClosed": false,
+          "closedUntil": null,
+          "claimability": {
+            "isClaimable": false
+          },
+          "claimability({\"useConsumerClaimability\":true})": {
+            "isClaimable": false,
+            "reason": "ALREADY_CLAIMED",
+            "isClaimed": true
+          },
+          "isYelpAdvertiser": true,
+          "history": {
+            "description": null,
+            "yearEstablished": null
+          },
+          "operationHours": {
+            "regularHoursMergedWithSpecialHoursForCurrentWeek": [
+              {
+                "dayOfWeekShort": "Mon",
+                "hours": [
+                  "Closed"
+                ]
+              },
+              {
+                "dayOfWeekShort": "Tue",
+                "hours": [
+                  "11:30 AM - 9:00 PM"
+                ]
+              }
+            ],
+            "regularHoursLastUpdated": "Updated over 3 months ago"
+          },
+          "criticalBusinessInfoFreshness": {
+            "freshnessLabelDisplayText": "Verified over 3 months ago"
+          }
+        },
+        "BusinessLocation:EkfGAqi1XZdMe2gMlrD4Kw": {
+          "address": {
+            "addressLine1": "2502 Telegraph Ave",
+            "city": "Berkeley",
+            "regionCode": "CA",
+            "postalCode": "94704"
+          },
+          "neighborhoods": [
+            "Telegraph Ave"
+          ]
+        },
+        "BusinessCategory:MHwNep1585bGYGQGK8CudQ": {
+          "title": "Ramen",
+          "alias": "ramen"
+        }
+      }
+    ]
+  },
+  "yelp_jsonld_photo_reviews": {
+    "source": "Same page, <script type=\"application/ld+json\"> ItemList of ImageObject. No extra call.",
+    "note": "Photo-attached reviews only: 40 entries, 28 unique dated ratings for Bansho after merging local-time and UTC copies, 2019-03-27 to 2026-04-15, mean 3.86 (overall 4.1). The earliest gives 'reviews on Yelp since at least 2019'. author fields removed. Earliest and latest shown.",
+    "records": [
+      {
+        "@type": "ImageObject",
+        "uploadDate": "2019-03-27T17:34:54",
+        "review": {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Thing",
+            "name": "Bansho Ramen"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 3
+          },
+          "datePublished": "2019-03-27T17:34:54"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "uploadDate": "2026-04-15T14:25:30Z",
+        "review": {
+          "@type": "Review",
+          "itemReviewed": {
+            "@type": "Thing",
+            "name": "Bansho Ramen"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": 4
+          },
+          "datePublished": "2026-04-15T14:25:30Z"
+        }
+      }
+    ]
+  },
+  "yelp_reviews_scraper": {
+    "dataset_id": "gd_lgzhlu9323u3k24jkv",
+    "note": "Partial and flaky: 10 of 196 Bansho reviews in 408.8 s on the run that returned anything, all recommended_review false. Older dates are year-precision (Oct 19-21 of each year). Review_auther, Content and profile_pic_url removed: never store them. Oldest and newest shown.",
+    "records": [
+      {
+        "business_id": "bansho-ramen-berkeley-3",
+        "Rating": 1,
+        "Date": "21/10/2018",
+        "review_order": 1.0,
+        "url": "https://www.yelp.com/biz/bansho-ramen-berkeley-3",
+        "recommended_review": false,
+        "review_id": "51CjBkr22x7d38qF7oSdWA",
+        "date_iso_format": "2018-10-21T00:00:00.000Z",
+        "timestamp": "2026-10-19T19:17:02.054Z"
+      },
+      {
+        "business_id": "bansho-ramen-berkeley-3",
+        "Rating": 5,
+        "Date": "20/08/2026",
+        "review_order": 7.0,
+        "url": "https://www.yelp.com/biz/bansho-ramen-berkeley-3",
+        "recommended_review": false,
+        "review_id": "QHgZBYrUUlQT1XorMPbV-A",
+        "date_iso_format": "2026-08-20T00:00:00.000Z",
+        "timestamp": "2026-10-19T19:17:02.054Z"
+      }
+    ]
+  },
+  "job_board_greenhouse": {
+    "source": "GET https://boards-api.greenhouse.io/v1/boards/stripe/jobs?content=true, plain fetch, no Bright Data. 0.73 s.",
+    "note": "meta.total was 723. content (long HTML) and compliance fields removed. Newest posting shown.",
+    "meta": {
+      "total": 723
+    },
+    "records": [
+      {
+        "absolute_url": "https://stripe.com/jobs/search?gh_jid=8267857",
+        "id": 8267857,
+        "title": "Country Manager, Israel",
+        "company_name": "Stripe",
+        "location": {
+          "name": "Israel"
+        },
+        "departments": [
+          {
+            "id": 76997,
+            "name": "1180 GEO Sales HQ (EMEA)",
+            "child_ids": [],
+            "parent_id": 81962
+          }
+        ],
+        "first_published": "2026-10-19T12:18:39-04:00",
+        "updated_at": "2026-10-19T12:47:41-04:00"
+      }
+    ]
+  },
+  "job_board_ashby": {
+    "source": "GET https://api.ashbyhq.com/posting-api/job-board/snowflake?includeCompensation=true, plain fetch, no Bright Data. 0.49 s.",
+    "note": "355 jobs. Description and compensation removed. Newest posting shown.",
+    "records": [
+      {
+        "title": "Senior Video Producer",
+        "department": "Enterprise Technology",
+        "team": "Enterprise Technology",
+        "location": "US-CA-Menlo Park",
+        "publishedAt": "2026-10-19T18:53:11.950+00:00",
+        "jobUrl": "https://jobs.ashbyhq.com/snowflake/f162dafb-fad5-488b-9865-e5adea8dcdcf"
+      }
+    ]
+  },
+  "linkedin_company": {
+    "dataset_id": "gd_l1vikfnt1wgvvqz95w",
+    "note": "funding, crunchbase_url, investors and stock_info were empty on 48 of 48 live records. additional_information 'open jobs' is LinkedIn-wide keyword totals, not this company's openings. updates[].title is who posted; keep only the company's own posts.",
+    "records": [
+      {
+        "url": "https://www.linkedin.com/company/stripe",
+        "name": "Stripe",
+        "company_id": "2135371",
+        "industries": "Technology, Information and Internet",
+        "company_size": "5,001-10,000 employees",
+        "employees_in_linkedin": 16694,
+        "followers": 1776107,
+        "headquarters": "South San Francisco, California",
+        "website": "https://stripe.com/",
+        "founded": 2010,
+        "organization_type": "Privately Held",
+        "locations": [
+          "354 Oyster Point Blvd South San Francisco, California 94080, US"
+        ],
+        "updates": [
+          {
+            "title": "Stripe",
+            "date": "2026-10-15T16:14:02.797Z",
+            "time": "4d",
+            "likes_count": 26,
+            "comments_count": 24,
+            "text": "Fundraise directly into your Stripe Treasury account. Deposits are aut...",
+            "post_url": "https://www.linkedin.com/posts/stripe_fundraise-directly-into-your-stripe-treasury-activity-7516531847267311616-ltsY"
+          }
+        ],
+        "additional_information": "Additional jobs info: Stripe (2,886 open jobs). Analyst (694,057 open jobs). Engin...",
+        "timestamp": "2026-10-19T19:06:42.754Z"
+      }
+    ]
+  }
+}

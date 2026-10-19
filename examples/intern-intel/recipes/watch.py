@@ -19,30 +19,35 @@ is not updated, so a site that was down does not make all of its listings look n
 Pages younger than 6 hours come from cache/, so run it less often than that, or pass --refresh.
 
 Scheduling. These are templates: the schedulers themselves were not run while testing this
-repo. Replace C:\path\to and /path/to with where you cloned it (a path without spaces).
+repo. Replace <repo folder> with the full path of your clone (a path without spaces), for
+example C:\code\intern-intel or /home/you/intern-intel.
 
   Windows Task Scheduler (every day at 09:00), one line in a terminal:
-    schtasks /Create /SC DAILY /ST 09:00 /TN "Intern Intel watch" /TR "C:\path\to\intern-intel\.venv\Scripts\python.exe C:\path\to\intern-intel\recipes\watch.py"
+    schtasks /Create /SC DAILY /ST 09:00 /TN "Intern Intel watch" /TR "<repo folder>\examples\intern-intel\.venv\Scripts\python.exe <repo folder>\examples\intern-intel\recipes\watch.py"
 
   cron on macOS or Linux (crontab -e, every day at 09:00):
-    0 9 * * * cd /path/to/intern-intel && .venv/bin/python recipes/watch.py >> out/watch.log 2>&1
+    0 9 * * * cd <repo folder>/examples/intern-intel && .venv/bin/python recipes/watch.py >> out/watch.log 2>&1
 
-  GitHub Actions (.github/workflows/watch.yml). Add BRIGHTDATA_API_TOKEN as a repository
-  secret. Each run starts on a fresh machine, so the baseline is carried over with the cache
-  action, saved under a new key every run and restored from the newest one:
+  GitHub Actions. GitHub reads workflows only from the repo root, so the file is
+  .github/workflows/watch.yml at the top of the repo, and its run steps use
+  examples/intern-intel as their working folder. The cache path is written from the repo root,
+  because the cache action does not use that working folder. Add BRIGHTDATA_API_TOKEN as a
+  repository secret. Each run starts on a fresh machine, so the baseline is carried over with
+  the cache action, saved under a new key every run and restored from the newest one:
     on:
       schedule: [{cron: "0 16 * * *"}]
       workflow_dispatch: {}
     jobs:
       watch:
         runs-on: ubuntu-latest
+        defaults: {run: {working-directory: examples/intern-intel}}
         steps:
           - uses: actions/checkout@v4
           - uses: actions/setup-python@v5
             with: {python-version: "3.12"}
           - run: pip install -r python/requirements.txt
           - uses: actions/cache@v4
-            with: {path: out/watch, key: "watch-${{ github.run_id }}", restore-keys: "watch-"}
+            with: {path: examples/intern-intel/out/watch, key: "watch-${{ github.run_id }}", restore-keys: "watch-"}
           - run: python recipes/watch.py
             env: {BRIGHTDATA_API_TOKEN: "${{ secrets.BRIGHTDATA_API_TOKEN }}"}
 """

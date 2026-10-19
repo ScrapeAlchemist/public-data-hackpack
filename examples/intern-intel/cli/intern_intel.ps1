@@ -23,9 +23,9 @@ Three steps:
 You need Node.js 20 or newer (for npx), Python 3 with python/requirements.txt installed,
 and a Bright Data API key. Nothing is installed globally: npx keeps the CLI in its own cache.
 
-API key: BRIGHTDATA_API_KEY or BRIGHTDATA_API_TOKEN, from your environment or the .env file
-in the repo root. The CLI reads the name BRIGHTDATA_API_KEY, so this script sets it for its
-own process only.
+API key: BRIGHTDATA_API_KEY or BRIGHTDATA_API_TOKEN, from your environment, else this folder's
+.env, else the hackpack root .env. The CLI reads the name BRIGHTDATA_API_KEY, so this script
+sets it for its own process only.
 Zone: -Zone, else BRIGHTDATA_UNLOCKER_ZONE or BRIGHTDATA_ZONE, else the first Web Unlocker
 zone on your account (found with "npx -y @brightdata/cli@0.4.0 zones --json").
 
@@ -60,11 +60,17 @@ if ($Rest) {
 }
 
 function Get-DotEnv([string]$Name) {
-    # The value of $Name in the repo .env file, or "".
-    $file = Join-Path $Root ".env"
-    if (-not (Test-Path $file)) { return "" }
-    foreach ($line in Get-Content $file -Encoding UTF8) {
-        if ($line -match "^\s*$Name\s*=\s*(.*)$") { return $Matches[1].Trim().Trim('"').Trim("'") }
+    # The value of $Name in this app's .env file, else in the hackpack root .env, or "".
+    # An empty value (BRIGHTDATA_ZONE=) counts as missing, so the next file is read.
+    foreach ($file in @((Join-Path $Root ".env"), (Join-Path (Split-Path -Parent (Split-Path -Parent $Root)) ".env"))) {
+        if (-not (Test-Path $file)) { continue }
+        foreach ($line in Get-Content $file -Encoding UTF8) {
+            if ($line -match "^\s*$Name\s*=\s*(.*)$") {
+                $value = $Matches[1].Trim().Trim('"').Trim("'")
+                if ($value) { return $value }
+                break
+            }
+        }
     }
     return ""
 }
@@ -91,7 +97,7 @@ $key = $env:BRIGHTDATA_API_KEY
 if (-not $key) { $key = $env:BRIGHTDATA_API_TOKEN }
 if (-not $key) { $key = Get-DotEnv "BRIGHTDATA_API_KEY" }
 if (-not $key) { $key = Get-DotEnv "BRIGHTDATA_API_TOKEN" }
-if (-not $key) { Stop-WithMessage "No Bright Data API key. Put BRIGHTDATA_API_TOKEN=... in .env (see .env.example)." }
+if (-not $key) { Stop-WithMessage "No Bright Data API key. Put BRIGHTDATA_API_TOKEN=... in .env (see .env.example in the hackpack root)." }
 $env:BRIGHTDATA_API_KEY = $key   # this process and its children only; never printed
 Remove-Variable key
 

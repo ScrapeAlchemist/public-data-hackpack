@@ -1,0 +1,195 @@
+{
+  "_about": "Trimmed real records from the Bright Data Amazon, Walmart and Target scrapers and from Google Shopping through the SERP API, measured 2026-10-19. Products and shops only. Field names are exactly as the source returns them; long lists are cut to 1-3 items and long titles shortened.",
+  "amazon_products": {
+    "dataset_id": "gd_l7q7dkf244hwjntr0",
+    "note": "Input url: https://www.amazon.com/dp/<ASIN>. Second record: the buy box (final_price 182.34) is a used offer. In other_sellers_prices, 'Used - Like New' is not new; the first real New offer is 263.86.",
+    "records": [
+      {
+        "url": "https://www.amazon.com/Instant-Pot-Multi-Use-Programmable-Pressure/dp/B00FLYWNYQ?th=1&psc=1&language=en_US&currency=USD",
+        "asin": "B00FLYWNYQ",
+        "parent_asin": "B0GXKV5FHP",
+        "title": "Instant Pot Duo 6 Qt 7-in-1 Electric Pressure Cooker, Stainless Steel",
+        "final_price": 79,
+        "initial_price": 109.99,
+        "currency": "USD",
+        "discount": "-28%",
+        "variant_condition": "Buy New",
+        "buybox_seller": "Amazon.com",
+        "availability": "In Stock",
+        "is_available": true,
+        "rating": 4.7,
+        "reviews_count": 186419,
+        "upc": "810028585201",
+        "model_number": "DUO 60",
+        "variant_attributes": [
+          {
+            "name": "Size",
+            "value": "6 Quarts"
+          }
+        ],
+        "other_sellers_prices": [
+          {
+            "price": 79,
+            "seller_name": "Amazon.com",
+            "condition": "New",
+            "ships_from": "Amazon.com"
+          },
+          {
+            "price": 71.1,
+            "seller_name": "Amazon Resale",
+            "condition": "Used - Very Good",
+            "ships_from": "Amazon.com"
+          }
+        ],
+        "zipcode": "11001",
+        "timestamp": "2026-10-19T19:08:12.871Z"
+      },
+      {
+        "url": "https://www.amazon.com/dp/B0D1XD1ZV3?th=1&psc=1&language=en_US&currency=USD",
+        "asin": "B0D1XD1ZV3",
+        "parent_asin": "B0FBXVLLQF",
+        "title": "Apple AirPods Pro 2 Wireless Earbuds, Active Noise Cancellation, Hearing Aid Feature, Blue...",
+        "final_price": 182.34,
+        "initial_price": 182.34,
+        "currency": "USD",
+        "variant_condition": "Used: Good",
+        "buybox_seller": "6ave",
+        "availability": "Only 12 left in stock - order soon.",
+        "is_available": true,
+        "rating": 4.6,
+        "reviews_count": 46989,
+        "model_number": "MTJV3LL/A",
+        "variant_attributes": [
+          {
+            "name": "Style",
+            "value": "Without AppleCare+"
+          }
+        ],
+        "other_sellers_prices": [
+          {
+            "price": 182.34,
+            "seller_name": "6ave",
+            "condition": "Used - Good",
+            "ships_from": "6ave"
+          },
+          {
+            "price": 237.14,
+            "seller_name": "Amazon Resale",
+            "condition": "Used - Like New",
+            "ships_from": "Amazon.com"
+          },
+          {
+            "price": 263.86,
+            "seller_name": "6ave",
+            "condition": "New",
+            "ships_from": "6ave"
+          }
+        ],
+        "zipcode": "11001",
+        "timestamp": "2026-10-19T19:08:11.327Z"
+      }
+    ]
+  },
+  "walmart_products": {
+    "dataset_id": "gd_l95fol7l1ru6rlo116",
+    "note": "Input url: https://www.walmart.com/ip/<usItemId>. product_id is the usItemId. Second record says condition 'New' but is Restored: see product_name and conditionGroupCode=2 in url. store_name is a random Supercenter, not your store.",
+    "records": [
+      {
+        "url": "https://www.walmart.com/ip/Instant-Pot-Duo-6-Qt-Electric-Pressure-Cooker-7-in-1-with-Easy-Release-Steam-Switch-Slow-Cooker-Rice-Cooker-Steamer-and-More/575389962",
+        "product_id": "575389962",
+        "product_name": "Instant Pot 6Qt DUO 7-in-1 Multi-Cooker, Pressure Cook, Slow Cook, & more, Stainless Steel",
+        "final_price": 131.99,
+        "initial_price": 149.99,
+        "currency": "USD",
+        "condition": "New",
+        "seller": "ZAI XPRESS L.L.C.",
+        "availability_text": "In stock",
+        "is_available": true,
+        "rating": 4.4,
+        "reviews_count": 2056,
+        "gtin": "810028585201",
+        "upc": "810028585201",
+        "store_name": "Minot Supercenter",
+        "timestamp": "2026-10-19T19:10:46.242Z"
+      },
+      {
+        "url": "https://www.walmart.com/ip/AirPods-Pro-2nd-generation-with-MagSafe-Case-USB-C/5689919121?conditionGroupCode=2",
+        "product_id": "5689919121",
+        "product_name": "Restored Apple AirPods Pro 2 In-Ear Headphones with USB-C Charging Case, White",
+        "final_price": 173.99,
+        "initial_price": 199,
+        "currency": "USD",
+        "condition": "New",
+        "seller": "Gadget Replay",
+        "availability_text": "In stock",
+        "is_available": true,
+        "rating": 4.4,
+        "reviews_count": 44483,
+        "gtin": "195949704529",
+        "upc": "195949704529",
+        "store_name": "Phoenix E Thomas Rd Supercenter",
+        "timestamp": "2026-10-19T19:08:24.112Z"
+      }
+    ]
+  },
+  "target_products": {
+    "dataset_id": "gd_ltppk5mx2lp0v1k0vo",
+    "note": "Input url: https://www.target.com/p/-/A-<TCIN>. Second record is out of stock: final_price and initial_price are absent, price is null and price_range says 'See price in cart'.",
+    "records": [
+      {
+        "url": "https://www.target.com/p/logitech-mx-master-3s-wireless-mouse-with-quiet-clicks-910006581/-/A-1008322060",
+        "tcin_id": "1008322060",
+        "title": "Logitech MX Master 3S Wireless Mouse with Quiet Clicks 910006581",
+        "final_price": 109.99,
+        "initial_price": 109.99,
+        "price": "$109.99",
+        "price_range": "$109.99",
+        "seller_name": "Target.com",
+        "availability_text": "Available",
+        "is_available": true,
+        "rating": 4.64,
+        "reviews_count": 11,
+        "upc": "097855176394",
+        "zipcode": "90077",
+        "timestamp": "2026-10-19T19:14:59.106Z"
+      },
+      {
+        "url": "https://www.target.com/p/instant-pot-rio-6qt-7-in-1-electric-pressure-cooker-multi-cooker/-/A-1012270116",
+        "tcin_id": "1012270116",
+        "title": "Instant Pot RIO 6qt 7-in-1 Electric Pressure Cooker & Multi-Cooker Black: Instapot, Slow & Rice Cooker",
+        "price": null,
+        "price_range": "See price in cart",
+        "seller_name": "Target.com",
+        "availability_text": "Out of Stock",
+        "is_available": false,
+        "rating": 3.92,
+        "reviews_count": 150,
+        "upc": "810028589438",
+        "zipcode": "90077",
+        "timestamp": "2026-10-19T19:15:34.169Z"
+      }
+    ]
+  },
+  "google_shopping_tiles": {
+    "request": "POST /request, url https://www.google.com/search?q=<query>&udm=28&hl=en&gl=us&uule=<location>&brd_json=1, tiles in shopping[]",
+    "note": "Use for other sellers only. Keys are absent when empty (old_price, tag, shipping). Key offers on headlineOfferDocid inside link. Second tile is an accessory, pre-owned: filter by title and tag. image, image_base64 and shop_logo (base64) were removed here.",
+    "records": [
+      {
+        "title": "Hydro Flask Wide Mouth Water Bottle, Flex Cap 32 oz, Lava",
+        "link": "https://www.google.com/search?ibp=oshop&q=Hydro+Flask+Wide+Mouth+Water+Bottle%2C+Flex+Cap+32+oz%2C+Lava&prds=imageDocid%3A9851877111326263467%2Cproductid%3A5137346656720008614%2CheadlineOfferDocid%3A5137346656720008614%2Cpvt%3Ahg%2Crds%3APC_671128257113256657%7CPROD_PC_671128257113256657&pvorigin=25&hl=en&gl=us&uule=w%2BCAIQICImU2FuIEZyYW5jaXNjbyxDYWxpZm9ybmlhLFVuaXRlZCBTdGF0ZXM%3D&shem=damc%2Cpvflt%2Cshrtsdl&shndl=37&udm=28&source=sh%2Fx%2Fprdct%2Fhdr%2Fm1%2F1",
+        "price": "$23.90",
+        "shop": "newegg.com",
+        "rating": 4.6,
+        "reviews_cnt": 25000,
+        "rank": 6
+      },
+      {
+        "title": "RECEIVER - Logitech MX Master 3S USB/Bluetooth Wireless Mouse",
+        "price": "$39.99",
+        "tag": "Pre-owned",
+        "shop": "eBay",
+        "rank": 16
+      }
+    ]
+  }
+}

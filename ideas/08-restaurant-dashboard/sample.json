@@ -1,0 +1,219 @@
+{
+  "_about": "Trimmed real data from Yelp pages fetched through Bright Data Web Unlocker (format raw), 2026-10-19. Businesses only. The first four groups sit in the page HTML with field names exactly as Yelp writes them; the last group is what yelp_competitors.mjs builds from them. Long lists are cut to 1-2 items.",
+  "distance_boxes": {
+    "source": "Search page, script data-hypernova-key, legacyProps.searchAppProps.searchPageProps.filterPanelProps.filterInfoMap",
+    "note": "Radio inputs named l. value is g:minLng,minLat,maxLng,maxLat, a box, not a radius. Same values on every search page for this address.",
+    "records": [
+      {
+        "name": "l",
+        "text": "Biking (2 mi.)",
+        "value": "g:-122.28452682495117,37.84652813106081,-122.23337173461914,37.88718300056984",
+        "isSelected": true
+      },
+      {
+        "name": "l",
+        "text": "Walking (1 mi.)",
+        "value": "g:-122.27173805236816,37.856693951195375,-122.24616050720215,37.87702138607635",
+        "isSelected": false
+      }
+    ]
+  },
+  "search_results": {
+    "source": "Same blob, page 1 of cflt=ramen in the Biking box: searchContext, the component with componentType vertical_organic, and a separate component with componentType unthemed_ads that holds the ads",
+    "note": "Organic rows hold only bizId; look it up as Business:<bizId> in the Apollo state. Ad rows sit in the unthemed_ads component with isAd true: drop them. Here the ad is Bansho Ramen itself.",
+    "searchContext": {
+      "totalResults": 12,
+      "resultsPerPage": 10,
+      "startResult": 0
+    },
+    "organic_component": {
+      "componentType": "vertical_organic",
+      "searchResults": [
+        {
+          "bizId": "GYkHHNSiw0-WlQACylifsw",
+          "searchResultBusiness": null
+        },
+        {
+          "bizId": "bQxmwI6vOOpwnT36_B-MfQ",
+          "searchResultBusiness": null
+        }
+      ]
+    },
+    "ad_component": {
+      "componentType": "unthemed_ads",
+      "searchResults": [
+        {
+          "bizId": "EkfGAqi1XZdMe2gMlrD4Kw",
+          "isAd": true,
+          "searchResultBusiness": {
+            "alias": "bansho-ramen-berkeley-3",
+            "name": "Bansho Ramen",
+            "isAd": true,
+            "rating": 4.1,
+            "reviewCount": 196
+          }
+        }
+      ]
+    }
+  },
+  "search_apollo": {
+    "source": "Search page, script data-apollo-state (HTML-escaped JSON inside <!-- -->)",
+    "note": "The first Business is Masa Ramen Bistro (temporarily closed: see activeAlert). The second is Tora Ramen, a new listing: rating null, reviewCount 0.",
+    "records": [
+      {
+        "__typename": "Business",
+        "encid": "t_flm6D8DvgrXpnrlv8_Fw",
+        "alias": "masa-ramen-bistro-berkeley-3",
+        "name": "Masa Ramen Bistro",
+        "rating": 4.5,
+        "reviewCount": 320,
+        "priceRange": {
+          "__typename": "PriceRange",
+          "display": "$$"
+        },
+        "categories": [
+          {
+            "__ref": "BusinessCategory:CQOqOwIlJ8LObnSSWcmKHQ"
+          },
+          {
+            "__ref": "BusinessCategory:MHwNep1585bGYGQGK8CudQ"
+          }
+        ],
+        "location": {
+          "__ref": "BusinessLocation:t_flm6D8DvgrXpnrlv8_Fw"
+        },
+        "activeAlert({\"deviceType\":\"WWW\"})": {
+          "__typename": "BusinessAlert",
+          "type": "tempclosed"
+        }
+      },
+      {
+        "__typename": "Business",
+        "encid": "fy-Yrd0QxjjVNapinpfpWw",
+        "alias": "tora-ramen-berkeley",
+        "name": "Tora Ramen",
+        "rating": null,
+        "reviewCount": 0,
+        "priceRange": null,
+        "categories": [
+          {
+            "__ref": "BusinessCategory:MHwNep1585bGYGQGK8CudQ"
+          }
+        ],
+        "location": {
+          "__ref": "BusinessLocation:fy-Yrd0QxjjVNapinpfpWw"
+        },
+        "activeAlert({\"deviceType\":\"WWW\"})": null
+      }
+    ],
+    "refs": {
+      "BusinessLocation:t_flm6D8DvgrXpnrlv8_Fw": {
+        "__typename": "BusinessLocation",
+        "encid": "t_flm6D8DvgrXpnrlv8_Fw",
+        "address": {
+          "__typename": "BusinessAddress",
+          "city": "Berkeley",
+          "addressLine1": "1923 University Ave"
+        },
+        "neighborhoods": [
+          "Downtown Berkeley"
+        ]
+      },
+      "BusinessCategory:CQOqOwIlJ8LObnSSWcmKHQ": {
+        "__typename": "BusinessCategory",
+        "encid": "CQOqOwIlJ8LObnSSWcmKHQ",
+        "title": "Hawaiian"
+      },
+      "BusinessCategory:MHwNep1585bGYGQGK8CudQ": {
+        "__typename": "BusinessCategory",
+        "encid": "MHwNep1585bGYGQGK8CudQ",
+        "title": "Ramen"
+      }
+    }
+  },
+  "biz_page_apollo": {
+    "source": "https://www.yelp.com/biz/masa-ramen-bistro-berkeley-3, script data-apollo-state",
+    "note": "lat,lng come only from the map image src center=. isClosed is false while closedUntil is set and the page says Temporarily closed. map src trimmed: it carries Yelp's own maps key.",
+    "records": [
+      {
+        "__typename": "Business",
+        "encid": "t_flm6D8DvgrXpnrlv8_Fw",
+        "alias": "masa-ramen-bistro-berkeley-3",
+        "name": "Masa Ramen Bistro",
+        "rating": 4.5,
+        "reviewCount": 320,
+        "isClosed": false,
+        "closedUntil": "2027-01-01",
+        "claimability({\"useConsumerClaimability\":true})": {
+          "__typename": "BusinessClaimability",
+          "isClaimed": true
+        },
+        "map({\"height\":180,\"width\":315})": {
+          "__typename": "BusinessMap",
+          "src": "https://maps.googleapis.com/maps/api/staticmap?...&center=37.871817%2C-122.272384&..."
+        }
+      }
+    ]
+  },
+  "competitors_output": {
+    "source": "node yelp_competitors.mjs \"2400 Telegraph Ave, Berkeley, CA\" ramen 1, run on the saved pages",
+    "note": "Rows inside the Walking box have dist_mi null unless you pass --all-coords. Masa was outside the Walking box, so it got a biz page and a haversine distance.",
+    "records": [
+      {
+        "biz_id": "EkfGAqi1XZdMe2gMlrD4Kw",
+        "slug": "bansho-ramen-berkeley-3",
+        "name": "Bansho Ramen",
+        "rating": 4.1,
+        "review_count": 196,
+        "price": "$$",
+        "categories": [
+          "Ramen",
+          "Sushi Bars"
+        ],
+        "address": "2502 Telegraph Ave",
+        "alert": null,
+        "lat": null,
+        "lng": null,
+        "dist_mi": null,
+        "url": "https://www.yelp.com/biz/bansho-ramen-berkeley-3"
+      },
+      {
+        "biz_id": "t_flm6D8DvgrXpnrlv8_Fw",
+        "slug": "masa-ramen-bistro-berkeley-3",
+        "name": "Masa Ramen Bistro",
+        "rating": 4.5,
+        "review_count": 320,
+        "price": "$$",
+        "categories": [
+          "Hawaiian",
+          "Ramen",
+          "Japanese Curry"
+        ],
+        "address": "1923 University Ave",
+        "alert": "tempclosed",
+        "lat": 37.871817,
+        "lng": -122.272384,
+        "dist_mi": 0.809,
+        "url": "https://www.yelp.com/biz/masa-ramen-bistro-berkeley-3"
+      }
+    ],
+    "outside_radius": [
+      {
+        "biz_id": "7qjUFp6l1b6bsRVVIdTENg",
+        "slug": "itani-sushi-berkeley-2",
+        "name": "Itani Sushi",
+        "rating": 4.4,
+        "review_count": 93,
+        "dist_mi": 1.052
+      },
+      {
+        "biz_id": "fy-Yrd0QxjjVNapinpfpWw",
+        "slug": "tora-ramen-berkeley",
+        "name": "Tora Ramen",
+        "rating": null,
+        "review_count": 0,
+        "dist_mi": 1.407
+      }
+    ]
+  }
+}

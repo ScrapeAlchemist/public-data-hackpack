@@ -1,0 +1,35 @@
+[
+  {
+    "id": "c1",
+    "name": "Satya Nadella",
+    "company": "Microsoft",
+    "linkedin_url": "",
+    "stage": "lead",
+    "notes": "Sample contact (a public figure) for the demo.",
+    "next_step": "",
+    "last_contacted": "",
+    "created_at": "2026-10-19T00:00:00.000Z"
+  },
+  {
+    "id": "c2",
+    "name": "Jensen Huang",
+    "company": "NVIDIA",
+    "linkedin_url": "",
+    "stage": "contacted",
+    "notes": "Sample contact (a public figure) for the demo.",
+    "next_step": "",
+    "last_contacted": "",
+    "created_at": "2026-10-19T00:00:00.000Z"
+  },
+  {
+    "id": "c3",
+    "name": "Lisa Su",
+    "company": "AMD",
+    "linkedin_url": "",
+    "stage": "meeting",
+    "notes": "Sample contact (a public figure) for the demo.",
+    "next_step": "",
+    "last_contacted": "",
+    "created_at": "2026-10-19T00:00:00.000Z"
+  }
+]

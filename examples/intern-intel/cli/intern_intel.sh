@@ -21,9 +21,9 @@
 # (steps 1 and 3 run the Python version; the repo's .venv is used by itself), and a Bright
 # Data API key. Nothing is installed globally: npx keeps the CLI in its own cache.
 #
-# API key: BRIGHTDATA_API_KEY or BRIGHTDATA_API_TOKEN, from your environment or the .env file
-# in the repo root. The CLI reads the name BRIGHTDATA_API_KEY, so this script exports it for
-# its own process only.
+# API key: BRIGHTDATA_API_KEY or BRIGHTDATA_API_TOKEN, from your environment, else this folder's
+# .env, else the hackpack root .env. The CLI reads the name BRIGHTDATA_API_KEY, so this script
+# exports it for its own process only.
 # Zone: --zone, else BRIGHTDATA_UNLOCKER_ZONE or BRIGHTDATA_ZONE, else the first Web Unlocker
 # zone on your account (found with "npx -y @brightdata/cli@0.4.0 zones --json").
 
@@ -53,10 +53,19 @@ done
 case "$pages" in 1|2) ;; *) echo "--pages must be 1 or 2"; exit 1 ;; esac
 case "$timeout" in ''|*[!0-9]*) echo "--timeout must be a number of seconds"; exit 1 ;; esac
 
-dotenv() {  # the value of $1 in the repo .env file, or nothing
-  [ -f "$ROOT/.env" ] || return 0
-  sed -n -E "s/^[[:space:]]*$1[[:space:]]*=[[:space:]]*//p" "$ROOT/.env" | head -n 1 | tr -d '\r' \
-    | sed -E 's/[[:space:]]+$//; s/^"(.*)"$/\1/'"; s/^'(.*)'\$/\\1/"
+dotenv() {  # the value of $1 in this app's .env file, else in the hackpack root .env, or nothing
+  # Checked per variable: an empty value (BRIGHTDATA_ZONE=) counts as missing, so the next file is read.
+  local f v
+  for f in "$ROOT/.env" "$ROOT/../../.env"; do
+    [ -f "$f" ] || continue
+    v="$(sed -n -E "s/^[[:space:]]*$1[[:space:]]*=[[:space:]]*//p" "$f" | head -n 1 | tr -d '\r' \
+      | sed -E 's/[[:space:]]+$//; s/^"(.*)"$/\1/'"; s/^'(.*)'\$/\\1/")" || true
+    if [ -n "$v" ]; then
+      printf '%s\n' "$v"
+      return 0
+    fi
+  done
+  return 0
 }
 
 if ! command -v npx >/dev/null 2>&1; then
@@ -78,7 +87,7 @@ key="${BRIGHTDATA_API_KEY:-${BRIGHTDATA_API_TOKEN:-}}"
 [ -n "$key" ] || key="$(dotenv BRIGHTDATA_API_KEY)"
 [ -n "$key" ] || key="$(dotenv BRIGHTDATA_API_TOKEN)"
 if [ -z "$key" ]; then
-  echo "No Bright Data API key. Put BRIGHTDATA_API_TOKEN=... in .env (see .env.example)."
+  echo "No Bright Data API key. Put BRIGHTDATA_API_TOKEN=... in .env (see .env.example in the hackpack root)."
   exit 1
 fi
 export BRIGHTDATA_API_KEY="$key"   # this process and its children only; never printed

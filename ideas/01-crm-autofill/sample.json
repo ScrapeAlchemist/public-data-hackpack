@@ -1,0 +1,177 @@
+{
+  "_about": "Trimmed real records from the Bright Data LinkedIn scrapers, 2026-10-19. Public figures only. Field names are exactly as the API returns them; long lists are cut to 1-2 items.",
+  "person_records": {
+    "dataset_id": "gd_l1viktl72bvl7bjuj0",
+    "records": [
+      {
+        "url": "https://de.linkedin.com/in/satyanadella",
+        "name": "Satya Nadella",
+        "position": "Chairman and CEO at Microsoft",
+        "current_company": {
+          "name": "Microsoft",
+          "company_id": "microsoft",
+          "title": "Chairman and CEO",
+          "location": "Greater Seattle Area"
+        },
+        "current_company_name": "Microsoft",
+        "current_company_company_id": "microsoft",
+        "city": "Redmond, Washington, United States",
+        "location": "Redmond",
+        "country_code": "US",
+        "followers": 12236210,
+        "connections": 500,
+        "experience": [
+          {
+            "title": "Chairman and CEO",
+            "company": "Microsoft",
+            "company_id": "microsoft",
+            "start_date": "Feb 2014",
+            "end_date": "Present"
+          },
+          {
+            "title": "Member Board Of Trustees",
+            "company": "University of Chicago",
+            "company_id": null,
+            "start_date": "2018",
+            "end_date": "Present"
+          }
+        ],
+        "education": [
+          {
+            "title": "The University of Chicago Booth School of Business",
+            "start_year": "1994",
+            "end_year": "1996"
+          },
+          {
+            "title": "Manipal Institute of Technology, Manipal",
+            "start_year": null,
+            "end_year": null
+          }
+        ],
+        "timestamp": "2026-10-19T19:07:19.529Z"
+      },
+      {
+        "url": "https://ph.linkedin.com/in/Jenhsunhuang",
+        "name": "Jensen Huang",
+        "position": "Founder and CEO, NVIDIA",
+        "current_company": {
+          "name": "NVIDIA",
+          "company_id": "nvidia",
+          "title": "Founder and CEO"
+        },
+        "current_company_name": "NVIDIA",
+        "current_company_company_id": "nvidia",
+        "city": "Los Altos, California, United States",
+        "location": "Los Altos",
+        "country_code": "US",
+        "followers": 2051226,
+        "connections": 500,
+        "experience": [
+          {
+            "title": "Founder and CEO",
+            "company": "NVIDIA",
+            "company_id": "nvidia",
+            "start_date": "1993",
+            "end_date": "Present"
+          }
+        ],
+        "education": [
+          {
+            "title": "Stanford University",
+            "start_year": "1990",
+            "end_year": "1992"
+          },
+          {
+            "title": "Oregon State University",
+            "start_year": "1980",
+            "end_year": "1984"
+          }
+        ],
+        "timestamp": "2026-10-19T19:06:55.500Z"
+      },
+      {
+        "url": "https://uk.linkedin.com/in/ryanroslansky",
+        "name": "Ryan Roslansky",
+        "position": null,
+        "current_company": {
+          "link": "https://www.linkedin.com/company/microsoft?trk=public_profile_topcard-current-company",
+          "name": "Microsoft",
+          "company_id": "microsoft"
+        },
+        "current_company_name": "Microsoft",
+        "current_company_company_id": "microsoft",
+        "city": "San Francisco Bay Area",
+        "location": null,
+        "country_code": "US",
+        "followers": 981931,
+        "connections": 500,
+        "experience": [],
+        "education": [],
+        "timestamp": "2026-10-19T19:07:33.845Z"
+      }
+    ],
+    "note": "The third record shows a sparse public profile: position is null, and so are current_company.title and experience: store a null title."
+  },
+  "error_record": {
+    "note": "Arrives inside a 200 response. Filter on error_code.",
+    "record": {
+      "timestamp": "2026-10-19T19:07:30.472Z",
+      "input": {
+        "url": "https://www.linkedin.com/in/williamrmcdermott"
+      },
+      "error": "The profile is hidden or private.",
+      "error_code": "dead_page"
+    }
+  },
+  "company_records": {
+    "dataset_id": "gd_l1vikfnt1wgvvqz95w",
+    "records": [
+      {
+        "url": "https://www.linkedin.com/company/microsoft",
+        "name": "Microsoft",
+        "company_id": "1035",
+        "industries": "Software Development",
+        "company_size": "10,001+ employees",
+        "employees_in_linkedin": 231136,
+        "headquarters": "Redmond, Washington",
+        "website": "https://news.microsoft.com/",
+        "followers": 29325641,
+        "founded": null,
+        "organization_type": "Public Company",
+        "specialties": "Business Software, Developer Tools, Home & Educational Software, Tablets, Search, Advertising, Servers, Windows Operatin...",
+        "timestamp": "2026-10-19T19:06:29.579Z",
+        "updates": [
+          {
+            "time": "4d",
+            "date": "2026-10-15T14:30:40.527Z",
+            "likes_count": 242,
+            "text": "This month, the Microsoft Atlanta team, in partnership with Black in Technology, hosted the 404 Tech..."
+          }
+        ]
+      },
+      {
+        "url": "https://www.linkedin.com/company/nvidia",
+        "name": "NVIDIA",
+        "company_id": "3608",
+        "industries": "Computer Hardware Manufacturing",
+        "company_size": "10,001+ employees",
+        "employees_in_linkedin": 52810,
+        "headquarters": "Santa Clara, CA",
+        "website": "https://www.nvidia.com/",
+        "followers": 6832066,
+        "founded": 1993,
+        "organization_type": "Public Company",
+        "specialties": "GPU-accelerated computing, artificial intelligence, deep learning, virtual reality, gaming, self-driving cars, supercomp...",
+        "timestamp": "2026-10-19T19:06:24.240Z",
+        "updates": [
+          {
+            "time": "2h",
+            "date": "2026-10-19T16:47:28.660Z",
+            "likes_count": 60,
+            "text": "AI factories need to respond when the power grid needs relief. At #OCPSummit26 , our VP of Hyperscal..."
+          }
+        ]
+      }
+    ]
+  }
+}

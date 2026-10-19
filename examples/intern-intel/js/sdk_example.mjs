@@ -4,7 +4,8 @@
 //   node sdk_example.mjs
 //   node sdk_example.mjs "data science intern" "New York, NY"
 //
-// Token: BRIGHTDATA_API_TOKEN, from the environment or the repo-root .env (fetch.mjs loads it).
+// Token: BRIGHTDATA_API_TOKEN, from the environment, else this folder's .env, else the hackpack
+// root .env (fetch.mjs loads them).
 // Zone: BRIGHTDATA_ZONE, your Web Unlocker zone. If it is empty, we pick a Web Unlocker zone
 // from your account the same way intern_intel.mjs does (fetch.mjs zone()). The SDK's own
 // variable for the zone is BRIGHTDATA_WEB_UNLOCKER_ZONE, so we pass the zone in explicitly.
@@ -17,7 +18,7 @@
 
 import { bdclient } from '@brightdata/sdk';
 
-import { zone } from './fetch.mjs'; // importing fetch.mjs also loads the repo-root .env
+import { zone } from './fetch.mjs'; // importing fetch.mjs also loads this folder's and the hackpack root .env
 import { parseIndeed } from './parsers.mjs';
 import { indeedUrl } from './sources.mjs';
 
@@ -25,7 +26,7 @@ const role = process.argv[2] || 'software engineer intern';
 const location = process.argv[3] || 'San Francisco, CA';
 
 if (!process.env.BRIGHTDATA_API_TOKEN && !process.env.BRIGHTDATA_API_KEY) {
-  console.error('Set BRIGHTDATA_API_TOKEN (see .env.example).');
+  console.error('Set BRIGHTDATA_API_TOKEN (see .env.example in the hackpack root).');
   process.exit(1);
 }
 
