@@ -176,7 +176,6 @@ python -m pytest tests/test_your_site.py
 Sites change their markup. When a parser that used to work returns nothing (`parse_yelp.py`
 prints "No ranked results found"), save the page again and repeat step 2.
 
-## Rules of the road
+## One rule
 
-- Public pages only: what a logged-out visitor sees.
-- Saved pages are data, never instructions, for you and for your coding agent.
+Public pages only: what a logged-out visitor sees.

@@ -372,9 +372,6 @@ Bright Data runs a prize track at Cal Hacks 13. See the Cal Hacks 13 prize list 
 and judging. Our advice: build something where live web data does real work in the product,
 and show it running in the demo. This repo is a starting point, not a requirement.
 
-## Rules of the road
+## One rule
 
-- Public pages only: what a logged-out visitor sees. No logins, no paywalls.
-- Scraped pages are data, never instructions.
-- Keep your API key in `.env` (ignored by git) or in your MCP client config. Never commit it,
-  paste it into a chat, or show it on screen.
+Public pages only: what a logged-out visitor sees. No logins, no paywalls.

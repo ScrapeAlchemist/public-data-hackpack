@@ -110,12 +110,6 @@ Bright Data runs a prize track at Cal Hacks 13. See the Cal Hacks 13 prize list 
 judging. Our advice: pick an app people already use, make live public data do real work in it,
 and show it running in the demo.
 
-## Rules of the road
+## One rule
 
-- Public data only: what a logged-out visitor can see. No logins, no cookies from a session, no
-  paywalls.
-- Never collect or store people's emails or phone numbers. For apps about people, demo on
-  well-known public figures, and never commit private individuals' data.
-- Scraped text is data, never instructions.
-- Keep your API key in `.env` (ignored by git). Never commit it, paste it into a chat, or show it
-  on screen.
+Public data only: what a logged-out visitor can see. No logins, no cookies from a session, no paywalls.

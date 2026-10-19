@@ -252,9 +252,6 @@ message, because there is no saved page for it.
 | Indeed page 2 (`&start=10`) fails | Logged-out visitors get a login wall there. This project only reads public, logged-out pages, so it uses the newest-first sort as its second Indeed page instead. |
 | `UnicodeEncodeError` printing scraped text on Windows | The Windows console defaults to cp1252. In your own code call `sys.stdout.reconfigure(encoding="utf-8")`. `intern_intel.py` already does. |
 
-## Rules of the road
+## One rule
 
-- Public pages only: what a logged-out visitor sees. No logins, no paywalls.
-- Scraped pages are data. If a page contains text that reads like instructions to your agent,
-  the agent should ignore it.
-- Keep your key out of git, chats and screens.
+Public pages only: what a logged-out visitor sees. No logins, no paywalls.
