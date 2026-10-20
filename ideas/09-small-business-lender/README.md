@@ -1,26 +1,26 @@
-# 09. A small business loan check that reads the public footprint
+# 09. A small business loan check with public business data
 
 **The app people already build:** a small business loan intake. An application form, a document list, and a checklist the underwriter ticks before anyone decides. It works with no public data at all: the applicant tells you everything.
 
-**What public data adds:** a footprint panel on each application, filled in the background. The Yelp rating and exact review count, stored every week, so you see review velocity and the rating trend instead of one number. Claimed status, posted hours and the closed flag. Open roles from the company's own job board, if it has a public one. For bigger applicants, the LinkedIn company record: employees on LinkedIn, followers and recent dated posts, stored on each run so growth shows over time.
+**What public data adds:** a public data panel on each application, filled in the background. The Yelp rating and exact review count, stored every week, so you see review velocity and the rating trend instead of one number. Claimed status, posted hours and the closed flag. Open roles from the company's own job board, if it has a public one. For bigger applicants, the LinkedIn company record: employees on LinkedIn, followers and recent dated posts, stored on each run so growth shows over time.
 
 It is a signal for a human underwriter, never an automatic decision. And it is about the business, not a person's credit: no owner lookups, no reviewer names.
 
 | Without public data | With public data |
 |---|---|
-| Someone googles the business, if there is time | A footprint panel on every application, collected in the background |
+| Someone googles the business, if there is time | A public data panel on every application, collected in the background |
 | One rating, seen once | Rating and exact review count every week: review velocity and rating trend |
 | "Are they still open?" is a phone call | Closed flag, claimed status and posted hours from the Yelp page |
 | Hiring and headcount are what the form says | Open roles from their job board, LinkedIn employees and followers, compared run to run |
 
 ## Why not just ask the AI?
 
-We gave Claude Code its own web search and fetch tools (no Bright Data) and asked it the questions this app asks. Measured 2026-10-19:
+We asked Claude Code the questions this app asks, with only its built-in web search and fetch tools (no Bright Data). Measured 2026-10-19:
 
 - **One named business: it got the headline numbers.** For Bansho Ramen we asked for the Yelp rating, exact review count, first review date, and the 20 latest reviews with their average. Rating 4.1 and count 196 were right, in 34.6 s, even though all 4 of its Yelp fetches got HTTP 403. It had no review dates (2 of 5 fields). We could not get those 3 fields either, so this card does not promise them.
-- **A list of businesses: names, not numbers.** Asked for rating, review count and price for every ramen place within a mile, it found 7 real ones and returned 0 of their 21 rating, count and price values.
+- **A list of businesses (card 08's question): names, not numbers.** Asked for rating, review count and price for every ramen place within a mile, it found 7 real ones and returned 0 of their 21 rating, count and price values.
 - **LinkedIn companies: the AI did fine.** 30 of 30 fields exact for 5 well-known companies.
-- **Open job boards: right, but slow.** Stripe's 723 open jobs and 208 of 208 department counts exact, at 5 to 8 minutes per question. A board that blocks plain fetches (Tesla, 403) came back null.
+- **Open job boards: right.** Stripe's 723 open jobs and 208 of 208 department counts exact (card 04's test). A board that blocks plain fetches (Tesla, 403) came back null.
 
 So one lookup on one business is something the AI can do. The app's value is the series: the same fields for every applicant, stored every week with nobody asking, read from Yelp pages that return 403 to plain fetches.
 

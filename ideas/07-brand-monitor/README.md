@@ -1,4 +1,4 @@
-# 07. A feedback board that also hears the internet
+# 07. A feedback board with public mentions
 
 **The app people already build:** a product feedback board. Users post ideas and bugs, you tag them, people vote, you prioritize. It works with no public data at all. It is not a brand monitor, though: you only hear from the people who find your board.
 
@@ -6,13 +6,13 @@
 
 | Without public data | With public data |
 |---|---|
-| Feedback from users who find your board | Plus the Reddit posts and YouTube videos that name the product, counted per day |
+| Feedback from users who find your board | Plus the Reddit posts and YouTube videos found by searching for the product, counted per day |
 | Board votes are the only signal | Reddit votes and comments, YouTube views, Trustpilot and G2 ratings beside them |
 | One snapshot of opinion | A stored run every day, so a jump in mentions stands out |
 
 ## Why not just ask the AI?
 
-We gave Claude Code only its own web search and fetch tools and asked for every Reddit post and YouTube video that mentioned "Notion AI" in the last 7 days, with dates, votes, views and a count per day. We scored it against what this card's route found: 37 records (17 Reddit posts, 20 YouTube videos). Measured 2026-10-19:
+We asked Claude Code, with only its built-in web search and fetch tools, for every Reddit post and YouTube video that mentioned "Notion AI" in the last 7 days, with dates, votes, views and a count per day. We scored it against what this card's route found: 37 records (17 Reddit posts, 20 YouTube videos). Measured 2026-10-19:
 
 - **0 of 37 records in 83.3 s.** All 16 per-day counts were null. In fairness, it invented nothing in this run: its own coverage note says reddit.com, old.reddit and `search.json` blocked it. YouTube search and video pages came back footer-only.
 - **Asked for the 10 most recent instead: 0 of 10 Reddit posts right** (128.1 s). Its Reddit posts came from an archive (PullPush) dated 2026-10-02 to 10-11, while the real 10 most recent span 10-15 to 10-19. One post showed 1 vote and 0 comments; live it had 71 and 16. It found 0 YouTube videos.

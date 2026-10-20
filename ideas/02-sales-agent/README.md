@@ -2,18 +2,18 @@
 
 **The app people already build:** an outreach agent. Upload a CSV of leads and it drafts a personalized first email for each one. It works with no public data at all: you bring the list.
 
-**What public data adds:** describe your ideal customer in words ("software companies in New York with 51-200 people") and the agent builds the list itself from LinkedIn's company dataset: 987 companies for that sentence. Then it finds the right people there by title (554 VP, Head of, Director and Chief titles at 319 of those companies) and drafts. It never sends anything. Drafts only.
+**What public data adds:** pick your ideal customer's industry, size and HQ (software, 51-200 people, New York) and the agent builds the list itself from LinkedIn's company dataset: 987 companies for that filter. Then it finds the right people there by title (554 VP, Head of, Director and Chief titles at 319 of those companies) and drafts. It never sends anything. Drafts only.
 
 | Without public data | With public data |
 |---|---|
 | You buy, scrape or hand-type the lead list | 987 matching companies from one filter request |
 | You guess who to write to | 554 senior titles at 319 of those companies |
-| "I came across your company..." | Drafts that use size, HQ, founding year, specialties and the latest company post |
+| "I came across your company..." | Drafts that use size, HQ, founding year and specialties |
 | The list is stale the day you export it | Re-scrape the shortlist live: 35 companies in 34.9 s |
 
 ## Why not just ask the AI?
 
-We gave Claude Code its own web search and fetch tools and the same customer profile (LinkedIn industry "Software Development", "51-200 employees", HQ in New York), and asked for up to 40 matching companies. Measured 2026-10-19:
+We asked Claude Code, with only its built-in web search and fetch tools, for up to 40 companies that match the same customer profile (LinkedIn industry "Software Development", "51-200 employees", HQ in New York). Measured 2026-10-19:
 
 - **Accuracy: the AI did fine.** It returned 35 companies. We re-scraped all 35: every one is a real match, and 175 of 175 fields were exact.
 - **Volume: 35 vs 987.** The AI took 314.6 s and 112 tool calls (100 LinkedIn page fetches, 12 searches). The filter returned 987 in 292.6 s. The AI itself estimated about 2,000 such companies exist.

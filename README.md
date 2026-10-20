@@ -7,7 +7,7 @@ From the Bright Data workshop "The Unfair Advantage: Live Web Data" at Cal Hacks
 (October 23-25, 2026).
 
 A CRM works without public data: you type the contacts in. Add public LinkedIn data and it fills
-itself in, and next month it tells you who changed jobs. That is the pattern in every card here.
+itself in. That is the pattern in every card here.
 
 Everything your agent needs to use Bright Data's tools is in its agent skills:
 https://github.com/brightdata/skills. Install them with `npx skills add brightdata/skills`.
@@ -16,16 +16,16 @@ https://github.com/brightdata/skills. Install them with `npx skills add brightda
 
 | # | The app people already build | What public data adds | Data from |
 |---|---|---|---|
-| [01](ideas/01-crm-autofill/) | A CRM | Type a name and a company: title, location, exact followers, company size, HQ and website fill in. Re-run to catch job changes. | LinkedIn people and companies |
-| [02](ideas/02-sales-agent/) | An outreach agent that drafts emails for a lead list you upload | Describe your customer in a sentence and it builds the list itself: 987 companies, then 554 people by title at 319 of them. Drafts only. | LinkedIn company and people datasets |
+| [01](ideas/01-crm-autofill/) | A CRM | Type a name and a company: title, location, exact followers, company size, HQ and website fill in. | LinkedIn people and companies |
+| [02](ideas/02-sales-agent/) | An outreach agent that drafts emails for a lead list you upload | Pick an industry, size and HQ and it builds the list itself: 987 companies, then 554 people by title at 319 of them. Drafts only. | LinkedIn company and people datasets |
 | [03](ideas/03-recruiter/) | A resume screener | Lines each resume up against the public profile and flags mismatches in titles, dates and schools for a recruiter to check. | LinkedIn people |
-| [04](ideas/04-hiring-signals/) | A stock watchlist | Open roles per team, every day, charted. A team that doubles its openings shows up the week it happens. | Company careers APIs, Tesla's careers page, LinkedIn jobs |
-| [05](ideas/05-price-watch/) | An online store's admin page | The same product's price at Amazon, Walmart and Target every day, with an alert when someone undercuts you. | Amazon, Walmart, Target |
+| [04](ideas/04-hiring-signals/) | A stock watchlist | Open roles per team, every day, charted. | Company careers APIs, Tesla's careers page, LinkedIn jobs |
+| [05](ideas/05-price-watch/) | An online store's admin page | The same product's price at Amazon and Walmart every day, and at Target when it sells it, with an alert when someone undercuts you. | Amazon, Walmart, Target |
 | [06](ideas/06-influencer-crm/) | A creator partnerships CRM | Exact followers, engagement on the last 12 posts and posting frequency, refreshed weekly. | Instagram, YouTube, X |
-| [07](ideas/07-brand-monitor/) | A product feedback board | Counts what people say about the product in public, per day: Reddit posts, new YouTube videos, Trustpilot and G2 ratings. | Reddit, YouTube, Trustpilot, G2 |
-| [08](ideas/08-restaurant-dashboard/) | A restaurant owner's dashboard | Every competitor in the same category within a mile, with exact rating and review count, weekly: new openings, rating drops, who is growing. | Yelp |
-| [09](ideas/09-small-business-lender/) | A small business loan intake | A public footprint panel per applicant: weekly Yelp rating and review count, hours, open roles, LinkedIn company data. For a human underwriter. | Yelp, careers APIs, LinkedIn companies |
-| [10](ideas/10-pay-ranges/) | An internal comp tool | Posted salary ranges for the same role and city, monthly, so every band and offer gets a market check. | LinkedIn jobs, Indeed, careers APIs |
+| [07](ideas/07-brand-monitor/) | A product feedback board | Counts public posts per day: Reddit posts and new YouTube videos found by searching for the product, plus Trustpilot and G2 ratings. | Reddit, YouTube, Trustpilot, G2 |
+| [08](ideas/08-restaurant-dashboard/) | A restaurant owner's dashboard | Every competitor in the same category within a mile, with exact rating and review count, weekly, with places new since the last scan tagged. | Yelp |
+| [09](ideas/09-small-business-lender/) | A small business loan intake | A public data panel per applicant: weekly Yelp rating and review count, hours, open roles, LinkedIn company data. For a human underwriter. | Yelp, careers APIs, LinkedIn companies |
+| [10](ideas/10-pay-ranges/) | An internal comp tool | Posted salary ranges for the same role and city, monthly, so you can check every band and offer against them. | LinkedIn jobs, Indeed, careers APIs |
 
 ## How to use a card
 
@@ -42,8 +42,8 @@ https://github.com/brightdata/skills. Install them with `npx skills add brightda
 Every card has the same parts:
 
 - **Without / with:** what the app does today and what public data adds.
-- **Why not just ask the AI?** We gave Claude Code its own web search and fetch tools and asked
-  for the same data. The card says what it got right and where it stopped.
+- **Why not just ask the AI?** We asked Claude Code for the same data, with only its built-in
+  web search and fetch tools and no Bright Data. The card says what it got right and where it stopped.
 - **The route:** the exact requests that returned the data on 2026-10-19, with timings.
 - **A sample:** `sample.json`, trimmed real records with the field names exactly as returned.
 - **Traps:** what broke, and how to get around it, including when you do not need Bright Data at all.
@@ -62,14 +62,14 @@ the cards say so. Here is what it did on each card's own question, measured 2026
 | Card | What the AI alone got right | Where it stopped |
 |---|---|---|
 | 01 CRM | Companies: 30 of 30 fields exact | People: 0 of 5 exact follower counts; one profile blocked it (HTTP 999) |
-| 02 Sales agent | 35 real matching companies, every field exact | 35 companies in 314.6 s and 112 tool calls; the dataset returned 987 in 292.6 s |
+| 02 Sales agent | Asked for up to 40, it found 35 real matching companies, every field exact | 35 companies in 314.6 s and 112 tool calls; the dataset returned 987 in 292.6 s |
 | 03 Recruiter | Title, company and location exact for 4 of 5 people | One profile returned HTTP 999 twice |
-| 04 Hiring signals | Open careers APIs: Stripe's 723 jobs and 208 department counts exact | Tesla returned 403, Microsoft 429; 5 to 8 minutes per question; today's count only |
+| 04 Hiring signals | Open careers APIs: Stripe's 723 jobs and 208 department counts exact | Tesla returned 403, Microsoft 429; today's count only |
 | 05 Price watch | It made nothing up | 1 of 15 prices; 0 of 10 even with the exact Amazon and Walmart URLs |
 | 06 Influencer CRM | YouTube: 18 of 25 fields exact, from the public RSS feed | Instagram: 6 of 20; rounded followers and no likes |
-| 07 Brand monitor | It made nothing up | 0 of 37 Reddit posts and YouTube videos; a retry used a stale archive |
+| 07 Brand monitor | It made nothing up | 0 of 37 Reddit posts and YouTube videos; a second run read an old archive |
 | 08 Restaurant | 7 of 10 nearby competitors by name | 0 ratings, review counts or prices; Yelp returned 403 |
-| 09 Lender | Rating and review count for one named business | 0 of 21 numbers for a list of businesses |
+| 09 Lender | One named business: rating and review count right. LinkedIn companies: 30 of 30 fields exact | Tesla's job board returned 403 |
 | 10 Pay ranges | 10 of 10 pay ranges exact | All 10 came from just 3 company job boards |
 
 The pattern: the AI is fine for one lookup. Public data at scale wins on pages that block plain
@@ -92,8 +92,8 @@ http://localhost:3000. On first start it copies the demo contacts from `crm/data
 `crm/data/contacts.json`, which git ignores, and saves every change there. To get the
 un-enriched demo back, stop the server, delete `crm/data/contacts.json` and start it again.
 
-The apps call the Bright Data REST API from their own server code, so they run on a schedule or a
-server with no agent attached. While you explore, the Bright Data MCP server gives your agent the
+The apps call the Bright Data REST API from their own server code, so a scheduler or a server can
+run them with no agent attached. While you explore, the Bright Data MCP server gives your agent the
 same tools (see SETUP.md).
 
 ## Bright Data tools this builds on

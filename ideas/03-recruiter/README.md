@@ -12,7 +12,7 @@
 
 ## Why not just ask the AI?
 
-We gave Claude Code its own web search and fetch tools and asked for current LinkedIn data on 5 well-known people (and 5 companies). Measured 2026-10-19:
+We asked Claude Code, with only its built-in web search and fetch tools, for current LinkedIn data on 5 well-known people (and 5 companies). Measured 2026-10-19:
 
 - **Current title and employer: the AI did fine.** 17 of 25 people fields exact, 0 wrong. Title, company and location were exact for 4 of the 5 people.
 - **One profile blocked it.** Sundar Pichai's page returned HTTP 999 twice, so his title, company, location and followers came back empty. The other 4 misses were exact follower counts, which a screener does not need.

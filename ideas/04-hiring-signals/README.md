@@ -12,7 +12,7 @@
 
 ## Why not just ask the AI?
 
-We gave Claude Code only its own web search and fetch tools and asked for open roles per team in two runs: NVIDIA and Stripe, then Tesla, Microsoft and AMD. Measured 2026-10-19:
+We asked Claude Code, with only its built-in web search and fetch tools, for open roles per team in two runs: NVIDIA and Stripe, then Tesla, Microsoft and AMD. Measured 2026-10-19:
 
 - **Open careers APIs: the AI did well.** It found NVIDIA's careers API and Stripe's Greenhouse board by itself. Stripe: total 723 and all 208 department counts exact. NVIDIA: total 2,749 exact, 8 of 15 job families exact, the other 7 off by 1 or 2. AMD: total and 11 of 11 categories exact. Run 1 scored 258 of 265 fields exact (it also had 10 pay rows).
 - **Blocked boards: it stopped.** Tesla returned 403 and the AI reported null instead of guessing. One Web Unlocker call returned all 8,370 Tesla listings. Microsoft hit it with 429 after 5 of 31 teams.

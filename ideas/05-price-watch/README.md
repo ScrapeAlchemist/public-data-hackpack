@@ -2,7 +2,7 @@
 
 **The app people already build:** the admin page of a small online store. Your catalog, your prices, your stock. It works with no public data at all: you set prices by hand and hope they are still right.
 
-**What public data adds:** for each product you sell, the same product's price at Amazon, Walmart and Target, every day. Matched by GTIN/UPC where the stores agree, pinned by hand once where they do not. You get an alert when a competitor's new-condition price goes below yours, and a price history per product and store.
+**What public data adds:** for each product you sell, the same product's price at Amazon and Walmart every day, and at Target when Target sells it. Matched by GTIN/UPC where the stores agree, pinned by hand once where they do not. You get an alert when a competitor's new-condition price goes below yours, and a price history per product and store.
 
 | Without public data | With public data |
 |---|---|
@@ -12,7 +12,7 @@
 
 ## Why not just ask the AI?
 
-We gave Claude Code its own web search and fetch tools and asked for 15 prices: 5 well-known products (Anker 737 power bank, Hydro Flask 32 oz, Logitech MX Master 3S, AirPods Pro 2, Instant Pot Duo 6 qt) at Amazon, Walmart and Target, new condition only. Measured 2026-10-19:
+We asked Claude Code, with only its built-in web search and fetch tools, for 15 prices: 5 well-known products (Anker 737 power bank, Hydro Flask 32 oz, Logitech MX Master 3S, AirPods Pro 2, Instant Pot Duo 6 qt) at Amazon, Walmart and Target, new condition only. Measured 2026-10-19:
 
 - **1 of 15 prices, in 177.8 s.** The one it got (MX Master 3S at Target, 109.99) matched the scraper exactly. It named a different seller than the scraper did; we did not resolve which is right.
 - **Target: the AI did fine.** Besides that price, it reported no exact Target listing for the other 4 products, the same conclusion we reached by title.

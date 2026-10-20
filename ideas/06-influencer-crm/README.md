@@ -1,18 +1,18 @@
-# 06. An influencer CRM with real numbers
+# 06. An influencer CRM with exact followers
 
-**The app people already build:** a CRM for creator partnerships. Creators, outreach status, deal terms, deliverables, due dates. It works with no public data at all: you copy the follower count from the creator's media kit.
+**The app people already build:** a CRM for creator partnerships. Creators, outreach status, deal terms, deliverables, due dates. It works with no public data at all: you type in the follower count yourself.
 
-**What public data adds:** every creator row gets their real follower count, the engagement rate on their last 12 posts and how often they post, refreshed weekly, so you pay for reach that exists. National Geographic has 268,337,664 Instagram followers and 0.026% engagement on its last 12 posts. Veritasium's Instagram engagement is 5.71%, but its last post there was on 2025-12-02.
+**What public data adds:** every creator row gets their exact follower count, the engagement rate on their last 12 posts and how often they post, refreshed weekly. National Geographic has 268,337,664 Instagram followers and 0.026% engagement on its last 12 posts. Veritasium's Instagram engagement is 5.71%, but its last post there was on 2025-12-02.
 
 | Without public data | With public data |
 |---|---|
-| Follower count from a media kit or a screenshot ("5.2M") | Exact followers from the profile (5,287,693), refreshed weekly |
+| A rounded follower count, typed in ("5.2M" on mkbhd's Instagram page) | Exact followers from the profile (5,287,693), refreshed weekly |
 | No idea if the audience still reacts | Engagement rate from exact likes and comments on the last 12 posts |
 | You find out a creator went quiet after the contract is signed | Posts per week and last post date on every row |
 
 ## Why not just ask the AI?
 
-We gave Claude Code its own web search and fetch tools and asked for 5 creators on Instagram and the same 5 on YouTube: followers, posts in the last 30 days, average likes on the last 12 posts, average views, latest post date. Measured 2026-10-19: 24 of 45 fields exact, in 140.8 s.
+We asked Claude Code, with only its built-in web search and fetch tools, for 5 creators on Instagram and the same 5 on YouTube: followers, posts in the last 30 days, average likes on the last 12 posts, average views, latest post date. Measured 2026-10-19: 24 of 45 fields exact, in 140.8 s.
 
 - **YouTube: the AI did fine.** 18 of 25 fields exact, 0 wrong. It found each channel's public RSS feed and matched it within 0.1%. It returned no subscriber counts (null for all 5), and no 30-day count for NatGeo and NASA because the feed stops at 15 uploads.
 - **Instagram: 6 of 20 exact.** All 5 follower counts were rounded page values (5,200,000 vs 5,287,693 for mkbhd). Average likes were null for all 5: the logged-out page shows no like counts. Posts in the last 30 days were null for MrBeast, NatGeo and NASA, and Veritasium's latest post date was a day off (UTC, see Traps).

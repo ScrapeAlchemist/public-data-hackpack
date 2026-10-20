@@ -2,17 +2,17 @@
 
 **The app people already build:** a CRM. Contacts, companies, a pipeline, notes. It works with no public data at all: you type everything in.
 
-**What public data adds:** type a name and a company, and the CRM fills in the rest from public LinkedIn pages. You get their current title, location and follower count, plus the company's industry, size, employees on LinkedIn, HQ and website. Run it again next month and it catches the job change you would have missed.
+**What public data adds:** type a name and a company, and the CRM fills in the rest from public LinkedIn pages. You get their current title, location and follower count, plus the company's industry, size, employees on LinkedIn, HQ and website. A re-run that flags job changes is the next step (see Make it yours).
 
 | Without public data | With public data |
 |---|---|
 | You type title, industry and company size by hand | Filled in from LinkedIn in under a minute (a few minutes on the fallback) |
-| Data goes stale the day you type it | Re-enrich on a schedule and flag job changes |
+| Data goes out of date over time | Click Enrich again to refresh a row |
 | A name and a company | Title, followers, company size and HQ, so you know who you are talking to |
 
 ## Why not just ask the AI?
 
-We gave Claude Code its own web search and fetch tools and asked for 10 records: 5 well-known people and 5 well-known companies. Measured 2026-10-19:
+We asked Claude Code, with only its built-in web search and fetch tools, for 10 records: 5 well-known people and 5 well-known companies. Measured 2026-10-19:
 
 - **Companies: the AI did fine.** 30 of 30 fields exact. The whole 10-record run took 45 s.
 - **People: 17 of 25 fields exact.** It got 0 of 5 exact follower counts, because public pages show "12M". One profile blocked it outright (HTTP 999).

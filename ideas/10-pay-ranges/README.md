@@ -2,7 +2,7 @@
 
 **The app people already build:** an internal comp tool. Roles, levels, salary bands per city, and the offers you made. It works with no public data at all: HR types the bands in once a year.
 
-**What public data adds:** pay transparency laws in several US states mean many job postings now show a base pay range. Pull the postings for the same role and city every month, parse the ranges, and every band and every offer gets a market check: where it sits among 75 to 83 posted ranges from 61 to 74 companies per role and city. Keep each run and you see the market move.
+**What public data adds:** pay transparency laws in several US states mean many job postings now show a base pay range. Pull the postings for the same role and city every month, parse the ranges, and every band and every offer gets a market check: where it sits among 75 to 83 posted ranges from 61 to 74 companies per role and city. Keep each run and you see the posted ranges move.
 
 | Without public data | With public data |
 |---|---|
@@ -12,7 +12,7 @@
 
 ## Why not just ask the AI?
 
-We gave Claude Code its own web search and fetch tools and asked for 10 current software engineer openings in San Francisco, at any company, with the posted base pay range as written in the ad. Measured 2026-10-19:
+We asked Claude Code, with only its built-in web search and fetch tools, for 10 current software engineer openings in San Francisco, at any company, with the posted base pay range as written in the ad. Measured 2026-10-19:
 
 - **Exact pay: the AI did fine.** 10 of 10 ranges matched the posting, and all 10 were still open.
 - **Coverage: 10 rows from only 3 company boards** (Figma, Anthropic, Stripe), all multi-city postings. That is three companies, not the market.
