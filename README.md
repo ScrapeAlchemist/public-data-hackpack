@@ -9,6 +9,9 @@ From the Bright Data workshop "The Unfair Advantage: Live Web Data" at Cal Hacks
 A CRM works without public data: you type the contacts in. Add public LinkedIn data and it fills
 itself in, and next month it tells you who changed jobs. That is the pattern in every card here.
 
+Everything your agent needs to use Bright Data's tools is in its agent skills:
+https://github.com/brightdata/skills. Install them with `npx skills add brightdata/skills`.
+
 ## The 10 ideas
 
 | # | The app people already build | What public data adds | Data from |
@@ -27,11 +30,14 @@ itself in, and next month it tells you who changed jobs. That is the pattern in 
 ## How to use a card
 
 1. Do [SETUP.md](SETUP.md) once (about 10 minutes): a Bright Data API key in `.env`, Node 20+.
-2. Open this repo in Claude Code or Cursor.
-3. Open a card and copy its **Paste this into your agent** block into your agent. The agent reads
+2. Install Bright Data's agent skills in the repo folder: `npx skills add brightdata/skills`.
+   https://github.com/brightdata/skills has everything your agent needs to use Bright Data's
+   tools, for this card and whatever you build after it.
+3. Open this repo in Claude Code or Cursor.
+4. Open a card and copy its **Paste this into your agent** block into your agent. The agent reads
    [AGENTS.md](AGENTS.md) and the card, then builds a small working app in `apps/<name>/` (card 01
    extends `crm/` instead; Node 20+, no `npm install`) and tests it on a small real input.
-4. Make it yours. Every card ends with ways to take it further.
+5. Make it yours. Every card ends with ways to take it further.
 
 Every card has the same parts:
 
@@ -94,7 +100,7 @@ same tools (see SETUP.md).
 
 - Hosted MCP server: `https://mcp.brightdata.com/mcp` (setup in [SETUP.md](SETUP.md)).
   Source: https://github.com/brightdata/brightdata-mcp
-- Agent skills: https://github.com/brightdata/skills
+- Agent skills, everything your agent needs to use Bright Data: https://github.com/brightdata/skills
 - CLI: https://github.com/brightdata/cli
 - Per-site starter repos with field tables and sample output:
   [linkedin-scraper-python](https://github.com/brightdata/linkedin-scraper-python),

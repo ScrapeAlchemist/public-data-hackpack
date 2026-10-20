@@ -98,17 +98,25 @@ and `&groups=...`. Do not add `&groups=scrapers`: it cuts the server to 9 tools 
 
 ---
 
-## 4. Optional: Bright Data agent skills
+## 4. Bright Data agent skills
 
-Bright Data publishes 21 skills that teach a coding agent its tools:
-https://github.com/brightdata/skills. The cards in this repo do not need them.
+https://github.com/brightdata/skills has everything your agent needs to use Bright Data's tools:
+21 skills covering the MCP server, the CLI, Web Unlocker, the SERP API, the Web Scraper API, the
+Browser API, proxies, and the Python and JavaScript SDKs. From the repo folder:
 
 ```
 npx skills add brightdata/skills
 ```
 
-Know before you install: the `bright-data-mcp` skill tells your agent to send all web work
-through Bright Data instead of its own web search and fetch tools, for the whole project.
+In our test (2026-10-20) it installed all 21 skills for Claude Code into `.claude/skills/` and
+wrote `skills-lock.json` in the repo folder. The installer asks for Node 22.20 or newer: on Node
+22.16 npm printed a warning and the install still worked. Node 20 was not tested.
+
+The cards carry their own measured routes, so each card works with or without the skills. For
+anything a card does not cover, the skills are where your agent finds how to do it.
+
+Once installed, the `bright-data-mcp` skill makes Bright Data your agent's default tool for web
+search and fetch in this project.
 
 ---
 

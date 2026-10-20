@@ -16,6 +16,10 @@ Follow the card's route. The plain-looking alternatives (fetch the page, call th
 
 `crm/` is a small starter CRM (Node 20+, no npm install) used by card 01 and the workshop. Start it with `node crm/server.mjs`, then open http://localhost:3000. On first start it copies the demo contacts from `crm/data/seed.json` (tracked) to `crm/data/contacts.json` (gitignored), and every change goes to `contacts.json`. Never write contacts or enriched profile data to `seed.json`. `examples/intern-intel/` is a finished example app with its own README.
 
+## Bright Data agent skills
+
+Bright Data's agent skills (https://github.com/brightdata/skills) have everything you need to use Bright Data's tools: the MCP server, the CLI, Web Unlocker, the SERP API, the Web Scraper API, the Browser API, proxies, and the Python and JavaScript SDKs. If they are installed, use them for anything this file and the card do not cover. If they are not, tell the human they can add them with `npx skills add brightdata/skills` (SETUP.md step 4).
+
 ## Secrets
 
 - The Bright Data API key comes from the env var `BRIGHTDATA_API_TOKEN` (accept `BRIGHTDATA_API_KEY` as a fallback), loaded from a `.env` file. If it is missing, stop and ask the human to add it. See `SETUP.md`.
