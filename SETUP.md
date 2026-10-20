@@ -5,7 +5,8 @@ Workshop: "The Unfair Advantage: Live Web Data", Cal Hacks 13.
 You need:
 
 - Claude Code or Cursor, installed and signed in.
-- Node 20 or newer (`node --version`). Every card builds a small Node app with no `npm install`.
+- Node 22 or newer (`node --version`). Every card builds a small Node app with no `npm install`.
+  The apps run on Node 20 too, but the agent skills installer in step 4 needs Node 22.
 - git.
 - Python 3 only if you want to run `examples/intern-intel/` in Python.
 
@@ -109,8 +110,9 @@ npx skills add brightdata/skills
 ```
 
 In our test (2026-10-20) it installed all 21 skills for Claude Code into `.claude/skills/` and
-wrote `skills-lock.json` in the repo folder. The installer asks for Node 22.20 or newer: on Node
-22.16 npm printed a warning and the install still worked. Node 20 was not tested.
+wrote `skills-lock.json` in the repo folder. The installer asks for Node 22.20 or newer. On Node
+22.16 npm printed a warning and the install still worked. On Node 20 it stopped with a
+`SyntaxError` before installing anything: update Node and run it again.
 
 The cards carry their own measured routes, so each card works with or without the skills. For
 anything a card does not cover, the skills are where your agent finds how to do it.

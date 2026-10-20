@@ -29,7 +29,7 @@ https://github.com/brightdata/skills. Install them with `npx skills add brightda
 
 ## How to use a card
 
-1. Do [SETUP.md](SETUP.md) once (about 10 minutes): a Bright Data API key in `.env`, Node 20+.
+1. Do [SETUP.md](SETUP.md) once (about 10 minutes): a Bright Data API key in `.env`, Node 22+.
 2. Install Bright Data's agent skills in the repo folder: `npx skills add brightdata/skills`.
    https://github.com/brightdata/skills has everything your agent needs to use Bright Data's
    tools, for this card and whatever you build after it.
