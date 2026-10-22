@@ -12,11 +12,10 @@ You need:
 
 ---
 
-## 1. Bright Data account and API key
+## 1. Your Bright Data API key
 
-1. Sign up: https://brightdata.com/?hs_signup=1
-2. Your API keys are under Account settings > API keys: https://brightdata.com/cp/setting/users
-3. No key there, or lost it? Create one on the same page:
+1. Your API keys are under Account settings > API keys: https://brightdata.com/cp/setting/users
+2. No key there, or lost it? Create one on the same page:
    - Click **Add API key** (top right of the API key section).
    - Choose the user, the permissions and an expiration date (or Unlimited), then click **Save**.
    - Copy the key right away. It is shown once. If you lose it, create a new one.

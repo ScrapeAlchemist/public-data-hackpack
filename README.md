@@ -83,7 +83,7 @@ crm/                   a small starter CRM (Node 20+, no npm install), used by c
 examples/intern-intel/ a finished example: internships from Indeed and Glassdoor in one table
 AGENTS.md              instructions for your coding agent: keys, zones, the four Bright Data calls
 CLAUDE.md              points Claude Code at AGENTS.md
-SETUP.md               account, API key, .env, MCP connection, smoke test
+SETUP.md               API key, .env, MCP connection, agent skills, smoke test
 .env.example           copy to .env and add your key
 ```
 

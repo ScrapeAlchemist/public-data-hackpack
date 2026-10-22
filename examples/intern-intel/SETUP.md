@@ -11,12 +11,11 @@ also runs offline with no account at all (step 5).
 
 ---
 
-## 1. Bright Data account and API key
+## 1. Your Bright Data API key
 
-1. Sign up: https://brightdata.com/?hs_signup=1
-2. Bright Data's docs say a new account gets a default API key. Your keys are under Account
+1. Bright Data's docs say a new account gets a default API key. Your keys are under Account
    settings > API keys: https://brightdata.com/cp/setting/users
-3. No key there, or lost it? Create a new one on the same page:
+2. No key there, or lost it? Create a new one on the same page:
    - Click **Add API key** (top right of the API key section).
    - Choose the user, the permissions and an expiration date (or Unlimited), then click **Save**.
    - Copy the key right away. It is shown once and cannot be viewed again later. If you lose

@@ -12,7 +12,7 @@ offline.
 Run every command below from this folder (`cd examples/intern-intel`). Your `.env` can sit here
 or in the hackpack root; the code reads this folder's first, then the hackpack root one.
 
-- [SETUP.md](SETUP.md): account, API key, MCP connection, smoke test, code setup
+- [SETUP.md](SETUP.md): API key, MCP connection, smoke test, code setup
 - [PROMPTS.md](PROMPTS.md): the live build as copy-paste prompts
 
 ## Why this needs Bright Data
