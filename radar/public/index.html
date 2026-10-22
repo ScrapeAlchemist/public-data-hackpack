@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI radar</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #1b2430; --muted: #687385; --line: #e3e7ed;
+    --accent: #3d7ffc; --accent-ink: #ffffff; --warn-bg: #fff6e0; --warn: #8a5a00; --danger: #c43d3d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }
+  header { padding: 20px 24px 8px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 22px; }
+  .muted { color: var(--muted); }
+  button { font: inherit; font-weight: 600; padding: 8px 18px; border-radius: 6px; border: 1px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+  button:disabled { opacity: .55; cursor: default; }
+  input { font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); width: 100%; }
+  .filter { flex: 1 1 280px; max-width: 420px; }
+  #status { font-variant-numeric: tabular-nums; }
+  main { padding: 8px 24px 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 1000px) { main { grid-template-columns: 1fr; } }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; min-height: 200px; }
+  section h2 { margin: 0; font-size: 16px; }
+  .col-head { padding: 12px 14px 10px; border-bottom: 1px solid var(--line); }
+  .src { font-size: 12px; color: var(--muted); }
+  .state { font-size: 13px; margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .state.saved { background: var(--warn-bg); color: var(--warn); padding: 4px 8px; border-radius: 6px; }
+  .state.err { color: var(--danger); }
+  ol { list-style: none; margin: 0; padding: 0; overflow-y: auto; max-height: calc(100vh - 210px); }
+  li { padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  li:last-child { border-bottom: none; }
+  li a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  li a:hover { text-decoration: underline; }
+  .meta { font-size: 12px; color: var(--muted); margin-top: 3px; font-variant-numeric: tabular-nums; }
+  .num { font-weight: 600; color: var(--ink); }
+  .text { margin-top: 3px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .empty { padding: 24px 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>AI radar</h1>
+  <button id="run">Run</button>
+  <span id="status" class="muted">Opening this page fetches nothing. Run starts one live fetch.</span>
+  <input class="filter" id="filter" placeholder="Filter all three columns (no new fetch): agent, qwen, open source">
+</header>
+<main>
+  <section id="reddit"><div class="col-head"><h2 id="reddit-title">Reddit</h2><div class="src">Bright Data Web Unlocker. Scores as Reddit displays them.</div><div class="state" id="reddit-state"></div></div><ol id="reddit-list"></ol></section>
+  <section id="x"><div class="col-head"><h2 id="x-title">X</h2><div class="src">Bright Data Web Scraper API. Reposts dropped, top 3 per account by likes.</div><div class="state" id="x-state"></div></div><ol id="x-list"></ol></section>
+  <section id="github"><div class="col-head"><h2 id="github-title">GitHub</h2><div class="src">GitHub's own search API. No Bright Data needed: it is open.</div><div class="state" id="github-state"></div></div><ol id="github-list"></ol></section>
+</main>
+
+<script>
+const SOURCES = ['reddit', 'x', 'github'];
+const FALLBACK_AFTER_S = 90;   // a live source still running after this shows its saved result meanwhile
+let state = null;
+let timer = null;
+
+const $ = (sel) => document.querySelector(sel);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const safeUrl = (u) => (/^https:\/\//.test(u || '') ? u : '#');
+const link = (url, text) => `<a href="${esc(safeUrl(url))}" target="_blank" rel="noopener noreferrer">${esc(text)}</a>`;
+const fmt = (v) => (v == null ? '?' : v >= 10000 ? new Intl.NumberFormat('en-US', { notation: 'compact', maximumFractionDigits: 1 }).format(v) : Number(v).toLocaleString('en-US'));
+const clock = (iso) => new Date(iso).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+const day = (iso) => new Date(iso).toLocaleDateString([], { month: 'short', day: 'numeric' });
+function ago(iso) {
+  if (!iso) return '';
+  const m = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
+  if (m < 60) return `${m} min ago`;
+  if (m < 48 * 60) return `${Math.round(m / 60)} h ago`;
+  return `${Math.round(m / 1440)} d ago`;
+}
+
+function topPerAccount(posts, max) {
+  const seen = {};
+  return posts.filter((p) => (seen[p.account] = (seen[p.account] || 0) + 1) <= max);
+}
+
+const ROWS = {
+  reddit: (r) => (r.posts || []).map((p) => ({
+    hay: `${p.title} ${p.subreddit} ${p.domain || ''}`,
+    html: `${link(p.permalink, p.title)}<div class="meta">` + [
+      `<span class="num">${fmt(p.score)}</span> points`,
+      `<span class="num">${fmt(p.comments)}</span> comments`,
+      esc(ago(p.created)),
+      r.per_subreddit && r.per_subreddit.length > 1 ? `r/${esc(p.subreddit)}` : '',
+      p.link ? `links to ${link(p.link, p.domain)}` : '',
+    ].filter(Boolean).join(', ') + '</div>',
+  })),
+  x: (r) => topPerAccount(r.posts || [], 3).map((p) => ({
+    hay: `${p.account} ${p.text}`,
+    html: `${link(p.url, '@' + p.account)} <span class="muted">${p.followers ? fmt(p.followers) + ' followers' : ''}</span>
+      <div class="text">${esc(p.text)}</div>
+      <div class="meta"><span class="num">${fmt(p.likes)}</span> likes, ${fmt(p.reposts)} reposts, ${fmt(p.views)} views, ${esc(ago(p.date))}</div>`,
+  })),
+  github: (r) => (r.repos || []).map((p) => ({
+    hay: `${p.name} ${p.description} ${p.language || ''}`,
+    html: `${link(p.url, p.name)}
+      ${p.description ? `<div class="text">${esc(p.description)}</div>` : ''}
+      <div class="meta"><span class="num">${fmt(p.stars)}</span> stars${p.language ? ', ' + esc(p.language) : ''}, created ${esc(ago(p.created))}</div>`,
+  })),
+};
+
+function titles(config) {
+  $('#reddit-title').textContent = `Reddit: top today in ${config.subreddits.map((s) => 'r/' + s).join(', ')}`;
+  $('#x-title').textContent = `X: ${config.x_accounts.length} AI lab accounts, last ${config.x_days} days`;
+  $('#github-title').textContent = `GitHub: new "${config.github_query}" repos, last ${config.github_days} days, by stars`;
+}
+
+function liveLine(k, r) {
+  if (k === 'reddit') return `${r.posts.length} posts in ${r.seconds} s${r.errors && r.errors.length ? '. Failed: ' + r.errors.join('; ') : ''}`;
+  if (k === 'x') return `${r.posts.length} posts in ${r.seconds} s (${r.reposts_dropped} reposts dropped)`;
+  return `${r.repos.length} repos in ${r.seconds} s${r.hidden_by_denylist.length ? ` (${r.hidden_by_denylist.length} hidden by the denylist)` : ''}`;
+}
+
+// Decide what each column shows: the live result, or the saved one with a label that says so.
+function pick(k) {
+  const job = state.job;
+  const saved = state.last_good[k];
+  const savedLabel = saved ? `the saved run from ${clock(saved.run_at)}` : null;
+  if (!job) {
+    return saved ? { data: saved, cls: 'saved', line: `Showing ${savedLabel}. Press Run for live data.` }
+                 : { data: null, cls: '', line: 'No saved run yet. Press Run.' };
+  }
+  const live = job.sources[k];
+  const elapsed = Math.round((Date.now() - new Date(job.started_at).getTime()) / 1000);
+  if (live.status === 'ok') return { data: live, cls: '', line: 'Live: ' + liveLine(k, live) };
+  if (live.status === 'error') {
+    return saved ? { data: saved, cls: 'saved', line: `Live fetch failed (${live.error}). Showing ${savedLabel}.` }
+                 : { data: null, cls: 'err', line: `Live fetch failed: ${live.error}` };
+  }
+  if (elapsed >= FALLBACK_AFTER_S && saved) return { data: saved, cls: 'saved', line: `Still fetching (${elapsed} s). Meanwhile showing ${savedLabel}.` };
+  return { data: null, cls: '', line: `Fetching... ${elapsed} s` };
+}
+
+function render() {
+  if (!state) return;
+  titles(state.config);
+  const q = $('#filter').value.trim().toLowerCase();
+  for (const k of SOURCES) {
+    const { data, cls, line } = pick(k);
+    const rows = data ? ROWS[k](data) : [];
+    const shown = q ? rows.filter((r) => r.hay.toLowerCase().includes(q)) : rows;
+    const st = $(`#${k}-state`);
+    st.className = 'state ' + cls;
+    st.textContent = line.replace(/\.?$/, '.') + (q && data ? ` Filter: ${shown.length} of ${rows.length} shown.` : '');
+    $(`#${k}-list`).innerHTML = shown.length ? shown.map((r) => `<li>${r.html}</li>`).join('')
+      : data ? '<div class="empty">Nothing matches the filter.</div>' : '';
+  }
+  const job = state.job;
+  const running = job && job.status === 'running';
+  $('#run').disabled = running;
+  if (running) {
+    const elapsed = Math.round((Date.now() - new Date(job.started_at).getTime()) / 1000);
+    const done = SOURCES.filter((k) => job.sources[k].status !== 'running').length;
+    $('#status').textContent = `Running: ${elapsed} s, ${done} of 3 sources back`;
+  } else if (job) {
+    const secs = Math.round((new Date(Math.max(...SOURCES.map((k) => new Date(job.sources[k].finished_at || job.started_at)))) - new Date(job.started_at)) / 1000);
+    $('#status').textContent = `Run at ${clock(job.started_at)} took ${secs} s. Saved in radar/data/runs/.`;
+  }
+}
+
+async function poll() {
+  clearTimeout(timer);
+  try {
+    state = await (await fetch('/api/state')).json();
+  } catch (e) {
+    $('#status').textContent = 'Lost the server: is node radar/server.mjs still running?';
+  }
+  render();
+  if (state && state.job && state.job.status === 'running') timer = setTimeout(poll, 1500);
+}
+
+$('#run').addEventListener('click', async () => {
+  $('#run').disabled = true;
+  await fetch('/api/run', { method: 'POST' });
+  poll();
+});
+$('#filter').addEventListener('input', render);
+poll();
+</script>
+</body>
+</html>

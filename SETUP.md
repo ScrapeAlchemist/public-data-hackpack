@@ -123,19 +123,28 @@ search and fetch in this project.
 
 ## 5. Smoke test
 
-From the repo root:
+From the repo root, run the AI radar once:
 
 ```
-node ideas/01-crm-autofill/enrich.mjs "Jensen Huang" "NVIDIA"
+node radar/radar.mjs
 ```
 
-- Expected: a JSON record with `person.followers` (an exact number), the company's
-  `employees_on_linkedin` and `headquarters`, and `checks.name_match` set to `true`.
-- It took 15 to 57 seconds per person in our tests on 2026-10-19. If Google keeps refusing, the
-  script falls back to LinkedIn's people search scraper, which adds one to three minutes.
+- Expected: three lists. Today's top posts on r/LocalLLaMA with scores and comment counts, the
+  latest posts from five AI lab accounts on X with likes, and new LLM repos on GitHub with stars.
+  The run is saved to `radar/data/runs/`.
+- It takes about a minute: X is the slow source (55 to 75 s in our runs on 2026-10-22). GitHub
+  comes back in about a second and Reddit in 3 to 50 s.
 - "Set BRIGHTDATA_API_TOKEN in .env" means step 2 is not done. "No Web Unlocker zone" means you
-  need a zone (end of step 2). These errors, and an HTTP 401 or 403 from Bright Data (a wrong
-  key, or a key without permission), stop the script right away; it does not fall back for them.
+  need a zone (end of step 2). "HTTP 401" from Bright Data means a wrong key. These stop that
+  source right away.
+- "GitHub search limit reached for this IP" means many people on the same Wi-Fi ran it at once.
+  Reddit and X still work. Add a GitHub token as `GITHUB_TOKEN` in `.env`, or run it again later.
+
+Then the page: `node radar/server.mjs`, open http://localhost:3001 and press Run.
+
+Card 01's script is a second smoke test, for LinkedIn:
+`node ideas/01-crm-autofill/enrich.mjs "Jensen Huang" "NVIDIA"` returns `person.followers` (an exact
+number) and the company's `employees_on_linkedin`, in 15 to 57 seconds per person (2026-10-19).
 
 To check the MCP connection, paste this into your agent:
 

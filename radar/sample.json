@@ -1,0 +1,167 @@
+{
+  "_about": "Trimmed real records from the AI radar, 2026-10-22. Reddit author attributes are never read. X posts are from the five AI lab accounts only. GitHub repos shown are organization-owned.",
+  "run": {
+    "fetched_at": "2026-10-22T21:26:55.181Z",
+    "reddit": {
+      "status": "ok",
+      "seconds": 23.5,
+      "per_subreddit": [
+        {
+          "sub": "LocalLLaMA",
+          "posts": 24,
+          "attempts": 1,
+          "failed_tries": [],
+          "seconds": 23.4,
+          "url": "https://www.reddit.com/svc/shreddit/community-more-posts/top/?t=DAY&name=LocalLLaMA"
+        }
+      ]
+    },
+    "x": {
+      "status": "ok",
+      "seconds": 75.1,
+      "snapshot_id": "sd_mvk1x7tv103kgg1qi4",
+      "records": 39,
+      "reposts_dropped": 5,
+      "errors": []
+    },
+    "github": {
+      "status": "ok",
+      "seconds": 1,
+      "query": "llm created:>=2026-10-15",
+      "total_count": 15556,
+      "hidden_by_denylist": "2 repos (names omitted)"
+    }
+  },
+  "reddit_raw_tag": {
+    "_note": "First <shreddit-post> tag of a Top Today page for r/LocalLLaMA, probe at 2026-10-22 ~21:03 UTC. That page held 24 posts and 3 <shreddit-ad-post> ads.",
+    "id": "t3_1xc48or",
+    "post-title": "Kitten-TTS 2: New Open-source SOTA 1.58 bit TTS (CPU-only with  voice cloning, multilingual, emotion control)",
+    "score": "663",
+    "comment-count": "139",
+    "created-timestamp": "2026-10-22T00:33:11.922000+0000",
+    "permalink": "/r/LocalLLaMA/comments/1xc48or/kittentts_2_new_opensource_sota_158_bit_tts/",
+    "content-href": "https://v.redd.it/d6hcbgp9vwwh1",
+    "domain": "v.redd.it",
+    "post-type": "video",
+    "upvote-ratio": "0.975609756097561",
+    "subreddit-name": "LocalLLaMA"
+  },
+  "reddit_posts": [
+    {
+      "id": "t3_1xc48or",
+      "subreddit": "LocalLLaMA",
+      "title": "Kitten-TTS 2: New Open-source SOTA 1.58 bit TTS (CPU-only with  voice cloning, multilingual, emotion control)",
+      "score": 674,
+      "comments": 142,
+      "created": "2026-10-22T00:33:11.922Z",
+      "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xc48or/kittentts_2_new_opensource_sota_158_bit_tts/",
+      "link": "https://v.redd.it/d6hcbgp9vwwh1",
+      "domain": "v.redd.it"
+    },
+    {
+      "id": "t3_1xcj1wm",
+      "subreddit": "LocalLLaMA",
+      "title": "Qwen4 and Kimi3.1 on Arena apperantly",
+      "score": 563,
+      "comments": 190,
+      "created": "2026-10-22T13:47:14.118Z",
+      "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xcj1wm/qwen4_and_kimi31_on_arena_apperantly/",
+      "link": "https://x.com/luminabench/status/2113217029675085963?s=46",
+      "domain": "x.com"
+    },
+    {
+      "id": "t3_1xc23iq",
+      "subreddit": "LocalLLaMA",
+      "title": "Recursive Flint - the \"Qwen3.8 35B\" we've all been waiting for?",
+      "score": 221,
+      "comments": 73,
+      "created": "2026-10-21T22:55:43.231Z",
+      "permalink": "https://www.reddit.com/r/LocalLLaMA/comments/1xc23iq/recursive_flint_the_qwen38_35b_weve_all_been/",
+      "link": "https://huggingface.co/RecursiveSI/flint",
+      "domain": "huggingface.co"
+    }
+  ],
+  "x_raw_record": {
+    "_note": "One record from the X posts scraper (gd_lwxkxvnf1cynvib9co), discover_by=profile_url, 7-day window, trimmed to the fields the radar reads.",
+    "id": "2110720940665372825",
+    "user_posted": "AnthropicAI",
+    "name": "Anthropic",
+    "followers": 1831170,
+    "is_verified": true,
+    "date_posted": "2026-10-15T13:14:22.000Z",
+    "description": "Applications are now open for two new Anthropic Fellowships.\n\nSTEM Fellows (science and engineering) and Conceptual Reasoning Fellows (philosophy, cognitive science, economics, policy, and law) will spend four months at Anthropic from January 2027, working to help Claude reason well about some of the hardest problems in those fields.\n\nFor more information, see the descriptions below. The application deadline is October 28.\n\nConceptual Reasoning Fellows: https://t.co/kTaBPqttbK\n\nSTEM Fellows:",
+    "likes": 6819,
+    "replies": 386,
+    "reposts": 558,
+    "quotes": 193,
+    "bookmarks": 5202,
+    "views": 1340965,
+    "url": "https://x.com/anthropicai/status/2110720940665372825",
+    "is_repost": false
+  },
+  "x_repost_record": {
+    "user_posted": "GoogleDeepMind",
+    "is_repost": true,
+    "note": "include_reposts was false; this record came back anyway"
+  },
+  "x_posts": [
+    {
+      "id": "2111881963657412903",
+      "account": "AnthropicAI",
+      "followers": 1831221,
+      "date": "2026-10-18T18:07:51.000Z",
+      "text": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit. It will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can contribute up to an extra 2%, subject to our board’s discretion. In total, this means that roughly 20% of Anthropic’s shares are committed to the public good. Our co-founders have already pledged to donate 80% of their equity, and",
+      "likes": 21567,
+      "replies": 2307,
+      "reposts": 1757,
+      "views": 7594205,
+      "url": "https://x.com/anthropicai/status/2111881963657412903"
+    },
+    {
+      "id": "2112907856018309586",
+      "account": "OpenAI",
+      "followers": 5464611,
+      "date": "2026-10-21T14:04:23.000Z",
+      "text": "OpenAI models helped researchers—operating as part of our Patch the Planet initiative—discover critical security flaws in PHP, an open-source programming language used to run an estimated 70% of websites. Over the past two months, we led a coalition of maintainers, researchers, and security providers to prepare fixes and protections ahead of disclosure. This duration was necessary because the fix was quite intricate and required a major change to the PHP engine. Every site using PHP can now safe",
+      "likes": 14254,
+      "replies": 597,
+      "reposts": 2833,
+      "views": 5618403,
+      "url": "https://x.com/openai/status/2112907856018309586"
+    },
+    {
+      "id": "2111192259073094035",
+      "account": "OpenAI",
+      "followers": 5464613,
+      "date": "2026-10-16T20:27:13.000Z",
+      "text": "GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools. And now, multiple agents can tackle different parts of a task in parallel. You can follow each agent’s progress and open completed tasks to review their work. Now available to Pro users in the Chat tab.",
+      "likes": 12445,
+      "replies": 917,
+      "reposts": 665,
+      "views": 2415407,
+      "url": "https://x.com/openai/status/2111192259073094035"
+    }
+  ],
+  "github_repos": [
+    {
+      "name": "MemTensor/MemT-1.0",
+      "description": "Official repository for MemT-1.0",
+      "stars": 334,
+      "language": "Python",
+      "created": "2026-10-19T03:29:30Z",
+      "url": "https://github.com/MemTensor/MemT-1.0"
+    },
+    {
+      "name": "qiniu/xhub",
+      "description": "A self-hosted AI gateway for enterprises. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, Vertex",
+      "stars": 68,
+      "language": "TypeScript",
+      "created": "2026-10-19T06:01:06Z",
+      "url": "https://github.com/qiniu/xhub"
+    }
+  ],
+  "errors_seen": {
+    "reddit_challenge": "HTTP 200, body is a \"Prove your humanity\" page, x-brd-error-code empty, 0 <shreddit-post> tags (1 of 9 calls on 2026-10-22). A later call for the same URL returned the posts.",
+    "github_rate_limit_message": "GitHub search limit reached for this IP. Add GITHUB_TOKEN to .env (see README.md)"
+  }
+}

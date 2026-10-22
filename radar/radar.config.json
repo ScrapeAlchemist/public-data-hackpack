@@ -1,0 +1,9 @@
+{
+  "subreddits": ["LocalLLaMA"],
+  "x_accounts": ["OpenAI", "AnthropicAI", "GoogleDeepMind", "MistralAI", "huggingface"],
+  "x_days": 7,
+  "x_posts_per_account": 10,
+  "github_query": "llm",
+  "github_days": 7,
+  "github_denylist": ["jailbreak", "\u7834\u7532", "\u8d8a\u72f1", "\u4e2d\u8f6c", "nsfw", "porn", "hentai", "nude", "onlyfans", "uncensored", "stealth", "crack"]
+}

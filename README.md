@@ -12,6 +12,21 @@ itself in. That is the pattern in every card here.
 Everything your agent needs to use Bright Data's tools is in its agent skills:
 https://github.com/brightdata/skills. Install them with `npx skills add brightdata/skills`.
 
+## Start here: the AI radar
+
+[`radar/`](radar/) is the workshop demo. One Run button gets today's top posts on r/LocalLLaMA,
+the latest posts from five AI lab accounts on X, and the most-starred new LLM repos on GitHub,
+side by side, in about a minute. Every run is saved, so the next one can tell you what is new.
+
+```
+node radar/server.mjs
+```
+
+Open http://localhost:3001 and press Run. Your agent can browse, so we asked it for the same three
+lists: it got GitHub (10 of 10), and 0 of 10 Reddit posts and 0 of 5 X accounts (measured
+2026-10-22). It is a small example on purpose: [radar/README.md](radar/README.md) has the
+measured routes and a prompt that scales it.
+
 ## The 10 ideas
 
 | # | The app people already build | What public data adds | Data from |
@@ -78,6 +93,7 @@ fetches, exact numbers, many records at once, and a job that keeps them current 
 ## What is in this repo
 
 ```
+radar/                 the workshop demo: an AI radar for Reddit, X and GitHub (Node 20+, no npm install)
 ideas/                 the 10 cards: README.md, sample.json, and a reference script for 01, 07, 08
 crm/                   a small starter CRM (Node 20+, no npm install), used by card 01
 examples/intern-intel/ a finished example: internships from Indeed and Glassdoor in one table
