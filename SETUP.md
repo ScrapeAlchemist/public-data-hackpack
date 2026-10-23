@@ -32,19 +32,33 @@ git clone https://github.com/ScrapeAlchemist/public-data-hackpack.git
 cd public-data-hackpack
 ```
 
-Copy `.env.example` to `.env` in the repo root and fill it in:
+Copy `.env.example` to `.env` in the repo root:
+
+```
+cp .env.example .env
+```
+
+`cp` works in macOS, Linux, Git Bash and PowerShell. In Windows cmd use `copy .env.example .env`.
+
+Open `.env` in your editor and put your key after `BRIGHTDATA_API_TOKEN=`, on the line that is
+already there:
 
 ```
 BRIGHTDATA_API_TOKEN=your key here
 BRIGHTDATA_ZONE=
 ```
 
+- Do not add a second `BRIGHTDATA_API_TOKEN=` line: the scripts use the first one, and that one is
+  empty. The same goes for `GITHUB_TOKEN=` further down.
+- In Windows PowerShell 5.1 (the one built into Windows), do not create `.env` with `echo ... > .env`
+  or `>>`: it writes UTF-16, which the scripts cannot read. Use `cp` and an editor.
 - `.env` is in `.gitignore`. Never commit it.
 - The code also accepts the name `BRIGHTDATA_API_KEY`.
 - `BRIGHTDATA_ZONE` can stay empty. The code then lists your zones and picks one with the type
   `unblocker` (a Web Unlocker zone). Fetching pages and Google results needs one.
-- No Web Unlocker zone on your account? Connecting the hosted MCP server once (step 3) creates
-  one named `mcp_unlocker`. Or add a Web Unlocker zone in the Bright Data control panel.
+- No Web Unlocker zone on your account? Add a Web Unlocker zone in the Bright Data control panel.
+  Connecting the hosted MCP server (step 3) may also create one named `mcp_unlocker` (not yet
+  tested on a new account).
 
 ---
 
@@ -108,6 +122,9 @@ Browser API, proxies, and the Python and JavaScript SDKs. From the repo folder:
 npx skills add brightdata/skills
 ```
 
+Windows PowerShell says running scripts is disabled? Use `npx.cmd skills add brightdata/skills`,
+or run it from cmd.
+
 In our test (2026-10-20) it installed all 21 skills for Claude Code into `.claude/skills/` and
 wrote `skills-lock.json` in the repo folder. The installer asks for Node 22.20 or newer. On Node
 22.16 npm printed a warning and the install still worked. On Node 20 it stopped with a
@@ -138,7 +155,11 @@ node radar/radar.mjs
   need a zone (end of step 2). "HTTP 401" from Bright Data means a wrong key. These stop that
   source right away.
 - "GitHub search limit reached for this IP" means many people on the same Wi-Fi ran it at once.
-  Reddit and X still work. Add a GitHub token as `GITHUB_TOKEN` in `.env`, or run it again later.
+  Reddit and X still work. Run it again later, or add a GitHub token: on GitHub, Settings ->
+  Developer settings -> Personal access tokens, create one with no extra permissions (every token
+  can read public repositories, per GitHub's docs), and paste it on the existing `GITHUB_TOKEN=`
+  line in `.env`. With a token GitHub allows 30 searches a minute instead of 10 (checked
+  2026-10-22).
 
 Then the page: `node radar/server.mjs`, open http://localhost:3001 and press Run.
 

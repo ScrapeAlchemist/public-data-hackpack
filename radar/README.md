@@ -40,7 +40,7 @@ We asked Claude Code (Opus 5.5), with only its built-in web search and fetch too
 - **X: 0 of 5 accounts.** x.com answered HTTP 402 and two X mirror sites refused. It tried one account and stopped.
 - **GitHub: 10 of 10 real repos, nothing invented.** It used GitHub's open search API, the same call this radar makes.
 
-So the AI is fine where the data is open (GitHub). The gap is the two sources students actually scroll: Reddit and X.
+So the AI gets GitHub, where the API is open, up to GitHub's limit: 10 searches a minute per IP without a token, 30 with one (checked 2026-10-22). The gap is the two sources students actually scroll: Reddit and X.
 
 ## Paste this into your agent (scale it)
 
@@ -103,7 +103,7 @@ The three run at the same time, and the X job starts first because it is the slo
 - **`end_date` today is fine.** With `end_date` set to today's UTC date, the job returned posts from earlier that day.
 - **Do not use the X profile scraper for "latest".** The sync profile scraper (`gd_lwxmeb2u1cniijd7t4`) returned old, most-liked posts for @MistralAI and @huggingface, not their latest. Use the posts scraper with a date window.
 - **X takes about a minute.** Start it first and show the other two while it runs. The page does this.
-- **GitHub counts its search limit per IP address without a token.** A room on one Wi-Fi shares it. Put a GitHub personal access token in `.env` as `GITHUB_TOKEN` and the radar sends it. GitHub also wants a `User-Agent` header; the radar sends one.
+- **GitHub counts its search limit per IP address without a token.** 10 searches a minute per IP, 30 with a token (checked 2026-10-22), and each radar run makes one. A room on one Wi-Fi shares the 10. Put a GitHub personal access token in `.env` as `GITHUB_TOKEN` and the radar sends it. GitHub also wants a `User-Agent` header; the radar sends one.
 - **Top by stars is not all safe for a projector.** On 2026-10-22 the top 10 held a jailbreak repo, a "stealth bridge" repo and a repo listing third-party API relay sites, two of them with Chinese descriptions. The denylist in `radar.config.json` hides all three. Edit it.
 
 ## Make it yours

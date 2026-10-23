@@ -22,6 +22,8 @@ Follow the card's route. The plain-looking alternatives (fetch the page, call th
 
 Bright Data's agent skills (https://github.com/brightdata/skills) have everything you need to use Bright Data's tools: the MCP server, the CLI, Web Unlocker, the SERP API, the Web Scraper API, the Browser API, proxies, and the Python and JavaScript SDKs. If they are installed, use them for anything this file and the card do not cover. If they are not, tell the human they can add them with `npx skills add brightdata/skills` (SETUP.md step 4).
 
+Skip any skill step that calls Bright Data's Discover API (`/discover`, `bdata discover`, `client.discover`): it is gone (it returned 404 on 2026-10-23). The `discover-api`, `live-research` and `rag-pipeline` skills are built on it, and `search`, `agent-onboarding` and the Python and JavaScript SDK skills have Discover steps. Use the routes in this file and the cards instead.
+
 ## Secrets
 
 - The Bright Data API key comes from the env var `BRIGHTDATA_API_TOKEN` (accept `BRIGHTDATA_API_KEY` as a fallback), loaded from a `.env` file. If it is missing, stop and ask the human to add it. See `SETUP.md`.
@@ -33,7 +35,7 @@ Bright Data's agent skills (https://github.com/brightdata/skills) have everythin
 Web Unlocker and Google requests need a zone name. One Web Unlocker zone covers both.
 
 1. If `BRIGHTDATA_ZONE` is set and not empty, use it.
-2. Otherwise call `GET https://api.brightdata.com/zone/get_active_zones` (same auth header). It returns `[{"name": ..., "type": ...}]`. Use a zone with type `unblocker`. Connecting the hosted Bright Data MCP once creates one named `mcp_unlocker`.
+2. Otherwise call `GET https://api.brightdata.com/zone/get_active_zones` (same auth header). It returns `[{"name": ..., "type": ...}]`. Use a zone with type `unblocker`. Connecting the hosted Bright Data MCP may also create one named `mcp_unlocker` (not yet tested on a new account).
 3. If the account has no `unblocker` zone, stop and ask the human to add a Web Unlocker zone in the Bright Data control panel. Do not create zones yourself.
 
 A zone with type `serp` also works for Google requests. On 2026-10-19 the same Google query returned the same JSON (10 organic results) through an `unblocker` zone in 9.2 s and a `serp` zone in 10.7 s. That comparison was a plain Google search. Card 05's Google Shopping step (`udm=28`) was measured with a `serp` zone only; it was not tested through an `unblocker` zone.
