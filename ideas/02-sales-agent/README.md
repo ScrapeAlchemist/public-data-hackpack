@@ -1,30 +1,19 @@
-# 02. A sales agent that builds its own lead list
+# 02. A sales agent that finds companies to contact
 
-**The app people already build:** an outreach agent. Upload a CSV of leads and it drafts a personalized first email for each one. It works with no public data at all: you bring the list.
+Choose the industry, company size and location you want to sell to. Build a list
+of matching companies, find relevant job titles there, and draft an email for
+each company. You review the drafts; the app does not send them.
 
-**What public data adds:** pick your ideal customer's industry, size and HQ (software, 51-200 people, New York) and the agent builds the list itself from LinkedIn's company dataset: 987 companies for that filter. Then it finds the right people there by title (554 VP, Head of, Director and Chief titles at 319 of those companies) and drafts. It never sends anything. Drafts only.
-
-| Without public data | With public data |
-|---|---|
-| You buy, scrape or hand-type the lead list | 987 matching companies from one filter request |
-| You guess who to write to | 554 senior titles at 319 of those companies |
-| "I came across your company..." | Drafts that use size, HQ, founding year and specialties |
-| The list is stale the day you export it | Re-scrape the shortlist live: 35 companies in 34.9 s |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for up to 40 companies that match the same customer profile (LinkedIn industry "Software Development", "51-200 employees", HQ in New York). Measured 2026-10-19:
-
-- **Accuracy: the AI did fine.** It returned 35 companies. We re-scraped all 35: every one is a real match, and 175 of 175 fields were exact.
-- **Volume: 35 vs 987.** The AI took 314.6 s and 112 tool calls (100 LinkedIn page fetches, 12 searches). The filter returned 987 in 292.6 s. The AI itself estimated about 2,000 such companies exist.
-- **Overlap:** 32 of the AI's 35 are also in the 987. One of the other 3 has HQ "Brooklyn, NY" (see Traps).
-- **People by title:** we did not ask the AI for this step, so there is no AI number. The filter returned 554 people at 319 companies in one request.
-
-So for a few dozen companies, the AI's own tools are enough and accurate. The dataset wins on volume, on finding people by title across hundreds of companies at once, and on running as a background job nobody waits on.
+The app uses public LinkedIn company and people data. The prompt creates `apps/sales-agent/`.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/02-sales-agent/README.md first.
@@ -57,6 +46,22 @@ plain HTML/JS, JSON files in apps/sales-agent/data/, and add that folder to .git
 Test with industries = "Software Development", company_size = "51-200 employees",
 headquarters includes "New York", records_limit 50. Keep the key server-side; never print it.
 ```
+
+</details>
+
+## Make it yours
+
+- Add company news to your email drafts.
+- Combine the results with a contact list you already have.
+- Refresh your shortlist and show which companies have grown.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Building into your own outreach tool instead? Copy `AGENTS.md` and this folder into your project and point step 5 at your drafting code.
 
@@ -126,10 +131,23 @@ How complete: of 987 companies, `industries`, `company_size`, `employees_in_link
 - **Plain fetch: fine for a few pages, no use for a list.** Fresh logged-out GETs (5 of one profile page, 5 of one company page, new connection each time) returned 200 on 10 of 10. One script that reused one connection over 30 profile and company pages got HTTP 999 on 26, starting at the 2nd request. And no public page lists every company that matches a profile: that is the filter's job.
 - **`&groups=scrapers` hides the dataset tools.** On the hosted MCP it leaves 9 tools, without `search_dataset` or `list_dataset_fields`. Leave it off if you want to explore.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for up to 40 companies that match the same customer profile (LinkedIn industry "Software Development", "51-200 employees", HQ in New York). Measured 2026-10-19:
+
+- **Accuracy: the AI did fine.** It returned 35 companies. We re-scraped all 35: every one is a real match, and 175 of 175 fields were exact.
+- **Volume: 35 vs 987.** The AI took 314.6 s and 112 tool calls (100 LinkedIn page fetches, 12 searches). The filter returned 987 in 292.6 s. The AI itself estimated about 2,000 such companies exist.
+- **Overlap:** 32 of the AI's 35 are also in the 987. One of the other 3 has HQ "Brooklyn, NY" (see Traps).
+- **People by title:** we did not ask the AI for this step, so there is no AI number. The filter returned 554 people at 319 companies in one request.
+
+So for a few dozen companies, the AI's own tools are enough and accurate. The dataset wins on volume, on finding people by title across hundreds of companies at once, and on running as a background job nobody waits on.
+
+### More build ideas
 
 - **Openers from the news:** a live refresh returns `updates[]`, the company's recent posts with dates and likes. Quote the latest one in the first line of the draft. Posts often name employees, so store only `date` and `likes_count` and read the text when you write the draft.
 - **Lead score:** rank companies by `followers`, `founded` and how many senior titles step 3 found there, and draft for the top 20 first.
 - **Watch the list:** run `refresh.mjs` nightly and flag companies whose `employees_in_linkedin` or `followers` moved between runs. A hiring jump is a reason to write.
 - **Mix in your CSV:** match uploaded leads to the dataset by company slug and fill in what the CSV lacks (card 01 does this one row at a time).
 - **Any other profile:** swap industry, size band and HQ text. Keep `=` values to LinkedIn's exact labels, as in step 1.
+
+</details>

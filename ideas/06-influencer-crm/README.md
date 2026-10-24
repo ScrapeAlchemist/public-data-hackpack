@@ -1,28 +1,19 @@
-# 06. An influencer CRM with exact followers
+# 06. A tracker for creator partnerships
 
-**The app people already build:** a CRM for creator partnerships. Creators, outreach status, deal terms, deliverables, due dates. It works with no public data at all: you type in the follower count yourself.
+Keep your creator contacts, deals and deadlines in one place. Add public follower
+counts, recent likes and comments, and posting activity so you can review a
+partnership with current numbers.
 
-**What public data adds:** every creator row gets their exact follower count, the engagement rate on their last 12 posts and how often they post, refreshed weekly. National Geographic has 268,337,664 Instagram followers and 0.026% engagement on its last 12 posts. Veritasium's Instagram engagement is 5.71%, but its last post there was on 2025-12-02.
-
-| Without public data | With public data |
-|---|---|
-| A rounded follower count, typed in ("5.2M" on mkbhd's Instagram page) | Exact followers from the profile (5,287,693), refreshed weekly |
-| No idea if the audience still reacts | Engagement rate from exact likes and comments on the last 12 posts |
-| You find out a creator went quiet after the contract is signed | Posts per week and last post date on every row |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for 5 creators on Instagram and the same 5 on YouTube: followers, posts in the last 30 days, average likes on the last 12 posts, average views, latest post date. Measured 2026-10-19: 24 of 45 fields exact, in 140.8 s.
-
-- **YouTube: the AI did fine.** 18 of 25 fields exact, 0 wrong. It found each channel's public RSS feed and matched it within 0.1%. It returned no subscriber counts (null for all 5), and no 30-day count for NatGeo and NASA because the feed stops at 15 uploads.
-- **Instagram: 6 of 20 exact.** All 5 follower counts were rounded page values (5,200,000 vs 5,287,693 for mkbhd). Average likes were null for all 5: the logged-out page shows no like counts. Posts in the last 30 days were null for MrBeast, NatGeo and NASA, and Veritasium's latest post date was a day off (UTC, see Traps).
-- **Definitions drift:** its YouTube "last 12" mixed Shorts with long-form videos. MrBeast came out at 97.5M average views; long-form only is 131.9M.
-
-So for YouTube uploads, skip Bright Data and read the RSS feed (step 5 below). The scrapers win on Instagram, where plain requests and the AI both come back with no exact followers and no likes, and on refreshing a whole roster in one background job.
+The prompt creates `apps/creator-crm/` with Instagram and YouTube data. X is an optional extension.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/06-influencer-crm/README.md first.
@@ -49,6 +40,22 @@ Keep the API key on the server and never print it. Test with Instagram mkbhd and
 YouTube @mkbhd (3 Bright Data jobs, 4 if a handle needs the retry), and check field names
 against ideas/06-influencer-crm/sample.json.
 ```
+
+</details>
+
+## Make it yours
+
+- Show follower growth since the last refresh.
+- Flag creators who have stopped posting.
+- Link a campaign deliverable to the public post when it appears.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Adding this to a CRM you already have? Copy `AGENTS.md` and this folder into your project and point the prompt at your code.
 
@@ -110,10 +117,22 @@ Note `followers` here: 91000000. The profiles scraper said 91087802 in the same 
 - **Dates are UTC.** Instagram `date_posted` is UTC and the page shows local dates, so a post can be a day off (Veritasium: 2025-12-02 in the scraper, 2025-12-01 from the page).
 - **It is slow.** Instagram jobs took 100.8 to 180.7 s, YouTube discovery 209.8 to 264.7 s. Refresh in the background or on a schedule, never on a click.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for 5 creators on Instagram and the same 5 on YouTube: followers, posts in the last 30 days, average likes on the last 12 posts, average views, latest post date. Measured 2026-10-19: 24 of 45 fields exact, in 140.8 s.
+
+- **YouTube: the AI did fine.** 18 of 25 fields exact, 0 wrong. It found each channel's public RSS feed and matched it within 0.1%. It returned no subscriber counts (null for all 5), and no 30-day count for NatGeo and NASA because the feed stops at 15 uploads.
+- **Instagram: 6 of 20 exact.** All 5 follower counts were rounded page values (5,200,000 vs 5,287,693 for mkbhd). Average likes were null for all 5: the logged-out page shows no like counts. Posts in the last 30 days were null for MrBeast, NatGeo and NASA, and Veritasium's latest post date was a day off (UTC, see Traps).
+- **Definitions drift:** its YouTube "last 12" mixed Shorts with long-form videos. MrBeast came out at 97.5M average views; long-form only is 131.9M.
+
+So for YouTube uploads, skip Bright Data and read the RSS feed (step 5 below). The scrapers win on Instagram, where plain requests and the AI both come back with no exact followers and no likes, and on refreshing a whole roster in one background job.
+
+### More build ideas
 
 - **Weekly growth:** compare `followers` across snapshots and show the change next to the deal. A creator who loses followers mid-campaign is worth a call.
 - **Dormant flag:** mark creators with no post in 30 days. Veritasium's Instagram would be flagged (0 posts, last on 2025-12-02) while its YouTube put out 3 long-form videos in the same 30 days.
 - **Deliverable check:** after a due date, look in the latest pull for a post whose `description` names the brand or whose `coauthor_producers` is set. Link it on the deliverable and track its likes while it stays in the newest 30.
 - **Fee check:** divide the creator's quoted fee by average likes or views on the last 12 and sort the pipeline by it.
 - **Add X:** one sync call per profile gives exact followers and views on the last 10 posts.
+
+</details>

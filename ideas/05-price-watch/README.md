@@ -1,30 +1,19 @@
-# 05. A store admin that watches competitor prices
+# 05. A price watch for your online store
 
-**The app people already build:** the admin page of a small online store. Your catalog, your prices, your stock. It works with no public data at all: you set prices by hand and hope they are still right.
+Add the products you sell and compare their prices with Amazon, Walmart and
+Target where available. Keep the seller, condition and availability beside each
+price so you can compare the same product and spot when a competitor undercuts you.
 
-**What public data adds:** for each product you sell, the same product's price at Amazon and Walmart every day, and at Target when Target sells it. Matched by GTIN/UPC where the stores agree, pinned by hand once where they do not. You get an alert when a competitor's new-condition price goes below yours, and a price history per product and store.
-
-| Without public data | With public data |
-|---|---|
-| You check competitor prices by hand, when you remember | A daily job reads Amazon, Walmart and Target for every product |
-| You learn you were undercut when sales drop | An alert the day a new-condition offer goes below your price |
-| One number, today | A history per product and store, with seller and stock |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for 15 prices: 5 well-known products (Anker 737 power bank, Hydro Flask 32 oz, Logitech MX Master 3S, AirPods Pro 2, Instant Pot Duo 6 qt) at Amazon, Walmart and Target, new condition only. Measured 2026-10-19:
-
-- **1 of 15 prices, in 177.8 s.** The one it got (MX Master 3S at Target, 109.99) matched the scraper exactly. It named a different seller than the scraper did; we did not resolve which is right.
-- **Target: the AI did fine.** Besides that price, it reported no exact Target listing for the other 4 products, the same conclusion we reached by title.
-- **It made nothing up.** Every empty cell came back null with a reason.
-- **Amazon and Walmart: 0 of 10, even with the exact URLs.** Given the 10 product pages, it returned 0 prices in 82.8 s. Walmart showed it "Robot or human?" on every fetch, and Amazon pages loaded with no buy-box price. In the same window the scrapers read 10 of 10 (2 of them not new, see Traps).
-- **Its fetcher is what gets blocked.** A plain script from a home IP in Israel read a price from 4 of 5 Amazon pages (the miss was the used buy box) and 5 of 5 Walmart pages in the same window.
-
-So for "does Target sell this at all?", the AI alone is enough. The scraper wins on Amazon and Walmart prices, the condition behind each price, and checking every product every day without anyone waiting.
+The prompt builds a store dashboard with saved price history and a daily refresh.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/05-price-watch/README.md first.
@@ -56,6 +45,22 @@ install: built-in fetch, node:http, plain HTML/JS, JSON files in apps/price-watc
    history chart (inline SVG) from prices.jsonl.
 Test on the 2 seeded products only (3 scraper jobs). Never print the API key.
 ```
+
+</details>
+
+## Make it yours
+
+- Show stock changes beside price changes.
+- Distinguish a temporary sale from a new regular price.
+- Suggest a price for you to review before applying it.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Already have a store admin? Copy `AGENTS.md` and this folder into your project and point step 2 at your own catalog.
 
@@ -124,10 +129,24 @@ How complete: on this run a price came back for Amazon 5 of 5 (one was a used bu
 - **Web Unlocker rate limits hide inside a 200.** With 8 Bright Data calls in flight, 2 of 6 Unlocker calls returned HTTP 200 with a 77-byte body and `x-brd-error-code: bucket_rate_limit`. One Walmart page came back as Spanish markdown. Use the scrapers for prices.
 - **What works without Bright Data, at small volume.** Plain requests from a home IP in Israel: Amazon search 20 of 20 and product pages 5 of 5 (price on 4 of 5; the miss was the used buy box), Walmart search 5 of 5 and product pages 5 of 5 (read `__NEXT_DATA__`), each in about 1 to 3 s. Target: HTTP 200 but 0 prices and 0 TCINs, because prices render client-side. Google Shopping: 5 of 5 were an enablejs page with 0 prices. Shopify `/products.json?limit=250`: 200 on allbirds.com and brooklinen.com, 404 on anker.com and bombas.com. Volumes above 20 requests were not measured. Walmart HTML contains `px_captcha` even when the data parses, so detect a block by missing `__NEXT_DATA__` items.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for 15 prices: 5 well-known products (Anker 737 power bank, Hydro Flask 32 oz, Logitech MX Master 3S, AirPods Pro 2, Instant Pot Duo 6 qt) at Amazon, Walmart and Target, new condition only. Measured 2026-10-19:
+
+- **1 of 15 prices, in 177.8 s.** The one it got (MX Master 3S at Target, 109.99) matched the scraper exactly. It named a different seller than the scraper did; we did not resolve which is right.
+- **Target: the AI did fine.** Besides that price, it reported no exact Target listing for the other 4 products, the same conclusion we reached by title.
+- **It made nothing up.** Every empty cell came back null with a reason.
+- **Amazon and Walmart: 0 of 10, even with the exact URLs.** Given the 10 product pages, it returned 0 prices in 82.8 s. Walmart showed it "Robot or human?" on every fetch, and Amazon pages loaded with no buy-box price. In the same window the scrapers read 10 of 10 (2 of them not new, see Traps).
+- **Its fetcher is what gets blocked.** A plain script from a home IP in Israel read a price from 4 of 5 Amazon pages (the miss was the used buy box) and 5 of 5 Walmart pages in the same window.
+
+So for "does Target sell this at all?", the AI alone is enough. The scraper wins on Amazon and Walmart prices, the condition behind each price, and checking every product every day without anyone waiting.
+
+### More build ideas
 
 - **Who else sells it:** once a week, pull Google Shopping tiles per product, drop pre-owned `tag`s and accessories, and list the shops under your price. The product panel (`ibp=oshop` plus the tile's `prds` ids) returned 4 to 5 seller offers with `item_price`, `total_price` and `shipping` in 4 to 35 s, but its first attempt needed a retry on 3 of 3.
 - **Brand stores too:** some Shopify stores answer `/products.json?limit=250` to a plain GET with `sku`, `price`, `compare_at_price`, `available` and `updated_at` per variant (2 of the 4 we tried).
 - **Sale or reprice?** `initial_price` vs `final_price`, plus Amazon's `discount` and `prices_breakdown.deal_type` ("Limited time deal" on the MX Master 3S), tell a temporary promo apart from a new base price. Alert on them differently.
 - **Stock-out signal:** when a competitor's `is_available` flips to false, that is not the day to cut your price. Track it next to price.
 - **Suggest, do not set:** show the lowest new competitor price next to yours and a suggested price with a floor you choose. One click applies it.
+
+</details>

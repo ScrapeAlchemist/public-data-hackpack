@@ -1,28 +1,19 @@
-# 01. A CRM that fills itself in
+# 01. A CRM that fills in contact details
 
-**The app people already build:** a CRM. Contacts, companies, a pipeline, notes. It works with no public data at all: you type everything in.
+Enter a person's name and company, then click **Enrich** to fill in their title,
+location and public LinkedIn profile. The app also adds company details, such as
+industry, size and website. It asks you to check uncertain matches before saving.
 
-**What public data adds:** type a name and a company, and the CRM fills in the rest from public LinkedIn pages. You get their current title, location and follower count, plus the company's industry, size, employees on LinkedIn, HQ and website. A re-run that flags job changes is the next step (see Make it yours).
-
-| Without public data | With public data |
-|---|---|
-| You type title, industry and company size by hand | Filled in from LinkedIn in under a minute (a few minutes on the fallback) |
-| Data goes out of date over time | Click Enrich again to refresh a row |
-| A name and a company | Title, followers, company size and HQ, so you know who you are talking to |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for 10 records: 5 well-known people and 5 well-known companies. Measured 2026-10-19:
-
-- **Companies: the AI did fine.** 30 of 30 fields exact. The whole 10-record run took 45 s.
-- **People: 17 of 25 fields exact.** It got 0 of 5 exact follower counts, because public pages show "12M". One profile blocked it outright (HTTP 999).
-- **Scale:** it reads one page at a time. A plain script that reused one connection got HTTP 999 on 26 of 30 LinkedIn pages.
-
-So for a few famous companies, the AI alone is enough. The scraper wins on exact person data, profiles that block plain fetches, and filling in every row in the background without anyone waiting.
+This prompt adds the feature to the starter CRM already in `crm/`.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/01-crm-autofill/README.md first.
@@ -44,6 +35,22 @@ Add LinkedIn enrichment to the CRM in crm/ (Node 20+, no npm install, keep it th
 5. Show the new fields in the table, with the follower count formatted (12,236,210).
 Test it on the sample contacts. Never print the API key.
 ```
+
+</details>
+
+## Make it yours
+
+- Flag contacts who change jobs.
+- Fill in a list of contacts when you import it.
+- Show a company's recent posts beside the contact.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Building your own app instead of `crm/`? Copy `AGENTS.md` and this folder into your project and change step 2 to point at your code.
 
@@ -101,9 +108,21 @@ How complete: on 48 company records, `industries`, `company_size`, `employees_in
 - **Batches go async.** Ten people took 99.8 s. Never make a user click wait on it.
 - **`employees_in_linkedin` is a signal, not a headcount.** It often sits outside the listed size band.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for 10 records: 5 well-known people and 5 well-known companies. Measured 2026-10-19:
+
+- **Companies: the AI did fine.** 30 of 30 fields exact. The whole 10-record run took 45 s.
+- **People: 17 of 25 fields exact.** It got 0 of 5 exact follower counts, because public pages show "12M". One profile blocked it outright (HTTP 999).
+- **Scale:** it reads one page at a time. A plain script that reused one connection got HTTP 999 on 26 of 30 LinkedIn pages.
+
+So for a few famous companies, the AI alone is enough. The scraper wins on exact person data, profiles that block plain fetches, and filling in every row in the background without anyone waiting.
+
+### More build ideas
 
 - **Job-change alerts:** re-enrich every contact weekly and flag when `current_company` or the title changes. That is the moment to reach out.
 - **Enrich on import:** drop in a CSV of 200 contacts and run one batch job with the trigger endpoint instead of 200 single calls.
 - **Conversation starters:** the company record has `updates[]`, its recent posts with likes. Show the latest one next to the contact.
 - **Lead score:** rank the pipeline by company size band, follower growth between runs, and seniority words in the title.
+
+</details>

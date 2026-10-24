@@ -1,28 +1,19 @@
-# 07. A feedback board with public mentions
+# 07. A feedback board that follows public mentions
 
-**The app people already build:** a product feedback board. Users post ideas and bugs, you tag them, people vote, you prioritize. It works with no public data at all. It is not a brand monitor, though: you only hear from the people who find your board.
+Put public discussions beside the feedback people submit to your product board.
+Find Reddit posts and YouTube videos about your product, show review-site ratings,
+and save daily results so a jump in mentions is easier to spot.
 
-**What public data adds:** the same board turns into a brand monitor. Next to your own feedback it counts what people say about the product in public, per day: Reddit posts that contain the quoted brand phrase, new YouTube videos, and the Trustpilot and G2 rating with review count and newest review date. When r/Notion posts "AI dumber and slower...", it shows up on the next daily run with its votes and comment count.
-
-| Without public data | With public data |
-|---|---|
-| Feedback from users who find your board | Plus the Reddit posts and YouTube videos found by searching for the product, counted per day |
-| Board votes are the only signal | Reddit votes and comments, YouTube views, Trustpilot and G2 ratings beside them |
-| One snapshot of opinion | A stored run every day, so a jump in mentions stands out |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for every Reddit post and YouTube video that mentioned "Notion AI" in the last 7 days, with dates, votes, views and a count per day. We scored it against what this card's route found: 37 records (17 Reddit posts, 20 YouTube videos). Measured 2026-10-19:
-
-- **0 of 37 records in 83.3 s.** All 16 per-day counts were null. In fairness, it invented nothing in this run: its own coverage note says reddit.com, old.reddit and `search.json` blocked it. YouTube search and video pages came back footer-only.
-- **Asked for the 10 most recent instead: 0 of 10 Reddit posts right** (128.1 s). Its Reddit posts came from an archive (PullPush) dated 2026-10-02 to 10-11, while the real 10 most recent span 10-15 to 10-19. One post showed 1 vote and 0 comments; live it had 71 and 16. It found 0 YouTube videos.
-- **Review ratings were not part of the test.**
-
-Nothing here went the AI's way. The measured gap is access (Reddit blocks it), exact numbers (an archive copy holds stale votes), and a fresh count every day with nobody asking. Note that a plain script does get YouTube search pages (step 2 below); the AI's fetch tool did not.
+The prompt creates `apps/feedback-board/` using Reddit, YouTube, Trustpilot and G2.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/07-brand-monitor/README.md first.
@@ -49,6 +40,22 @@ plain HTML/JS, JSON files in apps/feedback-board/data/, no npm install, keep it 
 Test with "notion ai", days=2, notion.so and notion: one or two Reddit pages, one Trustpilot page,
 one G2 page and one scraper job capped at 5 videos. Keep the key on the server. Never print it.
 ```
+
+</details>
+
+## Make it yours
+
+- Flag a jump in daily mentions.
+- Attach a relevant public discussion to a feedback card.
+- Compare mentions of your product with a competitor's.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Building into an existing board instead? Copy `AGENTS.md` and this folder into your project and point step 4 at your code.
 
@@ -112,10 +119,22 @@ How complete: all 21 Reddit posts had votes, comments and an exact time. The You
 - **Reviews move too slowly to count per day.** One Trustpilot review and one G2 page-1 review fell in the 7-day window. Show rating, count and newest review date instead.
 - **X is out.** Logged-out search redirects to the login flow (2 of 2), and Web Unlocker returned 26 bytes.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for every Reddit post and YouTube video that mentioned "Notion AI" in the last 7 days, with dates, votes, views and a count per day. We scored it against what this card's route found: 37 records (17 Reddit posts, 20 YouTube videos). Measured 2026-10-19:
+
+- **0 of 37 records in 83.3 s.** All 16 per-day counts were null. In fairness, it invented nothing in this run: its own coverage note says reddit.com, old.reddit and `search.json` blocked it. YouTube search and video pages came back footer-only.
+- **Asked for the 10 most recent instead: 0 of 10 Reddit posts right** (128.1 s). Its Reddit posts came from an archive (PullPush) dated 2026-10-02 to 10-11, while the real 10 most recent span 10-15 to 10-19. One post showed 1 vote and 0 comments; live it had 71 and 16. It found 0 YouTube videos.
+- **Review ratings were not part of the test.**
+
+Nothing here went the AI's way. The measured gap is access (Reddit blocks it), exact numbers (an archive copy holds stale votes), and a fresh count every day with nobody asking. Note that a plain script does get YouTube search pages (step 2 below); the AI's fetch tool did not.
+
+### More build ideas
 
 - **Spike alerts:** compare today's Reddit count with the 7-day average and flag a jump. Every run is stored, so the history is already there.
 - **Mentions under cards:** when a new Reddit title shares words with a feedback card, show it under that card as outside evidence.
 - **Read the thread:** Web Unlocker raw HTML of a post permalink gives the post `score` and `comment-count`, and each `<shreddit-comment>` with `score`, `created` and `depth`, in 5.64 s (the Reddit comments scraper took 106.75 s for one thread). Skip the `author` attribute.
 - **Watch a competitor:** run the same crawl for a competitor's quoted name and put both lines on one chart.
 - **Every Trustpilot language:** add the Trustpilot reviews scraper as a weekly job. It found a review the English-only page did not show.
+
+</details>

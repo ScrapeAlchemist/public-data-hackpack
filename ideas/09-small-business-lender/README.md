@@ -1,32 +1,19 @@
-# 09. A small business loan check with public business data
+# 09. Public business research for a loan application
 
-**The app people already build:** a small business loan intake. An application form, a document list, and a checklist the underwriter ticks before anyone decides. It works with no public data at all: the applicant tells you everything.
+Add a panel of public business information to each loan application: Yelp ratings
+and review counts, opening hours, job listings and LinkedIn company details. Save
+weekly results so an underwriter can see what changed and check the source.
 
-**What public data adds:** a public data panel on each application, filled in the background. The Yelp rating and exact review count, stored every week, so you see review velocity and the rating trend instead of one number. Claimed status, posted hours and the closed flag. Open roles from the company's own job board, if it has a public one. For bigger applicants, the LinkedIn company record: employees on LinkedIn, followers and recent dated posts, stored on each run so growth shows over time.
-
-It is a signal for a human underwriter, never an automatic decision. And it is about the business, not a person's credit: no owner lookups, no reviewer names.
-
-| Without public data | With public data |
-|---|---|
-| Someone googles the business, if there is time | A public data panel on every application, collected in the background |
-| One rating, seen once | Rating and exact review count every week: review velocity and rating trend |
-| "Are they still open?" is a phone call | Closed flag, claimed status and posted hours from the Yelp page |
-| Hiring and headcount are what the form says | Open roles from their job board, LinkedIn employees and followers, compared run to run |
-
-## Why not just ask the AI?
-
-We asked Claude Code the questions this app asks, with only its built-in web search and fetch tools (no Bright Data). Measured 2026-10-19:
-
-- **One named business: it got the headline numbers.** For Bansho Ramen we asked for the Yelp rating, exact review count, first review date, and the 20 latest reviews with their average. Rating 4.1 and count 196 were right, in 34.6 s, even though all 4 of its Yelp fetches got HTTP 403. It had no review dates (2 of 5 fields). We could not get those 3 fields either, so this card does not promise them.
-- **A list of businesses (card 08's question): names, not numbers.** Asked for rating, review count and price for every ramen place within a mile, it found 7 real ones and returned 0 of their 21 rating, count and price values.
-- **LinkedIn companies: the AI did fine.** 30 of 30 fields exact for 5 well-known companies.
-- **Open job boards: right.** Stripe's 723 open jobs and 208 of 208 department counts exact (card 04's test). A board that blocks plain fetches (Tesla, 403) came back null.
-
-So one lookup on one business is something the AI can do. The app's value is the series: the same fields for every applicant, stored every week with nobody asking, read from Yelp pages that return 403 to plain fetches.
+The prompt creates `apps/loan-desk/`. It supports a human review; it does not score applicants or approve or reject loans.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/09-small-business-lender/README.md first.
@@ -54,6 +41,22 @@ Stripe (https://www.linkedin.com/company/stripe, greenhouse:stripe). One run mak
 scrape calls (one Web Unlocker page, one LinkedIn scraper job), plus any retries. Run
 refresh.mjs twice and check that each application shows two runs.
 ```
+
+</details>
+
+## Make it yours
+
+- Keep watching the business after funding.
+- Compare a business with nearby competitors.
+- Let the underwriter add a note beside each source.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Building your own app instead? Copy `AGENTS.md`, this folder and `ideas/08-restaurant-dashboard/yelp_competitors.mjs` (its `parseBiz` and `unlockerPage` exports) into your project, or write the parser from step 1 of the route yourself. Then point step 3 at your code.
 
@@ -112,9 +115,22 @@ How complete: on 48 LinkedIn company records, `employees_in_linkedin`, `follower
 - **Job board dates only cover open postings.** `first_published` exists only for jobs still open, so diff stored runs to see what closed. Some boards block plain fetches (Tesla: 403; Web Unlocker got it in 29.15 s, with no dates).
 - **People are in this data. Leave them out.** The biz page carries the owner's display name (`bizOwnerProfile`) and JSON-LD photo authors, the reviews scraper returns reviewer names and text, and LinkedIn `updates[].title` is whoever posted, sometimes a person, while `updates[].text` can name people. Store none of it. A raw-page cache holds `bizOwnerProfile` too: keep `cache/` gitignored and delete it once the parser works, or strip `bizOwnerProfile` before caching.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code the questions this app asks, with only its built-in web search and fetch tools (no Bright Data). Measured 2026-10-19:
+
+- **One named business: it got the headline numbers.** For Bansho Ramen we asked for the Yelp rating, exact review count, first review date, and the 20 latest reviews with their average. Rating 4.1 and count 196 were right, in 34.6 s, even though all 4 of its Yelp fetches got HTTP 403. It had no review dates (2 of 5 fields). We could not get those 3 fields either, so this card does not promise them.
+- **A list of businesses (card 08's question): names, not numbers.** Asked for rating, review count and price for every ramen place within a mile, it found 7 real ones and returned 0 of their 21 rating, count and price values.
+- **LinkedIn companies: the AI did fine.** 30 of 30 fields exact for 5 well-known companies.
+- **Open job boards: right.** Stripe's 723 open jobs and 208 of 208 department counts exact (card 04's test). A board that blocks plain fetches (Tesla, 403) came back null.
+
+So one lookup on one business is something the AI can do. The app's value is the series: the same fields for every applicant, stored every week with nobody asking, read from Yelp pages that return 403 to plain fetches.
+
+### More build ideas
 
 - **Portfolio watch:** keep the weekly job running after funding and flag a closed flag, a review count that stops growing, a rating drop, or a job board that empties.
 - **No public job board:** the LinkedIn job listings scraper (`gd_lpfll7v5hcqtkxl6l`, `discover_by=url`) takes `https://www.linkedin.com/jobs/search?keywords=&f_C=<company_id>&geoId=92000000&f_TPR=r2592000` and returned 200 postings for two companies in 167.6 s, each with `job_posted_date` and `job_num_applicants`.
 - **Neighborhood context:** card 08 finds the competitors within a mile of an address. Show the applicant's rating trend next to theirs.
 - **Underwriter notes:** let the underwriter mark each signal "checked" with a note, kept next to its source URL and `fetched_at`.
+
+</details>

@@ -1,28 +1,19 @@
-# 04. Stock research from who a company is hiring
+# 04. A hiring tracker for your stock watchlist
 
-**The app people already build:** a stock watchlist. Tickers, notes, a thesis per company. It works with no public data at all: you write the thesis after reading the earnings call.
+Choose companies to follow and track their open jobs by team. Save a count each
+day so you can see which teams are adding roles, which have fewer openings, and
+which postings have appeared or disappeared.
 
-**What public data adds:** every day, the app counts each company's open roles by team, in the company's own categories (NVIDIA by job family, Stripe by department, Tesla by department), and charts them. A team that doubles its openings, or a team that stops hiring, shows up on your chart the week it happens instead of in next quarter's commentary.
-
-| Without public data | With public data |
-|---|---|
-| A thesis and your notes | Open roles per team, counted daily from each company's own careers API |
-| "They are hiring a lot" from a news story | NVIDIA: 2,749 open roles in 15 job families, with a count for each family |
-| One number, once | A line per team over time, plus which postings opened and closed since the last run |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for open roles per team in two runs: NVIDIA and Stripe, then Tesla, Microsoft and AMD. Measured 2026-10-19:
-
-- **Open careers APIs: the AI did well.** It found NVIDIA's careers API and Stripe's Greenhouse board by itself. Stripe: total 723 and all 208 department counts exact. NVIDIA: total 2,749 exact, 8 of 15 job families exact, the other 7 off by 1 or 2. AMD: total and 11 of 11 categories exact. Run 1 scored 258 of 265 fields exact (it also had 10 pay rows).
-- **Blocked boards: it stopped.** Tesla returned 403 and the AI reported null instead of guessing. One Web Unlocker call returned all 8,370 Tesla listings. Microsoft hit it with 429 after 5 of 31 teams.
-- **Slow, and one point in time.** Run 1 took 305 s (64 turns), run 2 took 461 s (161 turns). Each answer is today's count. Careers APIs only list postings that are still open, so last month's closed roles are not in them.
-
-So you need neither Bright Data nor an AI to read an open careers API: the route below plain-fetches those. Bright Data is for the boards that block (Tesla), companies with no open API (LinkedIn job listings) and history from before you started (the Filter Dataset keeps closed postings). The daily snapshot is what turns counts into a signal, and only your own job can store it.
+The prompt creates `apps/hiring-watch/`. It uses company careers APIs where available and Bright Data for the documented blocked sources.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/04-hiring-signals/README.md first.
@@ -50,6 +41,22 @@ Test with one snapshot of Stripe (greenhouse, board "stripe"), NVIDIA (workday) 
 Tesla (tesla). Check totals against sample.json in the card folder (counts drift daily).
 Keep the API key server-side and never print it.
 ```
+
+</details>
+
+## Make it yours
+
+- Highlight teams with a large change in open jobs.
+- Compare hiring changes before an earnings report.
+- Track the salary ranges in new job postings.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 The test makes one Web Unlocker call for Tesla (up to 3 with retries, see Traps), plus the zone lookup if `BRIGHTDATA_ZONE` is not set. The rest is plain fetch: 2 calls for Stripe and about 145 for NVIDIA, which took 39.9 s when we ran it.
 
@@ -109,10 +116,22 @@ The Web Unlocker, scraper trigger, polling and Filter request shapes are in [AGE
 - **Skip Indeed for this.** Plain fetch got a 403 "Security Check" on 3 of 3, and Stripe's Indeed company page said "no open jobs" while Greenhouse listed 723.
 - **Know when to skip Bright Data.** Plain fetch returned 200 on Greenhouse (39 of 39 calls), Ashby (1 of 1), NVIDIA Workday (148 of 148) and AMD (13 of 13), and was blocked on Tesla (403), Indeed (403, 3 of 3) and Microsoft (429 on 4 of 9 calls: the first total call plus 8 paging calls). Our plain calls sent a desktop Chrome User-Agent; Node's default was not tested.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for open roles per team in two runs: NVIDIA and Stripe, then Tesla, Microsoft and AMD. Measured 2026-10-19:
+
+- **Open careers APIs: the AI did well.** It found NVIDIA's careers API and Stripe's Greenhouse board by itself. Stripe: total 723 and all 208 department counts exact. NVIDIA: total 2,749 exact, 8 of 15 job families exact, the other 7 off by 1 or 2. AMD: total and 11 of 11 categories exact. Run 1 scored 258 of 265 fields exact (it also had 10 pay rows).
+- **Blocked boards: it stopped.** Tesla returned 403 and the AI reported null instead of guessing. One Web Unlocker call returned all 8,370 Tesla listings. Microsoft hit it with 429 after 5 of 31 teams.
+- **Slow, and one point in time.** Run 1 took 305 s (64 turns), run 2 took 461 s (161 turns). Each answer is today's count. Careers APIs only list postings that are still open, so last month's closed roles are not in them.
+
+So you need neither Bright Data nor an AI to read an open careers API: the route below plain-fetches those. Bright Data is for the boards that block (Tesla), companies with no open API (LinkedIn job listings) and history from before you started (the Filter Dataset keeps closed postings). The daily snapshot is what turns counts into a signal, and only your own job can store it.
+
+### More build ideas
 
 - **Earnings-week view:** enter each ticker's next earnings date and show which teams grew or shrank in the 30 days before it.
 - **Alerts:** flag any team whose open roles move more than a set percent week over week, and link the new postings.
 - **History before day one:** run the Filter backfill once per company for the last two months, then let your daily snapshots take over. It has no team field, so group by title words, and raise `records_limit` for a full month (not measured past 200).
 - **Pay band drift:** NVIDIA detail pages carried a pay range in the text on 20 of 20 US Engineering postings ("136,000 USD - 218,500 USD", no "$" sign), and Snowflake's Ashby compensation summary was on 231 of 231 US jobs. Track the median band per team.
 - **Seniority mix:** for LinkedIn-only companies, chart `job_seniority_level` over time. A shift toward "Director" postings says something different from a wave of "Entry level".
+
+</details>

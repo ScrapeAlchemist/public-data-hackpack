@@ -1,29 +1,19 @@
-# 10. A pay tool built on posted salary ranges
+# 10. Salary comparisons from public job postings
 
-**The app people already build:** an internal comp tool. Roles, levels, salary bands per city, and the offers you made. It works with no public data at all: HR types the bands in once a year.
+Enter your salary bands and compare them with posted ranges for the same role
+and city. Show the original job links, keep levels and locations separate, and
+save monthly results to see how the posted ranges change.
 
-**What public data adds:** pay transparency laws in several US states mean many job postings now show a base pay range. Pull the postings for the same role and city every month, parse the ranges, and every band and every offer gets a market check: where it sits among 75 to 83 posted ranges from 61 to 74 companies per role and city. Keep each run and you see the posted ranges move.
-
-| Without public data | With public data |
-|---|---|
-| Bands come from last year's survey or a guess | Checked against 75 to 83 posted ranges per role and city |
-| "Competitive offer" is an opinion | Each offer shows where it sits among real postings, with links |
-| You learn a band is stale when a candidate says no | A monthly run shows the posted ranges moving |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for 10 current software engineer openings in San Francisco, at any company, with the posted base pay range as written in the ad. Measured 2026-10-19:
-
-- **Exact pay: the AI did fine.** 10 of 10 ranges matched the posting, and all 10 were still open.
-- **Coverage: 10 rows from only 3 company boards** (Figma, Anthropic, Stripe), all multi-city postings. That is three companies, not the market.
-- **A second run** asked for 25 product manager openings in New York: 25 rows from 12 companies, pay confirmed on 23 (the other 2 not confirmed, not proven wrong), and 14 of the 25 were first posted more than 60 days ago.
-- **Time:** each run took 5 to 8 minutes (305.2 s and 461.4 s; each run also counted open roles per team at named companies).
-
-So to check what a few named companies post, the AI alone is enough. The scraper wins on breadth (61 to 74 companies per role and city in one job), fresh postings (all from the past month), Indeed (which returns 403 to a plain fetch), and a monthly refresh that runs with nobody waiting.
+The prompt creates `apps/pay-ranges/` using LinkedIn jobs, Indeed and company careers pages.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/10-pay-ranges/README.md first.
@@ -31,7 +21,7 @@ Read AGENTS.md and ideas/10-pay-ranges/README.md first.
 Build a pay-band checker in apps/pay-ranges/ (Node 20+, built-in fetch and node:http,
 plain HTML/JS, JSON files in apps/pay-ranges/data/, no npm install):
 1. Internal data: data/bands.json (role, level, city, min, max) and data/offers.json
-   (role, level, city, base, date). Seed 3 Software Engineer levels in San Francisco.
+   (role, level, city, base, date). Let the user enter their real bands and offers; leave these empty until supplied.
 2. collect.mjs <role> <city>: trigger the card's LinkedIn job listings scraper
    (discover_by=keyword, time_range "Past month", limit_per_input=20 while testing),
    poll, download. Also fetch Indeed page 1 through Web Unlocker as markdown and parse
@@ -55,6 +45,22 @@ plain HTML/JS, JSON files in apps/pay-ranges/data/, no npm install):
 Keep BRIGHTDATA_API_TOKEN on the server and never print it.
 Test with one role in one city: "software engineer" in "San Francisco, California".
 ```
+
+</details>
+
+## Make it yours
+
+- Check an offer against relevant postings before sending it.
+- Compare the same role across cities.
+- Follow salary ranges at companies you recruit against.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Already have a comp tool? Copy `AGENTS.md`, this folder, and `examples/intern-intel/js/parsers.mjs` with `compat.mjs` (keep them side by side) into your project, then point step 1 at your own bands table and step 2's import at the copied parsers.mjs.
 
@@ -113,9 +119,22 @@ The parser is the product. Every string below is quoted from the 2026-10-19 data
 - **Indeed stops at page 1.** `start=10` returned an empty 200 with `x-brd-error-code: reject_authwall` on 4 of 4. That is the logged-out ceiling. Do not go past it.
 - **Scraper jobs take minutes.** 263.2 s for 4 role-city queries. Precompute every role-city on a schedule and never fetch on a click.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for 10 current software engineer openings in San Francisco, at any company, with the posted base pay range as written in the ad. Measured 2026-10-19:
+
+- **Exact pay: the AI did fine.** 10 of 10 ranges matched the posting, and all 10 were still open.
+- **Coverage: 10 rows from only 3 company boards** (Figma, Anthropic, Stripe), all multi-city postings. That is three companies, not the market.
+- **A second run** asked for 25 product manager openings in New York: 25 rows from 12 companies, pay confirmed on 23 (the other 2 not confirmed, not proven wrong), and 14 of the 25 were first posted more than 60 days ago.
+- **Time:** each run took 5 to 8 minutes (305.2 s and 461.4 s; each run also counted open roles per team at named companies).
+
+So to check what a few named companies post, the AI alone is enough. The scraper wins on breadth (61 to 74 companies per role and city in one job), fresh postings (all from the past month), Indeed (which returns 403 to a plain fetch), and a monthly refresh that runs with nobody waiting.
+
+### More build ideas
 
 - **Offer check before it goes out:** when someone enters an offer, show where it sits among the same role and city postings, with links, on the approval screen.
 - **Borrow other ladders:** collect the labeled ranges (NVIDIA Level 3 and 4, DoorDash I4 to I6) and line them up against your own levels.
 - **Watch the companies you hire against:** add their Ashby boards (plain fetch) and alert when their range for a role changes between runs.
 - **Add cities:** run the same role in more cities and show the spread. On Indeed page 1 the median posted min for software engineers was $150,000 in San Francisco and $140,000 in New York.
+
+</details>

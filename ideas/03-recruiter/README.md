@@ -1,29 +1,19 @@
-# 03. A resume screener that checks the public profile
+# 03. A resume checker with public profiles
 
-**The app people already build:** a resume screener. Paste a job description, upload resumes (PDF or text), and an LLM ranks the applicants. It works with no public data at all.
+Compare a resume with the person's public LinkedIn profile. Show titles, employers,
+dates and education side by side, and flag differences for a recruiter to review.
+A missing field means it could not be checked; a difference is a question to ask.
 
-**What public data adds:** for each applicant, the app finds their public LinkedIn profile and lines it up against the resume: current title and employer, start dates of the last roles, schools and years. Where the two disagree, it raises a flag for a recruiter: "resume says Senior Engineer at X since 2021; profile says Engineer at X since 2023". It is a check for a human, not an automatic reject. A mismatch is a question for the interview.
-
-| Without public data | With public data |
-|---|---|
-| The LLM ranks whatever the resume says | Each claim sits next to what the public profile says |
-| Someone opens one LinkedIn tab per applicant | Checked in the background: 5.8 to 19.8 s to find the profile, 12 to 60 s to read it |
-| Titles and dates are taken on trust | Title, employer, start year and school compared field by field, mismatches flagged |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for current LinkedIn data on 5 well-known people (and 5 companies). Measured 2026-10-19:
-
-- **Current title and employer: the AI did fine.** 17 of 25 people fields exact, 0 wrong. Title, company and location were exact for 4 of the 5 people.
-- **One profile blocked it.** Sundar Pichai's page returned HTTP 999 twice, so his title, company, location and followers came back empty. The other 4 misses were exact follower counts, which a screener does not need.
-- **Start dates and education: not measured.** We did not ask the AI for them.
-- **Scale:** it reads one page at a time. A plain script that reused one connection got HTTP 999 on 26 of 30 LinkedIn pages.
-
-So to check one famous person's current job, the AI alone is enough. The measured gap is the profile that blocks a plain fetch, and checking a whole stack of applicants in the background, with start dates and school years as fields you can compare (see below), while nobody waits.
+The prompt creates `apps/screener/`. The recruiter makes the decision; the app does not reject applicants.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in a clone of this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/03-recruiter/README.md first.
@@ -49,12 +39,27 @@ HTML/JS, JSON files for storage, no npm install):
    resume vs profile vs flag per applicant, and what changed since the last run.
 7. Add apps/screener/refresh.mjs that re-checks every stored applicant, for a scheduler.
 Gitignore apps/screener/data/ (applicants are private). Never auto-reject or print the key.
-Test with 3 public CEOs as "applicants" and these made-up resume lines:
-- Satya Nadella: Chairman and CEO at Microsoft since 2014
-- Arvind Krishna: Chief Executive Officer at IBM since 2018 (wrong on purpose)
-- Mary Barra: Chair and Chief Executive Officer at General Motors since 2016
-Expect one mismatch (Krishna; his profile says Apr 2020). About 6 Bright Data calls.
+Check the field mapping against the real records in this card's sample.json.
+Test one live public profile URL from that sample, and check its returned fields.
+For resume comparisons, ask the user for real claims to check; do not invent resumes
+or a mismatch. Use "cannot verify" whenever the available evidence is insufficient.
 ```
+
+</details>
+
+## Make it yours
+
+- Turn a difference into a question for the interview.
+- Check the shortlist again before making offers.
+- Show public company information beside each profile.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Building into an existing screener instead? Copy `AGENTS.md` and this folder into your project, plus `ideas/01-crm-autofill/enrich.mjs` next to it (step 4 of the prompt imports from there), and point steps 1 and 6 at your code.
 
@@ -116,10 +121,23 @@ How complete: on 9 correct public CEO profiles, `current_company` was present on
 - **URLs come back on locale subdomains with mixed case** (`https://ar.linkedin.com/in/Arvindkrishna`). Normalize before you compare or store.
 - **It is slow, so it is a job.** 10 profiles took 99.8 s; the people search took 82.5 s for 3 names. Never make a recruiter's click wait on it.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for current LinkedIn data on 5 well-known people (and 5 companies). Measured 2026-10-19:
+
+- **Current title and employer: the AI did fine.** 17 of 25 people fields exact, 0 wrong. Title, company and location were exact for 4 of the 5 people.
+- **One profile blocked it.** Sundar Pichai's page returned HTTP 999 twice, so his title, company, location and followers came back empty. The other 4 misses were exact follower counts, which a screener does not need.
+- **Start dates and education: not measured.** We did not ask the AI for them.
+- **Scale:** it reads one page at a time. A plain script that reused one connection got HTTP 999 on 26 of 30 LinkedIn pages.
+
+So to check one famous person's current job, the AI alone is enough. The measured gap is the profile that blocks a plain fetch, and checking a whole stack of applicants in the background, with start dates and school years as fields you can compare (see below), while nobody waits.
+
+### More build ideas
 
 - **Interview prompts:** turn each mismatch into a neutral question the recruiter can ask ("Your profile shows a different start date at IBM. Can you walk me through it?").
 - **Re-check before the offer:** run `refresh.mjs` on the shortlist and show what changed since the first check (new title, new employer).
 - **Batch the stack:** 30 resumes become one trigger job with all 30 profile URLs instead of 30 single calls.
 - **Employer context:** add the LinkedIn company scraper from card 01 (`gd_l1vikfnt1wgvvqz95w`) to show the current employer's industry and size next to each applicant.
 - **Sourcing, not just screening:** card 02's step 3 ran Filter Dataset on the people profiles dataset (`gd_l1viktl72bvl7bjuj0`) with `current_company_company_id` `in` the 956 company slugs from its company filter, AND one OR group of `position` includes VP, Head of, Director, Chief. It returned 554 people at 319 of those companies in 1074.2 s. The body is in [card 02](../02-sales-agent/README.md). Build it ahead of time, and show counts and titles in a demo, not names.
+
+</details>

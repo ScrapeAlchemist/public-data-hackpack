@@ -1,28 +1,19 @@
-# 08. A restaurant dashboard with competitor data
+# 08. A dashboard for nearby restaurants
 
-**The app people already build:** a dashboard for a restaurant owner. Menu items, daily sales typed in by hand, the staff schedule. It works with no public data at all.
+Enter a restaurant address and category, then scan nearby Yelp listings. Show
+ratings, review counts and distance, and compare weekly scans to see which places
+have gained reviews, changed ratings or appeared in the results.
 
-**What public data adds:** every competitor in your Yelp category within a mile, with the exact star rating and the exact review count, refreshed weekly. Compare the weekly runs and the dashboard can flag places that were not in the last scan, rating drops, and who is gaining reviews fastest.
-
-| Without public data | With public data |
-|---|---|
-| You know your own numbers and nothing about nearby places | 10 ramen competitors within 1 mile of 2400 Telegraph Ave, Berkeley, each with exact rating and review count |
-| You notice a new place only once it is busy | Places that were not in the last weekly scan, or have 0 reviews, get tagged as new |
-| "They seem busy lately" | Review count and rating per competitor, week over week |
-
-## Why not just ask the AI?
-
-We asked Claude Code, with only its built-in web search and fetch tools, for every Ramen-category business on Yelp within 1 mile of 2400 Telegraph Ave, with rating, exact review count and price. Measured 2026-10-19:
-
-- **Finding the places: the AI did well.** It named 7 of the 10 real competitors in 67.9 s, with no wrong values. One of them, Masa Ramen Bistro, is a place Yelp's own Walking (1 mi.) filter misses.
-- **The numbers: 0 of 21.** Every rating, review count and price came back null, because all 4 of its Yelp fetches got HTTP 403. Score: 19 of 60 fields exact. It also missed DH Noodles And Grill, Party Sushi and Kinda Izakaya.
-- **One named listing works.** In a separate run, given Bansho Ramen's Yelp URL, it returned the right rating (4.1) and count (196) in 34.6 s, even with every Yelp fetch blocked.
-
-So the AI can tell you which places are nearby. The scraper wins on the numbers the dashboard tracks: exact rating and count for every competitor, every week, without anyone waiting.
+The prompt creates `apps/block-watch/` with a competitor view beside basic pages for the owner's menu, sales and staff schedule.
 
 ## Paste this into your agent
 
-Open Claude Code or Cursor in this repo, then:
+Finish [setup](../../SETUP.md), then open this project in Claude Code or Cursor.
+Expand the prompt below and paste the whole block into your agent. It will build
+the app and test it with a small real input using your Bright Data account.
+
+<details>
+<summary>Copy the build prompt</summary>
 
 ```
 Read AGENTS.md and ideas/08-restaurant-dashboard/README.md first.
@@ -45,6 +36,22 @@ node:http, plain HTML/JS, JSON files for storage, no npm install):
 Test once with "2400 Telegraph Ave, Berkeley, CA" and ramen (8 Yelp pages, about 10
 competitors), then reuse data/scans.json while you work on the UI.
 ```
+
+</details>
+
+## Make it yours
+
+- Summarize the week's changes for the owner.
+- Compare the price levels of nearby restaurants.
+- Watch more than one restaurant category.
+
+<details>
+<summary>Build reference: API requests, sample data and test results</summary>
+
+The rest of this card is for your coding agent and anyone changing how the app
+collects data. Keep these instructions with the prompt.
+
+### Adding this to an existing app
 
 Building into an app you already have? Copy `AGENTS.md` and this folder into it and point step 3 at your code.
 
@@ -104,9 +111,21 @@ How complete: a full search page held 10 organic rows plus 1 to 8 ads, and all 5
 - **New places have nulls.** Tora Ramen came back with `rating: null` and `reviewCount: 0`. Do not show that as 0 stars: it is your new-opening signal. Yelp shows no price level for many places (HINODEYA, DH Noodles, Sobo, Kinda Izakaya), so show "none", not "$".
 - **Skip the Yelp businesses scraper** (`gd_lgugwl0519h1p14rwk`). It returned 0 usable records for 3 inputs in 2 runs (one empty record, then `detect_block`), taking 196 to 377 s each. Web Unlocker raw pages are the route.
 
-## Make it yours
+## Why not just ask the AI?
+
+We asked Claude Code, with only its built-in web search and fetch tools, for every Ramen-category business on Yelp within 1 mile of 2400 Telegraph Ave, with rating, exact review count and price. Measured 2026-10-19:
+
+- **Finding the places: the AI did well.** It named 7 of the 10 real competitors in 67.9 s, with no wrong values. One of them, Masa Ramen Bistro, is a place Yelp's own Walking (1 mi.) filter misses.
+- **The numbers: 0 of 21.** Every rating, review count and price came back null, because all 4 of its Yelp fetches got HTTP 403. Score: 19 of 60 fields exact. It also missed DH Noodles And Grill, Party Sushi and Kinda Izakaya.
+- **One named listing works.** In a separate run, given Bansho Ramen's Yelp URL, it returned the right rating (4.1) and count (196) in 34.6 s, even with every Yelp fetch blocked.
+
+So the AI can tell you which places are nearby. The scraper wins on the numbers the dashboard tracks: exact rating and count for every competitor, every week, without anyone waiting.
+
+### More build ideas
 
 - **Monday digest:** after the weekly scan, send the owner new places, rating drops, temporary closures and the top 3 by reviews gained.
 - **Price position:** count the competitors at each `price` level and show where the owner's menu sits.
 - **Hours gaps:** fetch the biz pages once (`--all-coords`), keep the hours per weekday, and show when nobody nearby is open. Bansho Ramen, for one, is closed on Mondays.
 - **More than one category:** run it for each category alias you compete in and merge by biz_id. Check that every row carries the category you asked for.
+
+</details>
