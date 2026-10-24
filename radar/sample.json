@@ -162,6 +162,6 @@
   ],
   "errors_seen": {
     "reddit_challenge": "HTTP 200, body is a \"Prove your humanity\" page, x-brd-error-code empty, 0 <shreddit-post> tags (1 of 9 calls on 2026-10-22). A later call for the same URL returned the posts.",
-    "github_rate_limit_message": "GitHub search limit reached for this IP. Add GITHUB_TOKEN to .env (see README.md)"
+    "github_rate_limit_message": "GitHub search limit reached for this IP. Add GITHUB_TOKEN to .env (see SETUP.md, step 5)"
   }
 }

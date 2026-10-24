@@ -161,7 +161,9 @@ async function redditTop(sub) {
         const posts = parseTopFeed(r.text);
         if (posts.length) return { sub, url, posts, attempts: attempt, failed_tries: tries, seconds: secondsSince(t0) };
         // Measured once in 9 calls: a 200 "Prove your humanity" page with no x-brd-error-code. Ask again.
-        why = /prove your humanity/i.test(r.text.slice(0, 5000)) ? 'challenge page' : '0 posts';
+        // A 200 with an empty body and an x-brd-error-code (a zone that refuses this IP, for one) lands here too: say which.
+        const code = r.headers.get('x-brd-error-code');
+        why = code ? `HTTP 200 ${code}` : /prove your humanity/i.test(r.text.slice(0, 5000)) ? 'challenge page' : '0 posts';
       } else if (r.status === 401 || r.status === 403) {
         // A wrong key or a key without permission: asking again will not help.
         throw Object.assign(new Error(`Bright Data answered HTTP ${r.status} ${r.headers.get('x-brd-error') || ''}: check BRIGHTDATA_API_TOKEN and the zone`.replace(/ +:/, ':')), { fatal: true });
@@ -262,7 +264,7 @@ export async function fetchGitHub(query, days, denylist) {
     // Without a token the search limit is per IP: a room on one Wi-Fi shares it.
     const left = res.headers.get('x-ratelimit-remaining');
     throw new Error(left === '0' && !process.env.GITHUB_TOKEN
-      ? 'GitHub search limit reached for this IP. Add GITHUB_TOKEN to .env (see README.md)'
+      ? 'GitHub search limit reached for this IP. Add GITHUB_TOKEN to .env (see SETUP.md, step 5)'
       : `GitHub answered HTTP ${res.status}: ${text.slice(0, 200)}`);
   }
   if (res.status !== 200) throw new Error(`GitHub answered HTTP ${res.status}: ${text.slice(0, 200)}`);

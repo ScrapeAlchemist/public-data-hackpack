@@ -4,7 +4,7 @@
 
 **What public data adds:** one Run button fetches all three at once, with exact numbers (Reddit's displayed score and comment count, likes and views on X, stars on GitHub) and the time each was posted. Every run is saved with `fetched_at`, so the next run can tell you what is new.
 
-This is a small, working example on purpose. Start it, watch it fill, then scale it with the prompt below.
+This is a small, working example on purpose. Start it, watch it fill, scale it with the prompt below, then take it home and run it every morning (see [Take it home](#take-it-home-a-daily-monitor)).
 
 | Without public data | With public data |
 |---|---|
@@ -30,7 +30,7 @@ node radar/server.mjs
 
 Open http://localhost:3001 and press Run. Opening the page fetches nothing. Each column fills as its source comes back. The filter box narrows all three columns in the browser, with no new fetch: fetch once, filter locally. If a source fails, or is still running after 90 s, its column shows the last saved result for that source and says what time it is from.
 
-**What to watch** is in [`radar.config.json`](radar.config.json): subreddits, X accounts, how many days back, the GitHub search and a denylist. Add `"OpenAI", "ClaudeAI", "singularity"` to `subreddits` and run again. No code change.
+**What to watch** is in [`radar.config.json`](radar.config.json). Add `"OpenAI", "ClaudeAI", "singularity"` to `subreddits` and run again. No code change. The keys: `subreddits` (`LocalLLaMA` or `r/LocalLLaMA`: letters, digits and underscore, 2 to 21 characters), `x_accounts` (`OpenAI` or `@OpenAI`, up to 15 characters), `x_days` and `x_posts_per_account` (the X scraper's date window and its `num_of_posts` per account, counted before reposts are dropped), `github_query` (GitHub search syntax, see Make it yours), `github_days`, and `github_denylist` (hides GitHub repos whose name, description or topics contain a word; lowercase). Reddit is always Top Today (`t=DAY` in the URL): the days keys apply to X and GitHub only. A pasted URL, or a name with a dot or a space, is dropped without a message; when every entry is dropped the error is "No subreddits in radar.config.json". A JSON typo in the file stops both scripts: `node radar/radar.mjs` prints the parse error, and the page stays empty while the server's terminal shows it. The server reads `radar.config.json` again at every Run, but `.env` only once, at start: after editing `.env`, stop it (Ctrl+C) and start it again.
 
 ## Why not just ask the AI?
 
@@ -58,6 +58,26 @@ Scale the AI radar in radar/ (Node 20+, no npm install, keep it that way):
 3. Add radar/daily.mjs: run the radar once and print only the tagged items, for a daily cron.
 Test with one real run of radar/daily.mjs. Never print the key.
 ```
+
+## Take it home: a daily monitor
+
+The radar you cloned is the one-run version: it fetches, prints and saves. The prompt above is what turns it into a monitor. Your agent adds the `new` and `rising` tags and `radar/daily.mjs`, which runs the radar once and prints only what changed since the previous saved run. Neither is in this repo until you run the prompt yourself. On 2026-10-22 a fresh Claude Code session (Opus 5.5) built both from this prompt in 3.5 minutes (209.4 s, 29 tool calls), changed only files under `radar/`, and ran `daily.mjs` once for real.
+
+Then schedule `radar/daily.mjs` once a day:
+
+- macOS or Linux: `crontab -e`, then one line, for 08:00 every day:
+  `0 8 * * * cd /path/to/public-data-hackpack && node radar/daily.mjs >> radar/data/daily.log 2>&1`
+  Cron has a short PATH: if it cannot find `node`, write the full path from `which node`.
+- Windows: Task Scheduler, Create Basic Task, Daily. Action: Start a program. Program: `node` (or the full path to `node.exe`). Arguments: `radar\daily.mjs`. Start in: the folder you cloned into.
+
+What to expect:
+
+- The first run tags nothing: there is no earlier run to compare with. From the second morning on, the output is your digest: what is new since yesterday. Expect mostly `new` and rarely `rising` at a daily pace: Reddit's Top Today list turns over every 24 hours, so `rising` needs two runs on the same day.
+- Two things to check in what your agent built (the Oct 22 build had both): it compares each source with the newest saved run where that source came back ok, so the morning after X failed does not tag everything new; and it does not tag items from a subreddit or account the previous run did not watch, so adding a subreddit does not flood the page. If yours lacks them, ask for them.
+- The Oct 22 build exits 1 only when every source failed. GitHub needs no key, so a dead or expired key or a missing zone leaves Reddit and X failing every morning while the scheduler shows success: read the log now and then, or ask your agent for exit 1 when any source failed.
+- It needs no agent and no open page. `radar.mjs` reads `.env` from the repo root on its own.
+- The page still works next to it: `node radar/server.mjs` shows the last saved result for each source without fetching, so the morning run is already on the page when you open it.
+- Every daily run spends calls on your Bright Data key for Reddit (Web Unlocker, one call per subreddit, up to three when Reddit answers a challenge page) and X (Web Scraper API, one job for all accounts). GitHub is GitHub's own API and costs nothing. For a daily run set `x_days` to 1 or 2 in `radar.config.json`, so the X job fetches only the newest posts (a 1-day window returned 18 records in 56 s on 2026-10-22, against 39 for 7 days). Check your Bright Data dashboard now and then.
 
 ## The route (measured 2026-10-22)
 
@@ -108,8 +128,11 @@ The three run at the same time, and the X job starts first because it is the slo
 
 ## Make it yours
 
-- **Scale it:** the prompt above. Four subreddits, "new" and "rising" tags, and a daily script.
-- **Your own corner of AI:** swap the accounts and subreddits for robotics, bio or game dev. Change `github_query`.
+- **Scale it:** the prompt above. Four subreddits, "new" and "rising" tags, and a daily script. Then schedule it: [Take it home](#take-it-home-a-daily-monitor).
+- **Your own corner of AI:** swap the accounts and subreddits for robotics, bio or game dev, and change `github_query`. All of it is in `radar.config.json`, no code change. Each subreddit is one Web Unlocker call per run, and the calls run in parallel; all X accounts go into one Web Scraper job. A quiet subreddit returns few posts (r/MachineLearning: 3 in Top Today), so check a new one with `node radar/radar.mjs --only reddit` before you keep it.
+- **More X accounts:** add handles to `x_accounts` (`OpenAI` or `@OpenAI`). All of them go into one Web Scraper API job; five accounts took 55 to 75 s. The radar waits 240 s for the job, then marks X failed with the snapshot id in the error. The job still finishes on Bright Data's side: download it by hand with `GET /datasets/v3/snapshot/<id>?format=json` (AGENTS.md, call 3), or raise the cap in `fetchX`. The page shows the top 3 posts per account by likes (`topPerAccount(..., 3)` in `public/index.html`) whatever `x_posts_per_account` says, and its X column title says "AI lab accounts": edit both there when you watch something else. Every post is in the saved run file.
+- **Wider GitHub search:** `github_query` takes GitHub's search syntax and the radar URL-encodes it; it adds `created:>=<date>` from `github_days` itself, so do not write your own `created:`. Checked 2026-10-23 with the radar's URL and no token: `llm OR agents` (63,529 repos created since 2026-10-16, 0.5 s), `topic:llm` (5,021) and `language:python llm` (8,890) all returned HTTP 200. The same forms fit any field (`robotics OR ros2`, `topic:bioinformatics`; not run here). The radar keeps the top 30 by stars, so a wider query changes which 30 you see, not how many.
+- **A fourth source:** add a `fetchYourSource()` to `radar.mjs` in the shape of `fetchGitHub` (returns an object with `seconds` and a list of items, throws on failure), put its name in `SOURCES`, its call in the `jobs` map of `runRadar`, any new config key in `loadConfig` (it returns a fixed set of keys) and a block in `printRun` if you want it on the command line. Then the page, `public/index.html`: a fourth `<section>`, a `ROWS` entry, the name in its own `SOURCES` list, a title in `titles()`, and `repeat(3, ...)` in the grid CSS becomes 4. `server.mjs` needs no change: it reads `SOURCES` from `radar.mjs`. Try a plain `fetch` first, as GitHub does; if the site blocks, go through Web Unlocker as Reddit does (`redditTop` in `radar.mjs` is the pattern). Hacker News, Hugging Face and blog RSS feeds are the usual next picks; none of them is measured here.
 - **Is the launch real?** When a lab posts a name on X, look for the same name in Reddit titles and GitHub repos from the same run. All three are already in one saved file.
 - **Read the thread:** Web Unlocker raw HTML of a post's permalink gives the post's `score` and `comment-count` and each `<shreddit-comment>` with `score`, `created` and `depth` (measured 5.64 s, see card 07). Skip the `author` attribute.
 - **A trend line:** every run is saved. Chart a repo's stars or a post's score across runs.

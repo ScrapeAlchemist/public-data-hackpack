@@ -18,6 +18,8 @@ You need:
 2. No key there, or lost it? Create one on the same page:
    - Click **Add API key** (top right of the API key section).
    - Choose the user, the permissions and an expiration date (or Unlimited), then click **Save**.
+     If you plan to run the radar every day, pick Unlimited or note the date: an expired key fails
+     later as HTTP 401, the same as a wrong key.
    - Copy the key right away. It is shown once. If you lose it, create a new one.
    - Only account admins can create API keys.
 
@@ -56,9 +58,11 @@ BRIGHTDATA_ZONE=
 - The code also accepts the name `BRIGHTDATA_API_KEY`.
 - `BRIGHTDATA_ZONE` can stay empty. The code then lists your zones and picks one with the type
   `unblocker` (a Web Unlocker zone). Fetching pages and Google results needs one.
-- No Web Unlocker zone on your account? Add a Web Unlocker zone in the Bright Data control panel.
-  Connecting the hosted MCP server (step 3) may also create one named `mcp_unlocker` (not yet
-  tested on a new account).
+- No Web Unlocker zone on your account? In the Bright Data control panel add a zone and pick Web
+  Unlocker (its API type is `unblocker`); the default name is fine. Connecting the hosted MCP server
+  (step 3) may also create one named `mcp_unlocker` (not yet tested on a new account). Only the
+  radar's Reddit column needs the zone: X and GitHub run without one, so a run that says "No Web
+  Unlocker zone" still prints the X and GitHub lists.
 
 ---
 
@@ -154,6 +158,10 @@ node radar/radar.mjs
 - "Set BRIGHTDATA_API_TOKEN in .env" means step 2 is not done. "No Web Unlocker zone" means you
   need a zone (end of step 2). "HTTP 401" from Bright Data means a wrong key. These stop that
   source right away.
+- Reddit says "no posts after 3 tries" with `HTTP 200 <code>` inside the brackets: Bright Data
+  refused the call and the code says why. `ip_forbidden` means the zone it picked accepts only
+  certain IPs: set `BRIGHTDATA_ZONE` in `.env` to a zone without an IP allowlist, or allow your IP
+  in that zone's settings.
 - "GitHub search limit reached for this IP" means many people on the same Wi-Fi ran it at once.
   Reddit and X still work. Run it again later, or add a GitHub token: on GitHub, Settings ->
   Developer settings -> Personal access tokens, create one with no extra permissions (every token
@@ -161,7 +169,8 @@ node radar/radar.mjs
   line in `.env`. With a token GitHub allows 30 searches a minute instead of 10 (checked
   2026-10-22).
 
-Then the page: `node radar/server.mjs`, open http://localhost:3001 and press Run.
+Then the page: `node radar/server.mjs`, open http://localhost:3001 and press Run. If you edit `.env`
+while it runs, stop it (Ctrl+C) and start it again: it reads `.env` once, at start.
 
 Card 01's script is a second smoke test, for LinkedIn:
 `node ideas/01-crm-autofill/enrich.mjs "Jensen Huang" "NVIDIA"` returns `person.followers` (an exact
@@ -176,4 +185,4 @@ Use the Bright Data search_scrapers tool to find the scraper for LinkedIn compan
 Expected: `gd_l1vikfnt1wgvvqz95w` ("LinkedIn company information"). If the agent answers from
 memory or says it cannot reach Bright Data, the MCP server is not connected. Go back to step 3.
 
-You are ready. Pick a card in [README.md](README.md).
+You are ready. Pick a card in [README.md](README.md), or take the radar home: [radar/README.md](radar/README.md), Take it home.

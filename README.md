@@ -17,6 +17,7 @@ https://github.com/brightdata/skills. Install them with `npx skills add brightda
 [`radar/`](radar/) is the workshop demo. One Run button gets today's top posts on r/LocalLLaMA,
 the latest posts from five AI lab accounts on X, and the most-starred new LLM repos on GitHub,
 side by side, in about a minute. Every run is saved, so the next one can tell you what is new.
+After [SETUP.md](SETUP.md) (your key in `.env`, a Web Unlocker zone):
 
 ```
 node radar/server.mjs
@@ -25,7 +26,7 @@ node radar/server.mjs
 Open http://localhost:3001 and press Run. Your agent can browse, so we asked it for the same three
 lists: it got GitHub (10 of 10), and 0 of 10 Reddit posts and 0 of 5 X accounts (measured
 2026-10-22). It is a small example on purpose: [radar/README.md](radar/README.md) has the
-measured routes and a prompt that scales it.
+measured routes, a prompt that scales it, and how to run it every morning at home (Take it home).
 
 ## The 10 ideas
 
