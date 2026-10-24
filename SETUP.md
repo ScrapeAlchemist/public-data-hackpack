@@ -185,4 +185,20 @@ Use the Bright Data search_scrapers tool to find the scraper for LinkedIn compan
 Expected: `gd_l1vikfnt1wgvvqz95w` ("LinkedIn company information"). If the agent answers from
 memory or says it cannot reach Bright Data, the MCP server is not connected. Go back to step 3.
 
+---
+
+## 6. In the workshop: your own subreddit (about a minute)
+
+While the agent on stage builds the daily digest, make the radar yours. Four steps, in the repo root:
+
+1. Stop the page's server if it is running: Ctrl+C in its terminal.
+2. Open `radar/radar.config.json` and add one subreddit for your field to `subreddits`, a busy one.
+   `"robotics"` and `"r/robotics"` both work; keep the entry that is there. Save the file.
+3. `node radar/radar.mjs --only reddit`. Reddit only, 3 to 50 s. X and GitHub keep their last run.
+4. `node radar/server.mjs`, then reload http://localhost:3001. Your subreddit is in the Reddit column.
+
+No key yet? Watch your neighbor's screen and do this at home after step 2. That edit is the whole
+customization: one file, no code. The prompt in [radar/README.md](radar/README.md) adds the daily
+digest on top of it.
+
 You are ready. Pick a card in [README.md](README.md), or take the radar home: [radar/README.md](radar/README.md), Take it home.
