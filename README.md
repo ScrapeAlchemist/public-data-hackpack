@@ -129,9 +129,9 @@ same tools (see SETUP.md).
 
 ## Bright Data prize track
 
-Bright Data runs a prize track at Cal Hacks 13. See the Cal Hacks 13 prize list for the rules and
-judging. Our advice: pick an app people already use, make live public data do real work in it,
-and show it running in the demo.
+Bright Data runs a prize track at Cal Hacks 13: "Best Agent/App Using Public Web Data". Rules and
+judging are on Hive, hive.hackberkeley.org, Prizes tab. Our advice: pick an app people already use,
+make live public data do real work in it, and show it running in the demo.
 
 ## One rule
 

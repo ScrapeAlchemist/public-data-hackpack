@@ -368,9 +368,10 @@ cache/, out/           created at run time, ignored by git
 
 ## Bright Data prize track
 
-Bright Data runs a prize track at Cal Hacks 13. See the Cal Hacks 13 prize list for the rules
-and judging. Our advice: build something where live web data does real work in the product,
-and show it running in the demo. This repo is a starting point, not a requirement.
+Bright Data runs a prize track at Cal Hacks 13: "Best Agent/App Using Public Web Data". Rules and
+judging are on Hive, hive.hackberkeley.org, Prizes tab. Our advice: build something where live web
+data does real work in the product, and show it running in the demo. This repo is a starting point,
+not a requirement.
 
 ## One rule
 
